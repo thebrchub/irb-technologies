@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Albert Sans", "Inter", ui-sans-serif, system-ui;
-  --font-mono: "IBM Plex Mono", "Space Mono", monospace;
+  /* 🔥 THE EXACT BRAND TYPOGRAPHY 🔥 */
+  --font-display: "Albert Sans", sans-serif;
+  --font-sans: "Barlow", sans-serif; /* Body font */
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* 🔥 BRAND PALETTE: Integrated from the Sentinel Brand Kit */
   --color-parchment: #FBF8F3;
   --color-ember: #C45919;
   --color-slate-deep: #2B3A4A;
@@ -10,7 +14,7 @@
   --color-bone: #EAE2D6;
 }
 
-/* 1. GLOBAL OPTIMIZATIONS */
+/* 1. GLOBAL OPTIMIZATIONS & LAYOUT */
 html {
   /* Keep smooth scroll, but ensure it doesn't conflict with padding */
   scroll-behavior: smooth;
@@ -19,18 +23,38 @@ html {
   overflow-y: scroll; 
 }
 
+/* 2. TYPOGRAPHY ROUTING & BODY SETTINGS */
 body {
   background-color: var(--color-parchment);
   color: var(--color-slate-deep); 
+  
+  /* Sets Barlow 400 as the global default for all paragraphs/lists */
   font-family: var(--font-sans);
+  font-weight: 400; 
+  
   min-height: 100vh;
-  /* 🔥 PERFORMANCE FIX: Remove overflow-x: hidden if not needed, 
-     or move it to a main wrapper to avoid body repaint issues */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 🔥 PERFORMANCE FIX: THE NOISE OVERLAY 
+h1, h2, h3, h4, .font-display {
+  /* Forces all headings to use Albert Sans */
+  font-family: var(--font-display);
+  
+  /* Sticking to 700 for that ultra-bold, un-stretched Sentinel look */
+  font-weight: 700; 
+  letter-spacing: -0.045em; 
+  line-height: 1.05;
+  text-rendering: optimizeLegibility;
+}
+
+.technical-layer, code, pre {
+  /* Forces code-like text to use IBM Plex Mono */
+  font-family: var(--font-mono);
+}
+
+/* 3. PERFORMANCE FIX: THE NOISE OVERLAY 
    Moving noise to its own layer prevents the whole body from repainting on scroll */
 body::before {
   content: "";
@@ -46,16 +70,7 @@ body::before {
   will-change: transform;
 }
 
-/* 2. TYPOGRAPHY (Stays the same) */
-h1, h2, h3, h4, .font-display {
-  font-family: var(--font-sans);
-  font-weight: 900;
-  letter-spacing: -0.045em; 
-  line-height: 1.05;
-  text-rendering: optimizeLegibility;
-}
-
-/* 3. CUSTOM SCROLLBAR (Stays the same) */
+/* 4. CUSTOM SCROLLBAR */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -67,8 +82,11 @@ h1, h2, h3, h4, .font-display {
   border-radius: 20px;
   border: 2px solid var(--color-parchment);
 }
+::-webkit-scrollbar-thumb:hover {
+  background: #A34915; /* Darker Ember on hover */
+}
 
-/* 4. ANIMATIONS (Optimization: Added will-change) */
+/* 5. ANIMATIONS */
 .animate-sentinel-propagate {
   animation: sentinel-propagate 3s infinite ease-in-out;
   will-change: left;
@@ -79,14 +97,15 @@ h1, h2, h3, h4, .font-display {
   50% { opacity: 1; }
   100% { left: 100%; opacity: 0; }
 }
-/* 🔥 THE MISSING SCROLL ANIMATION 🔥 */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 
+/* 🔥 THE MISSING LOGO SCROLL ANIMATION IS BACK 🔥 */
 .animate-scroll {
   animation: scroll 25s linear infinite;
   /* This tells the browser to use the GPU for this animation, preventing lag! */
   will-change: transform; 
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

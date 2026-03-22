@@ -37,24 +37,28 @@ const Hero = ({ onOpenModal }: HeroProps) => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-2xl mb-8">
-               <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-2 mb-2 text-slate-900 font-bold">
-                     <Globe size={16} className="text-amber-500" /> Enterprise & Events
-                  </div>
-                  <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
-                     Comprehensive, high-concurrency protection for large scale environments.
-                  </p>
-               </div>
-               
-               <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-2 mb-2 text-slate-900 font-bold">
-                     <Zap size={16} className="text-amber-500" /> On-Demand Security
-                  </div>
-                  <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
-                     Fast, affordable audits and VAPT tailored for SMEs and startups.
-                  </p>
-               </div>
-            </div>
+  <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+     <div className="flex items-center gap-2 mb-2 text-slate-900 font-bold text-base sm:text-lg">
+        {/* 🔥 Updated icon size and exact brand Ember color */}
+        <Globe size={18} className="text-[#C45919]" /> Enterprise & Events
+     </div>
+     {/* 🔥 Changed text-[11px] to text-sm and darkened to slate-600 */}
+     <p className="text-sm text-slate-600 leading-relaxed font-medium">
+        Comprehensive, high-concurrency protection for large scale environments.
+     </p>
+  </div>
+  
+  <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+     <div className="flex items-center gap-2 mb-2 text-slate-900 font-bold text-base sm:text-lg">
+        {/* 🔥 Updated icon size and exact brand Ember color */}
+        <Zap size={18} className="text-[#C45919]" /> On-Demand Security
+     </div>
+     {/* 🔥 Changed text-[11px] to text-sm and darkened to slate-600 */}
+     <p className="text-sm text-slate-600 leading-relaxed font-medium">
+        Fast, affordable audits and VAPT tailored for SMEs and startups.
+     </p>
+  </div>
+</div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
               <button 
