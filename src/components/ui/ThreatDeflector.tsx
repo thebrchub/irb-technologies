@@ -1,4 +1,3 @@
- 
 import HolographicLogo from './HolographicLogo';
 
 const ThreatDeflector = () => {
@@ -38,6 +37,10 @@ const ThreatDeflector = () => {
         0%, 100% { opacity: 0.4; }
         50% { opacity: 0.8; }
       }
+      @keyframes radar-rotate {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
     `;
     return styles;
   };
@@ -67,6 +70,33 @@ const ThreatDeflector = () => {
           ))}
         </svg>
 
+        {/* ── Radar sweep: conic-gradient fan ── */}
+        <div
+          className="absolute inset-0 rounded-full overflow-hidden"
+          style={{ transform: 'translateZ(1px)' }}
+        >
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: '50%',
+              background: `conic-gradient(
+                from 0deg at 50% 50%,
+                rgba(245,158,11,0.00)   0deg,
+                rgba(245,158,11,0.00) 270deg,
+                rgba(245,158,11,0.04) 278deg,
+                rgba(245,158,11,0.10) 290deg,
+                rgba(245,158,11,0.20) 305deg,
+                rgba(245,158,11,0.35) 320deg,
+                rgba(245,158,11,0.50) 340deg,
+                rgba(245,158,11,0.65) 355deg,
+                rgba(245,158,11,0.70) 360deg
+              )`,
+              animation: 'radar-rotate 6s linear infinite',
+            }}
+          />
+        </div>
+
         {packets.map((pkt) => (
           <div
             key={pkt.id}
@@ -90,7 +120,7 @@ const ThreatDeflector = () => {
           style={{ transform: 'translate(-50%, -50%) translateZ(5px)' }}
         />
         
-        {/* Layer 1: Core Base (Your exact sizing) */}
+        {/* Layer 1: Core Base */}
         <div 
           className="absolute top-1/2 left-1/2 w-[25%] h-[25%] rounded-full border border-slate-300 bg-slate-100 shadow-xl"
           style={{ transform: 'translate(-50%, -50%) translateZ(15px)' }}
@@ -108,43 +138,33 @@ const ThreatDeflector = () => {
           style={{ transform: 'translate(-50%, -50%) translateZ(45px)' }}
         />
 
-        {/* 🔥 FLAWLESS HOLOGRAPHIC PROJECTION BEAM 🔥 */}
+        {/* Holographic Projection Beam */}
         <div 
           className="absolute top-1/2 left-1/2 w-0 h-0 pointer-events-none"
-          style={{ 
-            // Anchored exactly 1px above the top plate
-            transform: 'translateZ(46px)', 
-            transformStyle: 'preserve-3d' 
-          }}
+          style={{ transform: 'translateZ(46px)', transformStyle: 'preserve-3d' }}
         >
-           {/* 1. Projector Lens (Centered exactly on the 0x0 point) */}
-           <div className="absolute top-[-6px] left-[-6px] w-[12px] h-[12px] rounded-full bg-amber-200 shadow-[0_0_15px_5px_rgba(245,158,11,0.8)] animate-[pulse_2s_ease-in-out_infinite]" />
-           
-           {/* 2. The Volumetric Light Cone */}
-           <div 
-             className="absolute"
-             style={{ 
-               bottom: '0px', // Perfectly anchors the base of the cone to the lens
-               left: '-100px', // Perfectly centers the 160px width over the lens
-               width: '200px', 
-               height: '80px',
-               transformOrigin: 'bottom center',
-               transform: 'rotateZ(-45deg) rotateX(-90deg)', // Stands upright
-               background: 'linear-gradient(to top, rgba(245,158,11,0.6) 0%, rgba(245,158,11,0) 100%)',
-               clipPath: 'polygon(20% 0, 80% 0, 50% 100%)', // Triangle pointing down at the lens
-               filter: 'blur(3px)',
-               animation: 'beam-flicker 4s linear infinite',
-             }}
-           />
+          <div className="absolute top-[-6px] left-[-6px] w-[12px] h-[12px] rounded-full bg-amber-200 shadow-[0_0_15px_5px_rgba(245,158,11,0.8)] animate-[pulse_2s_ease-in-out_infinite]" />
+          <div 
+            className="absolute"
+            style={{ 
+              bottom: '0px',
+              left: '-100px',
+              width: '200px', 
+              height: '80px',
+              transformOrigin: 'bottom center',
+              transform: 'rotateZ(-45deg) rotateX(-90deg)',
+              background: 'linear-gradient(to top, rgba(245,158,11,0.6) 0%, rgba(245,158,11,0) 100%)',
+              clipPath: 'polygon(20% 0, 80% 0, 50% 100%)',
+              filter: 'blur(3px)',
+              animation: 'beam-flicker 4s linear infinite',
+            }}
+          />
         </div>
 
-        {/* Component Call: Holographic Logo */}
+        {/* Holographic Logo */}
         <div 
           className="absolute top-1/2 left-1/2"
-          style={{ 
-            transform: 'translate(-50%, -50%) translateZ(100px)', 
-            transformStyle: 'preserve-3d' 
-          }}
+          style={{ transform: 'translate(-50%, -50%) translateZ(100px)', transformStyle: 'preserve-3d' }}
         >
           <HolographicLogo />
         </div>

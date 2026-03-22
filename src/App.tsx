@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; // 🔥 Added useEffect
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; 
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
@@ -10,13 +10,10 @@ import ContactModal from './components/ui/ContactModal';
 import CTA from './components/sections/CTA';
 import CaseStudies from './components/sections/CaseStudies';
 import ScrollToTop from './components/ui/ScrollToTop'; 
-
-// 🔥 Legal Pages
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import SentinelAction from './components/sections/SentinelAction';
 
-// 🔥 NEW: Separate component to handle the Hash Scrolling
-// This must be INSIDE the Router but OUTSIDE the main App logic
 const HashScrollHandler = () => {
   const { pathname, hash } = useLocation();
 
@@ -27,7 +24,7 @@ const HashScrollHandler = () => {
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+        }, 150); // Increased slightly for smoother transition after route change
       }
     }
   }, [pathname, hash]);
@@ -38,15 +35,29 @@ const HashScrollHandler = () => {
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Reusable Home Page Component
   const HomePage = () => (
     <>
-      <Hero onOpenModal={() => setIsModalOpen(true)} />
-      <About />
-      <div id="architecture"> {/* Ensure your IDs match your NavLinks! */}
+      <section id="home">
+        <Hero onOpenModal={() => setIsModalOpen(true)} />
+      </section>
+      
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="architecture">
         <Features />
-      </div>
-      <Services />
+      </section>
+
+      <section id="services">
+        <Services />
+      </section>
+
+      {/* 🔥 Corrected: Wrapped Sentinel with the ID for Nav functionality */}
+      <section id="sentinel">
+        <SentinelAction />
+      </section>
+
       <CaseStudies />
       <CTA onOpenModal={() => setIsModalOpen(true)} />
     </>
@@ -55,7 +66,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <HashScrollHandler /> {/* 🔥 Now useLocation() works because it's a child of Router */}
+      <HashScrollHandler />
       
       <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-amber-500/30">
         <Navbar onOpenModal={() => setIsModalOpen(true)} />
@@ -67,7 +78,6 @@ function App() {
         </Routes>
 
         <Footer />
-        
         <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </Router>
