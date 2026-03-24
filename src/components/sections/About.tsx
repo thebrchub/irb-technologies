@@ -17,7 +17,7 @@ const About = () => {
           <ScrollReveal>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-              About IRB Technologies
+              About IRB  Technology
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-8">
@@ -25,7 +25,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              In an era where digital threats move faster than traditional defenses, IRB Technologies was founded to provide more than just security—we provide <strong className="text-slate-900">resilience</strong>. We believe that robust cybersecurity must be the foundation of every growing business.
+              In an era where digital threats move faster than traditional defenses, IRB  Technology was founded to provide more than just security—we provide <strong className="text-slate-900">resilience</strong>. We believe that robust cybersecurity must be the foundation of every growing business.
             </p>
           </ScrollReveal>
         </header>

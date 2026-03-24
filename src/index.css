@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  /* 🔥 THE EXACT BRAND TYPOGRAPHY 🔥 */
+
   --font-display: "Albert Sans", sans-serif;
   --font-sans: "Barlow", sans-serif; /* Body font */
   --font-mono: "IBM Plex Mono", monospace;
 
-  /* 🔥 BRAND PALETTE: Integrated from the Sentinel Brand Kit */
+
   --color-parchment: #FBF8F3;
   --color-ember: #C45919;
   --color-slate-deep: #2B3A4A;

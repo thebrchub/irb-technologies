@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
             Privacy Policy
           </h1>
           <p className="text-slate-500 text-sm max-w-xl leading-relaxed">
-            Strategic security data protocols for IRB Technologies clients. This document outlines how we collect, handle, and protect your data during and after security engagements.
+            Strategic security data protocols for IRB  Technology clients. This document outlines how we collect, handle, and protect your data during and after security engagements.
           </p>
           <p className="text-xs text-slate-400 font-mono mt-3">Last Updated: March 15, 2026</p>
 
@@ -51,7 +51,7 @@ const PrivacyPolicy = () => {
                 </div>
                 <div className="w-8 h-0.5 bg-[#C45919]/30 rounded mb-4" />
                 <p className="text-slate-600 leading-relaxed">
-                  At IRB Technologies, we recognize that the data we handle is the lifeblood of your enterprise. Our engagement protocols are designed to ensure that no piece of information — whether system architecture, source code, or internal network maps — is ever exposed beyond the necessary authorized personnel.
+                  At IRB  Technology, we recognize that the data we handle is the lifeblood of your enterprise. Our engagement protocols are designed to ensure that no piece of information — whether system architecture, source code, or internal network maps — is ever exposed beyond the necessary authorized personnel.
                 </p>
                 <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {['Zero-knowledge handling', 'Need-to-know access', 'Signed NDAs always'].map(item => (

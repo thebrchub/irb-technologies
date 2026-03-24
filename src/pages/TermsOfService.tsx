@@ -28,7 +28,7 @@ const TermsOfService = () => {
             Terms of Service
           </h1>
           <p className="text-slate-500 text-sm max-w-xl leading-relaxed">
-            Operational framework and service agreement for IRB Technologies. By using our services, you agree to the terms outlined in this document.
+            Operational framework and service agreement for IRB  Technology. By using our services, you agree to the terms outlined in this document.
           </p>
           <p className="text-xs text-slate-400 font-mono mt-3">Last Updated: March 15, 2026</p>
 
@@ -51,7 +51,7 @@ const TermsOfService = () => {
                 </div>
                 <div className="w-8 h-0.5 bg-[#C45919]/30 rounded mb-4" />
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  By requesting an audit or using our security services, you enter into a binding agreement with IRB Technologies. These terms govern the scope of our security assessments, reporting, and consulting engagements.
+                  By requesting an audit or using our security services, you enter into a binding agreement with IRB  Technology. These terms govern the scope of our security assessments, reporting, and consulting engagements.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {['Written SOW required', 'Scope-bound testing', 'Report within SLA'].map(item => (
@@ -77,7 +77,7 @@ const TermsOfService = () => {
                 </div>
                 <div className="w-8 h-0.5 bg-[#C45919]/30 rounded mb-4" />
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  Client warrants that they have full authority to authorize penetration testing on the target assets. IRB Technologies is not liable for incidental system downtime that may occur during aggressive security auditing, though we utilize industry-standard safety protocols to minimize risk.
+                  Client warrants that they have full authority to authorize penetration testing on the target assets. IRB  Technology is not liable for incidental system downtime that may occur during aggressive security auditing, though we utilize industry-standard safety protocols to minimize risk.
                 </p>
                 {/* Warning */}
                 <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-100 rounded-2xl">

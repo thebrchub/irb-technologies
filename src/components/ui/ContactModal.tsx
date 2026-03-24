@@ -109,7 +109,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                </div>
                <h3 className="text-3xl font-extrabold text-slate-900 mb-3">Request Received</h3>
                <p className="text-slate-600 max-w-sm mb-8">
-                  Thank you. An IRB Technologies security architect will be in touch with you shortly via your corporate email.
+                  Thank you. An IRB  Technology security architect will be in touch with you shortly via your corporate email.
                </p>
                <button 
                   onClick={handleClose}

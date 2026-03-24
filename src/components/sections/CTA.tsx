@@ -38,7 +38,7 @@ const CTA = ({ onOpenModal }: CTAProps) => {
                 </h2>
 
                 <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
-                  Don't wait for a breach to build your defenses. Partner with IRB Technologies for proactive, elite cybersecurity tailored to your exact scale.
+                  Don't wait for a breach to build your defenses. Partner with IRB  Technology for proactive, elite cybersecurity tailored to your exact scale.
                 </p>
               </div>
 

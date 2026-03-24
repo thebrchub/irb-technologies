@@ -58,7 +58,7 @@ const Footer = () => {
                     <span className="text-amber-500 font-extrabold text-xl">I</span>
                  </div>
                  <span className="text-2xl font-bold text-slate-900 tracking-tight">
-                    IRB <span className="text-amber-500">Technologies</span>
+                    IRB <span className="text-amber-500"> Technology</span>
                  </span>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed mb-8 pr-4">
@@ -155,7 +155,7 @@ const Footer = () => {
                
                {/* Copyright & Legal Links */}
                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-slate-500 text-sm font-medium text-center lg:text-left">
-                   <span>&copy; {new Date().getFullYear()} IRB Technologies. All rights reserved.</span>
+                   <span>&copy; {new Date().getFullYear()} IRB  Technology. All rights reserved.</span>
                    <span className="hidden sm:inline-block text-slate-300">|</span>
                    <div className="flex items-center gap-4">
                        {/* 🔥 UPDATED: Internal Links for Routing 🔥 */}
