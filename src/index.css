@@ -1,11 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-
   --font-display: "Albert Sans", sans-serif;
-  --font-sans: "Barlow", sans-serif; /* Body font */
+  --font-sans: "Barlow", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
-
 
   --color-parchment: #FBF8F3;
   --color-ember: #C45919;
@@ -14,24 +12,17 @@
   --color-bone: #EAE2D6;
 }
 
-/* 1. GLOBAL OPTIMIZATIONS & LAYOUT */
 html {
-  /* Keep smooth scroll, but ensure it doesn't conflict with padding */
   scroll-behavior: smooth;
-  scroll-padding-top: 110px; 
-  /* Optimization: Prevents layout shifts */
+  scroll-padding-top: 10px; 
   overflow-y: scroll; 
 }
 
-/* 2. TYPOGRAPHY ROUTING & BODY SETTINGS */
 body {
   background-color: var(--color-parchment);
   color: var(--color-slate-deep); 
-  
-  /* Sets Barlow 400 as the global default for all paragraphs/lists */
   font-family: var(--font-sans);
   font-weight: 400; 
-  
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -39,10 +30,7 @@ body {
 }
 
 h1, h2, h3, h4, .font-display {
-  /* Forces all headings to use Albert Sans */
   font-family: var(--font-display);
-  
-  /* Sticking to 700 for that ultra-bold, un-stretched Sentinel look */
   font-weight: 700; 
   letter-spacing: -0.045em; 
   line-height: 1.05;
@@ -50,27 +38,22 @@ h1, h2, h3, h4, .font-display {
 }
 
 .technical-layer, code, pre {
-  /* Forces code-like text to use IBM Plex Mono */
   font-family: var(--font-mono);
 }
 
-/* 3. PERFORMANCE FIX: THE NOISE OVERLAY 
-   Moving noise to its own layer prevents the whole body from repainting on scroll */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Sits behind content */
+  z-index: -1;
   pointer-events: none;
   opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  /* Use hardware acceleration */
   will-change: transform;
 }
 
-/* 4. CUSTOM SCROLLBAR */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -83,10 +66,9 @@ body::before {
   border: 2px solid var(--color-parchment);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A34915; /* Darker Ember on hover */
+  background: #A34915;
 }
 
-/* 5. ANIMATIONS */
 .animate-sentinel-propagate {
   animation: sentinel-propagate 3s infinite ease-in-out;
   will-change: left;
@@ -98,10 +80,8 @@ body::before {
   100% { left: 100%; opacity: 0; }
 }
 
-/* 🔥 THE MISSING LOGO SCROLL ANIMATION IS BACK 🔥 */
 .animate-scroll {
   animation: scroll 25s linear infinite;
-  /* This tells the browser to use the GPU for this animation, preventing lag! */
   will-change: transform; 
 }
 

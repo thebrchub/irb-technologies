@@ -164,7 +164,7 @@ const ThreatDeflector = () => {
         {/* Holographic Logo */}
         <div 
           className="absolute top-1/2 left-1/2"
-          style={{ transform: 'translate(-50%, -50%) translateZ(100px)', transformStyle: 'preserve-3d' }}
+          style={{ transform: 'translate(-50%, -50%) translateZ(110px)', transformStyle: 'preserve-3d' }}
         >
           <HolographicLogo />
         </div>
