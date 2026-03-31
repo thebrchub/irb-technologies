@@ -195,7 +195,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                          type="text" 
                          required
                          className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400" 
-                         placeholder="Acme Corp" 
+                         placeholder="IRB TECHNOLOGY PVT LTD" 
                        />
                     </div>
                   </div>
