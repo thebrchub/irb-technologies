@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Mail, User, Building2, MessageSquare, ArrowRight, ShieldCheck, CheckCircle2, ChevronDown, Check } from 'lucide-react';
+import { siteContent } from '../../config/siteContent';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -27,19 +28,12 @@ const MODAL_STYLES = `
   .animate-cyber-scan { animation: scan-line 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.3s; }
 `;
 
-const SERVICE_OPTIONS = [
-  "Network Discovery & Mapping",
-  "Penetration Testing",
-  "Cloud Security Architecture",
-  "Endpoint Protection",
-  "Other / General Inquiry"
-];
-
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
+  const content = siteContent.contactModal;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState(SERVICE_OPTIONS[0]);
+  const [selectedService, setSelectedService] = useState(content.serviceOptions[0]);
 
   useEffect(() => {
     if (isOpen) {
@@ -109,21 +103,19 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 <div className="w-12 h-12 bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center shadow-lg mb-8">
                   <ShieldCheck className="w-6 h-6 text-amber-500" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-4 leading-tight">Secure your enterprise today.</h3>
+                <h3 className="text-3xl font-bold text-white mb-4 leading-tight">{content.sidebar.heading}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                   Speak with our security architects to identify vulnerabilities and build a zero-trust infrastructure tailored to your corporate needs.
+                   {content.sidebar.description}
                 </p>
              </div>
 
              <div className="relative z-10 space-y-6">
-                <div className="flex flex-col gap-1 border-l-2 border-amber-500 pl-4">
-                   <span className="text-white font-bold text-sm">Rapid Response</span>
-                   <span className="text-slate-400 text-xs">Guaranteed callback within 2 hours.</span>
-                </div>
-                <div className="flex flex-col gap-1 border-l-2 border-slate-700 pl-4">
-                   <span className="text-white font-bold text-sm">Confidentiality</span>
-                   <span className="text-slate-400 text-xs">All inquiries are under strict NDA.</span>
-                </div>
+                {content.sidebar.features.map((feature, index) => (
+                  <div key={index} className={`flex flex-col gap-1 border-l-2 ${index === 0 ? 'border-amber-500' : 'border-slate-700'} pl-4`}>
+                     <span className="text-white font-bold text-sm">{feature.title}</span>
+                     <span className="text-slate-400 text-xs">{feature.description}</span>
+                  </div>
+                ))}
              </div>
           </div>
 
@@ -133,26 +125,26 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                  <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mb-6">
                     <CheckCircle2 className="w-10 h-10 text-emerald-500" />
                  </div>
-                 <h3 className="text-3xl font-extrabold text-slate-900 mb-3">Request Received</h3>
+                 <h3 className="text-3xl font-extrabold text-slate-900 mb-3">{content.successScreen.heading}</h3>
                  <p className="text-slate-600 max-w-sm mb-8">
-                    Thank you. An IRB Technology security architect will be in touch with you shortly via your corporate email.
+                    {content.successScreen.description}
                  </p>
                  <button 
                     onClick={handleClose}
                     className="px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-colors shadow-lg"
                  >
-                    Close Window
+                    {content.successScreen.buttonText}
                  </button>
               </div>
             ) : (
               <div className="animate-modal-bg pb-2">
-                <h2 id="modal-title" className="text-2xl font-extrabold text-slate-900 mb-2 pr-8 mt-2 md:mt-0">Request an Audit</h2>
-                <p className="text-sm text-slate-500 mb-6 md:mb-8">Fill out the details below to route you to the right specialist.</p>
+                <h2 id="modal-title" className="text-2xl font-extrabold text-slate-900 mb-2 pr-8 mt-2 md:mt-0">{content.form.heading}</h2>
+                <p className="text-sm text-slate-500 mb-6 md:mb-8">{content.form.subheading}</p>
                 
                 <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                      <div className="space-y-1.5">
-                       <label htmlFor="name" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">Full Name</label>
+                       <label htmlFor="name" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">{content.form.fields.nameLabel}</label>
                        <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
                              <User size={16} className="text-slate-400" />
@@ -162,13 +154,13 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                             type="text" 
                             required
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400" 
-                            placeholder="John Doe" 
+                            placeholder={content.form.fields.namePlaceholder} 
                           />
                        </div>
                      </div>
 
                      <div className="space-y-1.5">
-                       <label htmlFor="email" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">Corporate Email</label>
+                       <label htmlFor="email" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">{content.form.fields.emailLabel}</label>
                        <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
                              <Mail size={16} className="text-slate-400" />
@@ -178,14 +170,14 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                             type="email" 
                             required
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400" 
-                            placeholder="john@company.com" 
+                            placeholder={content.form.fields.emailPlaceholder} 
                           />
                        </div>
                      </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label htmlFor="company" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">Company Name</label>
+                    <label htmlFor="company" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">{content.form.fields.companyLabel}</label>
                     <div className="relative">
                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
                           <Building2 size={16} className="text-slate-400" />
@@ -195,13 +187,13 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                          type="text" 
                          required
                          className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400" 
-                         placeholder="IRB TECHNOLOGY PVT LTD" 
+                         placeholder={content.form.fields.companyPlaceholder} 
                        />
                     </div>
                   </div>
 
                   <div className={`space-y-1.5 relative ${isDropdownOpen ? 'z-50' : 'z-10'}`}>
-                    <label className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">Primary Interest</label>
+                    <label className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">{content.form.fields.serviceLabel}</label>
                     <input type="hidden" name="service" value={selectedService} />
                     
                     <button
@@ -220,7 +212,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                           onClick={() => setIsDropdownOpen(false)}
                         ></div>
                         <ul className="absolute z-50 mt-2 w-full bg-white border border-slate-100 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] overflow-hidden py-1.5 origin-top transition-all duration-200 animate-in fade-in slide-in-from-top-2">
-                          {SERVICE_OPTIONS.map((option) => (
+                          {content.serviceOptions.map((option) => (
                             <li
                               key={option}
                               onClick={() => {
@@ -245,7 +237,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   </div>
 
                   <div className="space-y-1.5 relative z-0">
-                    <label htmlFor="message" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">Project Details</label>
+                    <label htmlFor="message" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">{content.form.fields.messageLabel}</label>
                     <div className="relative">
                        <div className="absolute top-3 left-3.5 pointer-events-none">
                           <MessageSquare size={16} className="text-slate-400" />
@@ -255,7 +247,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                          rows={2} 
                          required
                          className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400 resize-none md:rows-3" 
-                         placeholder="Tell us about your infrastructure goals..." 
+                         placeholder={content.form.fields.messagePlaceholder} 
                        ></textarea>
                     </div>
                   </div>
@@ -271,15 +263,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Processing...
+                          {content.form.processingText}
                        </span>
                     ) : (
-                       <>Submit Request <ArrowRight size={18} /></>
+                       <>{content.form.submitButtonText} <ArrowRight size={18} /></>
                     )}
                   </button>
                   
                   <p className="text-center text-[10px] text-slate-400 font-medium">
-                     By submitting, you agree to our <Link to="/privacy-policy" onClick={handleClose} className="underline hover:text-amber-500">Privacy Policy</Link>.
+                     {content.form.agreementText} <Link to="/privacy-policy" onClick={handleClose} className="underline hover:text-amber-500">{content.form.privacyLinkText}</Link>.
                   </p>
 
                 </form>

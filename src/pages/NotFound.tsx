@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ShieldAlert, ArrowLeft } from 'lucide-react';
+import { siteContent } from '../config/siteContent';
 
 const NotFound = () => {
+  const content = siteContent.notFound;
   return (
     <div className="min-h-[75vh] flex items-center justify-center bg-slate-50 relative overflow-hidden px-6 py-24 pt-32">
       
@@ -15,15 +17,15 @@ const NotFound = () => {
         </div>
 
         <h1 className="text-[6rem] md:text-[8rem] font-extrabold text-slate-900 leading-none tracking-tighter mb-4">
-          404
+          {content.errorCode}
         </h1>
         
         <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4 tracking-tight">
-          Secure Channel Not Found
+          {content.heading}
         </h2>
         
         <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-10 max-w-md mx-auto">
-          The digital asset you are looking for has been moved, deleted, or never existed in our infrastructure.
+          {content.description}
         </p>
 
         <Link
@@ -31,7 +33,7 @@ const NotFound = () => {
           className="group flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
         >
           <ArrowLeft size={18} className="transform group-hover:-translate-x-1 transition-transform" />
-          Return to Base
+          {content.buttonText}
         </Link>
       </div>
     </div>

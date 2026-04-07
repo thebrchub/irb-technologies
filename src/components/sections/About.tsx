@@ -1,7 +1,9 @@
 import { Target, Eye, ShieldCheck, Cpu } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
+import { siteContent } from '../../config/siteContent';
 
 const About = () => {
+  const content = siteContent.about;
   return (
     <section className="bg-slate-50 py-20 md:py-24 relative overflow-hidden border-t border-slate-200">
       
@@ -15,20 +17,20 @@ const About = () => {
             <div className="flex flex-col items-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-                About IRB Technology
+                {content.badge}
               </div>
               
               <h2 className="text-center text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 md:mb-8 max-w-4xl mx-auto">
-                Elite Cybersecurity & <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Digital Resilience.</span>
+                {content.headingMain} <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">{content.headingHighlight}</span>
               </h2>
               
               <p className="md:hidden text-left text-lg text-slate-600 leading-relaxed w-full">
-                In an era of fast-moving digital threats, we provide the <strong className="text-slate-900">elite resilience</strong> required to secure your growing business.
+                {content.descriptionMobile}
               </p>
 
               <p className="hidden md:block text-center text-lg lg:text-xl 2xl:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-                Traditional defenses are obsolete. We engineer <strong className="text-slate-900">adaptive resilience</strong> to let you scale your enterprise fearlessly.
+                {content.descriptionDesktop}
               </p>
             </div>
           </ScrollReveal>
@@ -41,13 +43,13 @@ const About = () => {
                <div className="w-14 h-14 2xl:w-16 2xl:h-16 bg-amber-50 rounded-2xl flex items-center justify-center border border-amber-100 group-hover:bg-amber-100 transition-colors mb-6 shadow-sm">
                   <Target className="w-7 h-7 2xl:w-8 2xl:h-8 text-amber-600" />
                </div>
-               <h3 className="text-2xl 2xl:text-3xl font-bold text-slate-900 mb-4">Our Mission</h3>
+               <h3 className="text-2xl 2xl:text-3xl font-bold text-slate-900 mb-4">{content.mission.title}</h3>
                
                <p className="md:hidden text-slate-600 leading-relaxed text-sm">
-                 Delivering elite cybersecurity shields to startups and mega-events through rapid, expert-led resilience training.
+                 {content.mission.descriptionMobile}
                </p>
                <p className="hidden md:block text-slate-600 leading-relaxed 2xl:text-lg">
-                 To provide the shield of elite cybersecurity to every entity, from the local startup to the international mega-event, through rapid audits and expert-led resilience training.
+                 {content.mission.descriptionDesktop}
                </p>
             </article>
           </ScrollReveal>
@@ -57,13 +59,13 @@ const About = () => {
                <div className="w-14 h-14 2xl:w-16 2xl:h-16 bg-amber-50 rounded-2xl flex items-center justify-center border border-amber-100 group-hover:bg-amber-100 transition-colors mb-6 shadow-sm">
                   <Eye className="w-7 h-7 2xl:w-8 2xl:h-8 text-amber-600" />
                </div>
-               <h3 className="text-2xl 2xl:text-3xl font-bold text-slate-900 mb-4">Our Vision</h3>
+               <h3 className="text-2xl 2xl:text-3xl font-bold text-slate-900 mb-4">{content.vision.title}</h3>
                
                <p className="md:hidden text-slate-600 leading-relaxed text-sm">
-                 Setting the global benchmark for adaptive cybersecurity, ensuring every digital interaction is inherently secure.
+                 {content.vision.descriptionMobile}
                </p>
                <p className="hidden md:block text-slate-600 leading-relaxed 2xl:text-lg">
-                 To be the global benchmark for adaptive cybersecurity, where the scale of the challenge never compromises the integrity of the protection. We ensure every digital interaction is inherently secure.
+                 {content.vision.descriptionDesktop}
                </p>
             </article>
           </ScrollReveal>
@@ -75,13 +77,13 @@ const About = () => {
                     <ShieldCheck className="w-7 h-7 2xl:w-8 2xl:h-8 text-amber-600" />
                  </div>
                  <div>
-                   <h3 className="text-2xl 2xl:text-3xl font-bold text-slate-900 mb-3 md:mb-4">What We Do</h3>
+                   <h3 className="text-2xl 2xl:text-3xl font-bold text-slate-900 mb-3 md:mb-4">{content.whatWeDo.title}</h3>
                    
                    <p className="md:hidden text-slate-600 leading-relaxed text-sm">
-                     Strategic security consulting and high-precision <strong className="text-slate-900">VAPT</strong> to harden your defenses against real-world attack vectors.
+                     {content.whatWeDo.descriptionMobile}
                    </p>
                    <p className="hidden md:block text-slate-600 leading-relaxed text-base md:text-lg 2xl:text-xl">
-                     We partner with organizations for strategic digital security consulting, identifying critical vulnerabilities through high-precision <strong className="text-slate-900">VAPT (Vulnerability Assessment and Penetration Testing)</strong>. Our approach goes beyond automated scans; we simulate real-world attack vectors to harden your defenses.
+                     {content.whatWeDo.descriptionDesktop}
                    </p>
                  </div>
               </article>
@@ -98,13 +100,13 @@ const About = () => {
                         <Cpu className="w-8 h-8 md:w-10 md:h-10 2xl:w-12 2xl:h-12 text-amber-500" />
                     </div>
                     <div>
-                      <h3 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-white mb-3 md:mb-4">A Culture of Safety</h3>
+                      <h3 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-white mb-3 md:mb-4">{content.culture.title}</h3>
                       
                       <p className="md:hidden text-slate-300 leading-relaxed text-sm font-light">
-                        Engineering next-gen cybersecurity tools with a <strong className="font-semibold text-white">"Security-First"</strong> philosophy to build your internal resilience.
+                        {content.culture.descriptionMobile}
                       </p>
                       <p className="hidden md:block text-slate-300 leading-relaxed text-base md:text-lg 2xl:text-xl font-light">
-                        While we protect our clients today, we are engineering the next generation of cybersecurity tools. Our <strong className="font-semibold text-white">"Security-First"</strong> philosophy ensures that we don't just find problems; we help you build resilience from the inside out.
+                        {content.culture.descriptionDesktop}
                       </p>
                     </div>
                  </div>

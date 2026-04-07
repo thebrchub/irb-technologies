@@ -1,11 +1,13 @@
 import { Zap, Globe, FileCheck } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
+import { siteContent } from '../../config/siteContent';
 
 // const partners = [
 //   "Microsoft", "Cisco", "CrowdStrike", "Palo Alto", "Fortinet", "Splunk", "Okta", "IBM Security"
 // ];
 
 const Features = () => {
+  const content = siteContent.features;
   return (
     <section id="architecture" className="bg-slate-50 py-24 relative overflow-hidden border-t border-slate-200">
       
@@ -43,11 +45,11 @@ const Features = () => {
           <ScrollReveal>
             {/* 🔥 Heading is strictly centered everywhere */}
             <h2 className="text-center text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">IRB Tech</span> Architecture
+              {content.headingPart1}<span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">{content.headingHighlight}</span>{content.headingPart2}
             </h2>
             {/* 🔥 Description is left on mobile, centered on desktop */}
             <p className="text-left md:text-center text-xl 2xl:text-2xl text-slate-600 font-light w-full">
-              Redefining corporate infrastructure with zero-latency resilience.
+              {content.description}
             </p>
           </ScrollReveal>
         </header>
@@ -65,9 +67,9 @@ const Features = () => {
                    <Globe className="text-amber-500 w-7 h-7 2xl:w-8 2xl:h-8" strokeWidth={1.5} />
                 </div>
 
-                <h3 className="text-3xl md:text-4xl 2xl:text-5xl font-bold text-slate-900 mb-6">Global Threat <br className="hidden md:block"/>Neural Network</h3>
+                <h3 className="text-3xl md:text-4xl 2xl:text-5xl font-bold text-slate-900 mb-6">{content.card1.title}<br className="hidden md:block"/>{content.card1.titleHighlight}</h3>
                 <p className="text-lg md:text-xl 2xl:text-2xl text-slate-500 max-w-sm 2xl:max-w-md leading-relaxed font-light mb-8">
-                   Leveraging high-fidelity sensors across 140+ countries to orchestrate instant operational pivots.
+                   {content.card1.description}
                 </p>
                 
                 {/* 🌎 THE BULLETPROOF INLINE SVG MAP */}
@@ -116,14 +118,14 @@ const Features = () => {
                    <Zap className="text-amber-500 w-7 h-7 2xl:w-8 2xl:h-8" strokeWidth={1.5} />
                 </div>
 
-                <h3 className="text-2xl 2xl:text-3xl font-bold text-slate-900 mb-4 tracking-tight">Ultra-Low Latency</h3>
+                <h3 className="text-2xl 2xl:text-3xl font-bold text-slate-900 mb-4 tracking-tight">{content.card2.title}</h3>
                 <p className="text-slate-500 leading-relaxed 2xl:text-lg">
-                   Proprietary routing algorithms ensuring &lt;10ms response times for global data synchronization.
+                   {content.card2.description}
                 </p>
 
                 <div className="mt-auto pt-6 flex items-center gap-2">
                    <div className="h-[1px] flex-grow bg-slate-200 group-hover:bg-slate-300 transition-colors"></div>
-                   <span className="text-[10px] font-mono text-slate-400 tracking-widest uppercase">Active Mesh Network</span>
+                   <span className="text-[10px] font-mono text-slate-400 tracking-widest uppercase">{content.card2.statusLabel}</span>
                 </div>
              </div>
           </article>
@@ -142,13 +144,13 @@ const Features = () => {
                    </div>
                 </div>
 
-                <h3 className="text-2xl 2xl:text-3xl font-bold text-white mb-4 tracking-tight">Regulatory Mastery</h3>
+                <h3 className="text-2xl 2xl:text-3xl font-bold text-white mb-4 tracking-tight">{content.card3.title}</h3>
                 <p className="text-slate-400 leading-relaxed font-light 2xl:text-lg">
-                   Real-time compliance monitoring tailored for ISO, GDPR, and localized sovereign standards.
+                   {content.card3.description}
                 </p>
                 <div className="mt-auto pt-6 flex items-center gap-2">
                    <div className="h-[1px] flex-grow bg-slate-800 group-hover:bg-amber-500/30 transition-colors"></div>
-                   <span className="text-[10px] font-mono text-slate-500 tracking-widest uppercase">Verified System</span>
+                   <span className="text-[10px] font-mono text-slate-500 tracking-widest uppercase">{content.card3.statusLabel}</span>
                 </div>
              </div>
           </article>

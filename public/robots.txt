@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Point Google directly to your map!
+Sitemap: https://www.irbtechnology.com/sitemap.xml

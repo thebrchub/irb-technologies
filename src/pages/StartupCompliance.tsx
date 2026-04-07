@@ -1,7 +1,9 @@
 import { ArrowLeft, FileCheck, Map, ShieldCheck, CheckCircle, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { siteContent } from '../config/siteContent';
 
 const StartupCompliance = () => {
+  const content = siteContent.startupCompliance;
   return (
     <div className="min-h-screen bg-[#FDFBF7] pt-32 pb-32 font-sans selection:bg-amber-200 selection:text-amber-900 relative overflow-hidden">
       
@@ -10,18 +12,18 @@ const StartupCompliance = () => {
       <div className="max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
         
         <Link to="/#case-studies" className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-amber-600 transition-colors mb-12 group">
-          <ArrowLeft size={16} className="mr-2 transform group-hover:-translate-x-1 transition-transform" /> Back to Case Studies
+          <ArrowLeft size={16} className="mr-2 transform group-hover:-translate-x-1 transition-transform" /> {content.backLinkText}
         </Link>
 
-        <div className="max-w-4xl mb-12">
+        <div className="max-w-5xl mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-xs font-black uppercase tracking-widest mb-6 shadow-sm">
-            <FileCheck size={14} /> Strategic Advisory
+            <FileCheck size={14} /> {content.badge}
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-[5.5rem] font-black text-slate-900 tracking-tighter mb-8 leading-[1.05]">
-            Compliance for <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Startups.</span>
+            {content.headingMain}<span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">{content.headingHighlight}</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl">
-            Providing a clear roadmap for a promising tech startup to achieve DPDP and SOC2 compliance without drowning in administrative overhead.
+          <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-4xl">
+            {content.description}
           </p>
         </div>
 
@@ -29,8 +31,8 @@ const StartupCompliance = () => {
           <div className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] 2xl:h-[650px] rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl relative">
             <div className="absolute inset-0 bg-slate-900/20 z-10"></div>
             <img 
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015" 
-              alt="Data Strategy and Compliance" 
+              src={content.imageUrl}
+              alt={content.imageAlt}
               className="w-full h-full object-cover"
             />
           </div>
@@ -38,16 +40,16 @@ const StartupCompliance = () => {
           <div className="absolute bottom-0 translate-y-1/2 w-[95%] sm:w-[90%] lg:w-[80%] bg-white rounded-2xl md:rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-stone-200 p-4 sm:p-6 lg:p-8 z-20 overflow-hidden">
             <div className="grid grid-cols-3 gap-2 sm:gap-6 divide-x divide-stone-200 text-center items-center">
               <div className="px-1 sm:px-4 md:px-0">
-                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">Timeline</div>
-                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 whitespace-nowrap">4 Weeks</div>
+                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">{content.timelineLabel}</div>
+                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 whitespace-nowrap">{content.timelineValue}</div>
               </div>
               <div className="px-1 sm:px-4 md:px-0">
-                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">Frameworks</div>
-                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 whitespace-nowrap">DPDP & SOC2</div>
+                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">{content.frameworksLabel}</div>
+                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 whitespace-nowrap">{content.frameworksValue}</div>
               </div>
               <div className="px-1 sm:px-4 md:px-0">
-                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">Pipeline Unblocked</div>
-                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-emerald-500 whitespace-nowrap">$2M+</div>
+                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">{content.pipelineLabel}</div>
+                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-emerald-500 whitespace-nowrap">{content.pipelineValue}</div>
               </div>
             </div>
           </div>
@@ -60,9 +62,9 @@ const StartupCompliance = () => {
             <div className="w-14 h-14 bg-red-500/20 border border-red-500/30 text-red-400 rounded-2xl flex items-center justify-center mb-8">
               <FileCheck size={28} />
             </div>
-            <h3 className="text-3xl font-black mb-6">The Challenge</h3>
+            <h3 className="text-3xl font-black mb-6">{content.challenge.title}</h3>
             <p className="text-slate-300 text-lg leading-relaxed font-medium">
-              A Series A startup was closing enterprise deals but kept hitting a brick wall during vendor security questionnaires. They needed to navigate the complex landscape of the new DPDP Act and prepare for SOC2, but lacked a dedicated, full-time compliance team.
+              {content.challenge.description}
             </p>
           </div>
 
@@ -70,19 +72,17 @@ const StartupCompliance = () => {
             <div className="w-14 h-14 bg-amber-50 border border-amber-100 text-amber-500 rounded-2xl flex items-center justify-center mb-8">
               <Target size={28} />
             </div>
-            <h3 className="text-3xl font-black text-slate-900 mb-6">Our Approach</h3>
+            <h3 className="text-3xl font-black text-slate-900 mb-6">{content.approach.title}</h3>
             <p className="text-slate-600 text-lg leading-relaxed font-medium mb-8">
-              We stepped in as their integrated <strong className="text-slate-900">Compliance-as-a-Service</strong> partner, eliminating the need to hire a massive internal team.
+              We stepped in as their integrated <strong className="text-slate-900">{content.approach.complianceService}</strong> partner, eliminating the need to hire a massive internal team.
             </p>
             <ul className="space-y-4">
-              <li className="flex items-start gap-4">
-                <div className="mt-1 bg-amber-100 p-1.5 rounded-md text-amber-700"><Map size={16} strokeWidth={3} /></div>
-                <p className="text-slate-600 font-medium"><strong className="text-slate-900">Gap Analysis:</strong> Conducted a rigorous baseline assessment to map out exactly where their current infrastructure fell short of DPDP standards.</p>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="mt-1 bg-amber-100 p-1.5 rounded-md text-amber-700"><CheckCircle size={16} strokeWidth={3} /></div>
-                <p className="text-slate-600 font-medium"><strong className="text-slate-900">Remediation:</strong> Streamlined data storage practices, encrypted at-rest databases, and authored custom security policies tailored to their agile workflows.</p>
-              </li>
+              {content.approach.items.map((item, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <div className="mt-1 bg-amber-100 p-1.5 rounded-md text-amber-700">{index === 0 ? <Map size={16} strokeWidth={3} /> : <CheckCircle size={16} strokeWidth={3} />}</div>
+                  <p className="text-slate-600 font-medium"><strong className="text-slate-900">{item.label}:</strong> {item.description}</p>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -94,9 +94,9 @@ const StartupCompliance = () => {
                 <ShieldCheck size={40} className="text-white" />
               </div>
               <div className="flex-1 w-full">
-                <h3 className="text-3xl lg:text-4xl font-black mb-4">The Result</h3>
+                <h3 className="text-3xl lg:text-4xl font-black mb-4">{content.result.title}</h3>
                 <p className="text-amber-50 text-lg lg:text-xl leading-relaxed font-medium w-full">
-                  The startup achieved full DPDP readiness within 4 weeks. By streamlining their processes, they passed their SOC2 Type I audit seamlessly 3 months later, instantly unblocking over $2M in pending enterprise pipeline revenue.
+                  {content.result.description}
                 </p>
               </div>
             </div>

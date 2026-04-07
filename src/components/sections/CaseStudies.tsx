@@ -1,33 +1,14 @@
 import { ShieldAlert, Zap, FileCheck, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { siteContent } from '../../config/siteContent';
 
 const CaseStudies = () => {
-  const cases = [
-    {
-      id: '01',
-      title: 'The Mega-Event',
-      icon: ShieldAlert,
-      description: 'Securing a high-traffic public gathering against real-time threats.',
-      tag: 'Enterprise Scale',
-      link: '/case-study/mega-event'
-    },
-    {
-      id: '02',
-      title: 'The SME Shield',
-      icon: Zap,
-      description: 'How we helped a local IT firm identify critical vulnerabilities in their client-facing portal within 24 hours.',
-      tag: 'Rapid Response',
-      link: '/case-study/sme-shield'
-    },
-    {
-      id: '03',
-      title: 'Compliance for Startups',
-      icon: FileCheck,
-      description: 'A roadmap for a small business to achieve regulatory compliance without a massive overhead.',
-      tag: 'Strategic Advisory',
-      link: '/case-study/startup-compliance'
-    }
-  ];
+  const content = siteContent.caseStudies;
+  const iconMap: Record<string, React.ComponentType<any>> = {
+    '01': ShieldAlert,
+    '02': Zap,
+    '03': FileCheck,
+  };
 
   return (
     
@@ -39,13 +20,13 @@ const CaseStudies = () => {
         <header className="mb-10 md:mb-12 max-w-3xl 2xl:max-w-4xl flex flex-col items-center md:items-start mx-auto md:mx-0">
           
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
-            Versatility in Action
+            {content.badge}
           </div>
           
           <h2 className="text-center md:text-left text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 mb-5 md:mb-6 tracking-tight leading-[1.1]">
-            Proven security across <br className="hidden md:block" />
+            {content.headingMain} <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">
-              every scale.
+              {content.headingHighlight}
             </span>
           </h2>
 
@@ -54,7 +35,9 @@ const CaseStudies = () => {
         {/* Case Studies Grid */}
         {/* 🔥 FIX: Reduced the grid gaps slightly (gap-5 lg:gap-6) to make the layout more compact */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 2xl:gap-8">
-          {cases.map((study) => (
+          {content.cases.map((study) => {
+            const IconComponent = iconMap[study.id];
+            return (
             <div 
               key={study.id} 
               /* 🔥 FIX: Reduced card padding to p-5 md:p-6 */
@@ -64,7 +47,7 @@ const CaseStudies = () => {
               <div className="flex justify-between items-start mb-4">
                 {/* 🔥 FIX: Slightly shrunk the icon box from 12 to 10 */}
                 <div className="w-10 h-10 bg-orange-50/50 border border-orange-100 text-amber-500 rounded-xl flex items-center justify-center group-hover:bg-amber-50 group-hover:border-amber-200 transition-colors">
-                  <study.icon size={20} />
+                  <IconComponent size={20} />
                 </div>
                 <span className="text-3xl font-black text-stone-100 group-hover:text-stone-200 transition-colors">
                   {study.id}
@@ -94,11 +77,12 @@ const CaseStudies = () => {
                   to={study.link}
                   className="inline-flex items-center text-sm 2xl:text-base font-bold text-slate-900 group-hover:text-amber-600 transition-colors"
                 >
-                  Read Full Case <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                  {content.readFullCaseLabel} <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

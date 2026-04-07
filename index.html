@@ -2,20 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+    <title>IRB Technology | Enterprise Cybersecurity & IT Operations</title>
+    <meta name="description" content="Strategic enterprise cybersecurity, Rapid VAPT, DPDP readiness, SOC2 compliance, and zero-trust infrastructure solutions by IRB Technology." />
+    <meta name="keywords" content="cybersecurity, VAPT, DPDP compliance, SOC2, zero-trust, enterprise security, penetration testing" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="IRB Technology Pvt Ltd" />
     
+    <link rel="canonical" href="https://www.irbtechnology.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.irbtechnology.com/" />
+    <meta property="og:title" content="IRB Technology | Enterprise Cybersecurity" />
+    <meta property="og:description" content="Secure your digital future with our enterprise-grade VAPT and compliance solutions." />
+    <meta property="og:image" content="https://www.irbtechnology.com/og-image.jpg" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.irbtechnology.com/" />
+    <meta property="twitter:title" content="IRB Technology | Enterprise Cybersecurity" />
+    <meta property="twitter:description" content="Secure your digital future with our enterprise-grade VAPT and compliance solutions." />
+    <meta property="twitter:image" content="https://www.irbtechnology.com/og-image.jpg" />
+
+    <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <script>
+      const favicon = document.getElementById('dynamic-favicon');
+      const matcher = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      const updateFavicon = (e) => {
+        favicon.href = e.matches ? '/logo_w.svg' : '/logo.svg';
+      };
+      
+      // Run once on load
+      updateFavicon(matcher);
+      // Listen for OS theme changes
+      matcher.addEventListener('change', updateFavicon);
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@700;900&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>IRB  Technology Pvt Ltd | Enterprise Security Solutions</title>
-    
-    <meta name="description" content="IRB  Technology Pvt Ltd provides strategic enterprise cybersecurity, network discovery, penetration testing, and zero-trust infrastructure solutions." />
-    
-    <meta name="theme-color" content="#ffffff" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "IRB Technology Pvt Ltd",
+      "url": "https://www.irbtechnology.com",
+      "logo": "https://www.irbtechnology.com/logo.svg",
+      "description": "Strategic enterprise cybersecurity, network discovery, and zero-trust infrastructure solutions.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "irbtechnology25@gmail.com",
+        "contactType": "customer support"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

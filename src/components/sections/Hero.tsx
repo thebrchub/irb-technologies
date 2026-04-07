@@ -1,11 +1,13 @@
 import { Zap, ArrowRight, Globe } from 'lucide-react';
-import ThreatDeflector from '../ui/ThreatDeflector'; 
+import ThreatDeflector from '../ui/ThreatDeflector';
+import { siteContent } from '../../config/siteContent'; 
 
 interface HeroProps {
   onOpenModal: () => void;
 }
 
 const Hero = ({ onOpenModal }: HeroProps) => {
+  const content = siteContent.hero;
   return (
     <section id="home" className="relative bg-white pt-24 pb-12 md:pt-40 md:pb-16 xl:pt-32 xl:pb-12 overflow-hidden min-h-[100dvh] flex items-center">
       
@@ -21,40 +23,40 @@ const Hero = ({ onOpenModal }: HeroProps) => {
           <div className="xl:col-span-7 flex flex-col items-start text-left pt-6 sm:pt-4 xl:pt-0">
             
             <h1 className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-[3.5rem] xl:text-6xl 2xl:text-[5rem] font-extrabold text-slate-900 tracking-tight lg:leading-[1.05] mb-4 xl:mb-6 w-full">
-              Cybersecurity Tailored to <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Your Business.</span>
+              {content.headingMain}<span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">{content.headingHighlight}</span>
             </h1>
 
             <p className="text-sm sm:text-base 2xl:text-lg text-slate-600 leading-relaxed max-w-2xl 2xl:max-w-3xl mx-auto sm:mx-0 mb-6 xl:mb-8">
-              From high-concurrency <strong className="text-slate-900">Mega-Events</strong> to agile <strong className="text-slate-900">DPDP-ready</strong> audits for growing SMEs. We safeguard your digital assets at any scale.
+              {content.descriptionPart1}<strong className="text-slate-900">{content.descriptionHighlight1}</strong>{content.descriptionPart2}<strong className="text-slate-900">{content.descriptionHighlight2}</strong>{content.descriptionPart3}
             </p>
 
             <div className="grid grid-cols-2 gap-3 w-full mb-6 sm:hidden">
               <div className="p-3.5 rounded-xl border border-slate-200 bg-white shadow-sm flex flex-col items-center justify-center gap-2 text-center">
                  <Globe size={18} className="text-amber-500" />
-                 <span className="text-slate-900 font-bold text-xs">Enterprise Scale</span>
+                 <span className="text-slate-900 font-bold text-xs">{content.mobileCard1Label}</span>
               </div>
               <div className="p-3.5 rounded-xl border border-slate-200 bg-white shadow-sm flex flex-col items-center justify-center gap-2 text-center">
                  <Zap size={18} className="text-amber-500" />
-                 <span className="text-slate-900 font-bold text-xs">Agile VAPT</span>
+                 <span className="text-slate-900 font-bold text-xs">{content.mobileCard2Label}</span>
               </div>
             </div>
 
             <div className="hidden sm:grid sm:grid-cols-2 gap-3 2xl:gap-5 w-full max-w-2xl 2xl:max-w-3xl mb-6 xl:mb-8">
               <div className="p-4 2xl:p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
                  <div className="flex items-center gap-2 mb-1.5 text-slate-900 font-bold text-sm lg:text-base 2xl:text-lg">
-                    <Globe size={16} className="text-amber-500 2xl:w-5 2xl:h-5" /> Enterprise & Events
+                    <Globe size={16} className="text-amber-500 2xl:w-5 2xl:h-5" /> {content.desktopCard1Title}
                  </div>
                  <p className="text-xs 2xl:text-sm text-slate-600 leading-relaxed font-medium">
-                    Comprehensive, high-concurrency protection for large scale environments.
+                    {content.desktopCard1Description}
                  </p>
               </div>
               
               <div className="p-4 2xl:p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
                  <div className="flex items-center gap-2 mb-1.5 text-slate-900 font-bold text-sm lg:text-base 2xl:text-lg">
-                    <Zap size={16} className="text-amber-500 2xl:w-5 2xl:h-5" /> On-Demand Security
+                    <Zap size={16} className="text-amber-500 2xl:w-5 2xl:h-5" /> {content.desktopCard2Title}
                  </div>
                  <p className="text-xs 2xl:text-sm text-slate-600 leading-relaxed font-medium">
-                    Fast, affordable audits and VAPT tailored for SMEs and startups.
+                    {content.desktopCard2Description}
                  </p>
               </div>
             </div>
@@ -64,14 +66,14 @@ const Hero = ({ onOpenModal }: HeroProps) => {
                 onClick={onOpenModal}
                 className="group w-full sm:w-auto px-6 py-4 sm:py-3.5 sm:px-8 2xl:px-10 2xl:py-5 bg-amber-500 hover:bg-amber-600 text-white font-extrabold 2xl:text-xl rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_8px_25px_rgba(245,158,11,0.35)] sm:shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:-translate-y-1"
               >
-                Schedule an Audit <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                {content.ctaButtonLabel} <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
               </button>
               
               <a 
-                href="#services"
+                href={content.secondaryButtonLink}
                 className="w-full sm:w-auto px-6 py-4 sm:py-3.5 sm:px-8 2xl:px-10 2xl:py-5 bg-white border border-slate-200 hover:border-amber-300 text-slate-700 hover:text-amber-600 font-bold 2xl:text-xl rounded-xl flex items-center justify-center transition-all hover:bg-amber-50"
               >
-                View Services
+                {content.secondaryButtonLabel}
               </a>
             </div>
 

@@ -1,7 +1,18 @@
 import React from 'react';
 import { Lock, Server, Terminal, Activity, BookOpen, Users } from 'lucide-react';
+import { siteContent } from '../../config/siteContent';
 
 const Services = () => {
+  const content = siteContent.services;
+  const iconMap: Record<number, React.ComponentType<any>> = {
+    0: Activity,
+    1: Server,
+    2: Lock,
+    3: Terminal,
+    4: Users,
+    5: BookOpen,
+  };
+  const iconColors = ['text-amber-600', 'text-slate-700', 'text-emerald-600', 'text-blue-600', 'text-amber-500', 'text-slate-800'];
   return (
     <section id="services" className="bg-white pt-12 pb-24 scroll-mt-24 relative overflow-hidden">
       
@@ -15,58 +26,34 @@ const Services = () => {
         
         <header className="mb-16 md:mb-20 max-w-3xl 2xl:max-w-4xl flex flex-col items-center md:items-start mx-auto md:mx-0">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
-            Core Offerings
+            {content.badge}
           </div>
           
           <h2 className="text-center md:text-left text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 mb-5 md:mb-6 tracking-tight leading-[1.1]">
-            Elite Cyber Defense, <br />
+            {content.headingMain} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">
-              no matter the stage.
+              {content.headingHighlight}
             </span>
           </h2>
           
           <p className="w-full text-center md:text-left text-lg md:text-xl 2xl:text-2xl text-slate-600 leading-relaxed">
-             From specialized Rapid VAPT for mega-events to agile security audits for growing businesses.<span className="hidden sm:inline"> We ensure you are DPDP ready and inherently secure.</span>
+             {content.descriptionPart1}<span className="hidden sm:inline"> {content.descriptionPart2}</span>
           </p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 2xl:gap-12 group/bento">
           
-          <Card 
-            title="Health Check Express" 
-            description="A fixed-price, 24-hour turnaround audit. Comprehensive VAPT for websites, APIs, and internal networks to fix loopholes instantly."
-            icon={<Activity className="text-amber-600" />}
-          />
-
-          <Card 
-            title="Rapid Event VAPT" 
-            description="Accelerated, high-concurrency security audits designed specifically to protect live mega-event environments from real-time threats."
-            icon={<Server className="text-slate-700" />}
-          />
-
-          <Card 
-            title="Compliance as a Service" 
-            description="Helping businesses of all sizes navigate the DPDP Act, ISO 27001, and SOC2. We simplify the complex world of data privacy laws."
-            icon={<Lock className="text-emerald-600" />}
-          />
-
-          <Card 
-            title="Network Consultation" 
-            description="Designing secure, segmented networks. We help SMBs secure remote-work setups and mega-events secure onsite infrastructure."
-            icon={<Terminal className="text-blue-600" />}
-          />
-
-          <Card 
-            title="Resilience Training" 
-            description="Custom Cyber Awareness and Incident Response [IR] training programs tailored for corporate teams of 5 to 5,000 members."
-            icon={<Users className="text-amber-500" />}
-          />
-          
-           <Card 
-            title="IR Playbooks" 
-            description="Custom 'What-to-do-if' actionable guides for your teams to handle hardware failures, data breaches, or DDoS attacks instantly."
-            icon={<BookOpen className="text-slate-800" />}
-          />
+          {content.cards.map((card, index) => {
+            const IconComponent = iconMap[index];
+            return (
+              <Card 
+                key={index}
+                title={card.title}
+                description={card.description}
+                icon={<IconComponent className={iconColors[index]} />}
+              />
+            );
+          })}
 
         </div>
       </div>

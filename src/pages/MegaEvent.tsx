@@ -1,7 +1,9 @@
 import { ArrowLeft, ShieldAlert, Target, ShieldCheck, Clock, Server, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { siteContent } from '../config/siteContent';
 
 const MegaEvent = () => {
+  const content = siteContent.megaEvent;
   return (
     <div className="min-h-screen bg-[#FDFBF7] pt-32 pb-32 font-sans selection:bg-amber-200 selection:text-amber-900 relative overflow-hidden">
       
@@ -10,20 +12,20 @@ const MegaEvent = () => {
       <div className="max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
         
         <Link to="/#case-studies" className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-amber-600 transition-colors mb-12 group">
-          <ArrowLeft size={16} className="mr-2 transform group-hover:-translate-x-1 transition-transform" /> Back to Case Studies
+          <ArrowLeft size={16} className="mr-2 transform group-hover:-translate-x-1 transition-transform" /> {content.backLinkText}
         </Link>
 
         <div className="max-w-5xl mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-xs font-black uppercase tracking-widest mb-6 shadow-sm">
-            <Globe size={14} /> Enterprise Scale
+            <Globe size={14} /> {content.badge}
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.5rem] font-black text-slate-900 tracking-tighter mb-8 leading-[1.05]">
-            Securing The <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Mega-Event.</span>
+            {content.headingMain}<span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">{content.headingHighlight}</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl">
-            How we protected a high-traffic public gathering against real-time, coordinated cyber threats without a single second of downtime.
+            {content.description}
           </p>
         </div>
 
@@ -31,8 +33,8 @@ const MegaEvent = () => {
           <div className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] 2xl:h-[650px] rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl relative">
             <div className="absolute inset-0 bg-slate-900/30 z-10"></div>
             <img 
-              src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=2000" 
-              alt="Massive crowd at a stadium event" 
+              src={content.imageUrl}
+              alt={content.imageAlt}
               className="w-full h-full object-cover"
             />
           </div>
@@ -40,16 +42,16 @@ const MegaEvent = () => {
           <div className="absolute bottom-0 translate-y-1/2 w-[95%] sm:w-[90%] lg:w-[80%] bg-white rounded-2xl md:rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-stone-200 p-4 sm:p-6 lg:p-8 z-20 overflow-hidden">
             <div className="grid grid-cols-3 gap-2 sm:gap-6 divide-x divide-stone-200 text-center items-center">
               <div className="px-1 sm:px-4 md:px-0">
-                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">Scale</div>
-                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 whitespace-nowrap">2.5M+</div>
+                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">{content.scaleLabel}</div>
+                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 whitespace-nowrap">{content.scaleValue}</div>
               </div>
               <div className="px-1 sm:px-4 md:px-0">
-                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">Threat Level</div>
-                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-red-500 whitespace-nowrap">Extreme</div>
+                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">{content.threatLabel}</div>
+                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-red-500 whitespace-nowrap">{content.threatValue}</div>
               </div>
               <div className="px-1 sm:px-4 md:px-0">
-                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">Uptime</div>
-                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-emerald-500 whitespace-nowrap">100%</div>
+                <div className="text-[9px] sm:text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide md:tracking-widest mb-0.5 md:mb-1 truncate">{content.uptimeLabel}</div>
+                <div className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-black text-emerald-500 whitespace-nowrap">{content.uptimeValue}</div>
               </div>
             </div>
           </div>
@@ -62,9 +64,9 @@ const MegaEvent = () => {
             <div className="w-14 h-14 bg-red-500/20 border border-red-500/30 text-red-400 rounded-2xl flex items-center justify-center mb-8">
               <ShieldAlert size={28} />
             </div>
-            <h3 className="text-3xl font-black mb-6">The Challenge</h3>
+            <h3 className="text-3xl font-black mb-6">{content.challenge.title}</h3>
             <p className="text-slate-300 text-lg leading-relaxed font-medium">
-              A massive international event was expecting millions of concurrent digital interactions. The attack surface was enormous, and threat intelligence indicated planned DDoS and intrusion attempts targeting the core ticketing and broadcast APIs.
+              {content.challenge.description}
             </p>
           </div>
 
@@ -72,19 +74,17 @@ const MegaEvent = () => {
             <div className="w-14 h-14 bg-amber-50 border border-amber-100 text-amber-500 rounded-2xl flex items-center justify-center mb-8">
               <Target size={28} />
             </div>
-            <h3 className="text-3xl font-black text-slate-900 mb-6">Our Approach</h3>
+            <h3 className="text-3xl font-black text-slate-900 mb-6">{content.approach.title}</h3>
             <p className="text-slate-600 text-lg leading-relaxed font-medium mb-8">
-              We deployed an agile <strong className="text-slate-900">Rapid Event VAPT</strong> protocol exactly 48 hours before the massive influx of traffic.
+              We deployed an agile <strong className="text-slate-900">{content.approach.rapidEventVAPT}</strong> protocol exactly 48 hours before the massive influx of traffic.
             </p>
             <ul className="space-y-4">
-              <li className="flex items-start gap-4">
-                <div className="mt-1 bg-amber-100 p-1.5 rounded-md text-amber-700"><Server size={16} strokeWidth={3} /></div>
-                <p className="text-slate-600 font-medium"><strong className="text-slate-900">Infrastructure:</strong> Segmented the critical network nodes and established a strict Zero-Trust perimeter around payment gateways.</p>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="mt-1 bg-amber-100 p-1.5 rounded-md text-amber-700"><Clock size={16} strokeWidth={3} /></div>
-                <p className="text-slate-600 font-medium"><strong className="text-slate-900">Execution:</strong> Set up a 24/7 live-monitoring War Room to intercept, analyze, and neutralize volumetric attacks in real-time.</p>
-              </li>
+              {content.approach.items.map((item, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <div className="mt-1 bg-amber-100 p-1.5 rounded-md text-amber-700">{index === 0 ? <Server size={16} strokeWidth={3} /> : <Clock size={16} strokeWidth={3} />}</div>
+                  <p className="text-slate-600 font-medium"><strong className="text-slate-900">{item.label}:</strong> {item.description}</p>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -96,9 +96,9 @@ const MegaEvent = () => {
                 <ShieldCheck size={40} className="text-white" />
               </div>
               <div className="flex-1 w-full">
-                <h3 className="text-3xl lg:text-4xl font-black mb-4">The Result</h3>
+                <h3 className="text-3xl lg:text-4xl font-black mb-4">{content.result.title}</h3>
                 <p className="text-amber-50 text-lg lg:text-xl leading-relaxed font-medium w-full">
-                  100% uptime maintained. We successfully deflected 4 major volumetric DDoS attempts and patched 3 critical zero-day API vulnerabilities on the fly, securing the digital experience for over 2.5 million users without them ever noticing.
+                  {content.result.description}
                 </p>
               </div>
             </div>
