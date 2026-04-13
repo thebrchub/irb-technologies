@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ShieldCheck, Twitter, Github, Linkedin, Facebook, ArrowRight, Lock, Globe, MapPin, Mail, Phone } from 'lucide-react';
 
-interface FooterProps {
-  onOpenModal: () => void;
-}
-
-const Footer = ({ onOpenModal }: FooterProps) => {
+// 🔥 FIXED: Removed FooterProps and the onOpenModal prop since there is no modal logic anymore
+const Footer = () => {
   return (
     // Slightly reduced top padding since the CTA block is removed, keeping it tight
     <footer className="relative bg-slate-50 border-t border-slate-200 pt-16 pb-12 overflow-hidden">
@@ -15,28 +12,9 @@ const Footer = ({ onOpenModal }: FooterProps) => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-500/5 blur-[120px] rounded-full"></div>
       </div>
 
-      {/* 🔥 FIXED: Expanded max-width to 1920px for large monitors to match all other sections */}
       <div className="relative z-10 max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16">
         
-        {/* 🔥 FIXED: Commented out the duplicate CTA section to keep the design clean! */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-20 border-b border-slate-200 pb-16 items-center">
-           <div>
-              <h3 className="text-3xl md:text-4xl 2xl:text-[2.75rem] font-extrabold text-slate-900 mb-4 tracking-tight">Ready to secure your future?</h3>
-              <p className="text-slate-600 max-w-md leading-relaxed text-sm md:text-base 2xl:text-lg">
-                 Connect with our cybersecurity experts to discuss your vulnerabilities and build a robust, enterprise-grade defense strategy.
-              </p>
-           </div>
-           
-           <div className="flex items-center md:justify-end mt-4 md:mt-0">
-              <button 
-                onClick={onOpenModal}
-                className="group relative inline-flex items-center gap-3 bg-slate-900 hover:bg-amber-500 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-amber-500/25 text-sm md:text-base w-full md:w-auto justify-center cursor-pointer"
-              >
-                Contact Our Team <ArrowRight size={18} className="transform group-hover:translate-x-1 transition-transform" />
-              </button>
-           </div>
-        </div> 
-        */}
+        {/* 🔥 FIXED: Completely removed the old commented-out CTA block and button to keep the file perfectly clean */}
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
            

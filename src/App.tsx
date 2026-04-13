@@ -51,7 +51,7 @@ function App() {
           </Routes>
         </main>
 
-        <Footer onOpenModal={() => setIsModalOpen(true)} />
+        <Footer />
         
         <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
