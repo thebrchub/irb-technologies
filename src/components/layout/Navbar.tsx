@@ -90,7 +90,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
   const navLinks = [
     { name: 'Home',          href: '/#home',         index: '01' },
     { name: 'About Us',      href: '/#about',        index: '02' },
-    { name: 'Architecture',  href: '/#architecture', index: '03' },
+    // { name: 'Architecture',  href: '/#architecture', index: '03' },
     { name: 'Core Offerings',href: '/#services',     index: '04' },
     { name: 'Case Studies',  href: '/#case-studies', index: '05' },
   ];
@@ -110,16 +110,16 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className={`
-            relative bg-white/90 backdrop-blur-2xl border border-stone-200
-            rounded-full shadow-2xl shadow-stone-200/50 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden
+            relative bg-slate-900/95 backdrop-blur-2xl border border-slate-700/50
+            rounded-full shadow-2xl shadow-slate-900/50 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden
             flex items-center justify-between h-16
-            ${effectiveExpanded ? 'w-[95vw] lg:w-[85vw] max-w-[1100px] pl-3 lg:pl-4 pr-3 lg:pr-6' : 'w-[240px] lg:w-[200px] pl-2 lg:pl-3 pr-2 lg:pr-3'}
+            ${effectiveExpanded ? 'w-[95vw] lg:w-[85vw] max-w-[1100px] 2xl:max-w-[1500px] pl-3 lg:pl-4 2xl:pl-6 pr-3 lg:pr-6 2xl:pr-8' : 'w-[240px] lg:w-[200px] pl-2 lg:pl-3 pr-2 lg:pr-3'}
           `}
         >
           <Link to="/" className="flex items-center min-w-max cursor-pointer z-10">
             <div className="relative flex items-center h-12 shrink-0">
               <img 
-                src="/logo2.svg" 
+                src="/logow.svg" 
                 alt="IRB Tech Logo" 
                 className="h-9 lg:h-10 w-auto object-contain drop-shadow-md" 
               />
@@ -131,12 +131,12 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             hidden lg:flex items-center gap-1 transition-all duration-500 delay-100
             ${effectiveExpanded ? 'opacity-100 translate-y-[-50%]' : 'opacity-0 translate-y-[100%] pointer-events-none'}
           `}>
-            <div className="flex items-center bg-[#FBF8F3]/80 rounded-full px-2 py-1 border border-stone-200 whitespace-nowrap shadow-inner">
+            <div className="flex items-center bg-slate-800/80 rounded-full px-2 py-1 border border-slate-700 whitespace-nowrap shadow-inner">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-5 py-2 text-sm font-bold text-slate-600 hover:text-[#C45919] hover:bg-[#C45919]/10 rounded-full transition-all duration-300"
+                  className="px-5 py-2 text-sm font-bold text-slate-300 hover:text-white hover:bg-slate-700 rounded-full transition-all duration-300"
                 >
                   {link.name}
                 </a>
@@ -148,7 +148,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             hidden lg:flex items-center gap-4 min-w-max transition-all duration-500 delay-150
             ${effectiveExpanded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 pointer-events-none'}
           `}>
-            <div className="h-6 w-[1px] bg-stone-200" />
+            <div className="h-6 w-[1px] bg-slate-700" />
             <button
               onClick={onOpenModal}
               className="flex items-center gap-2 bg-[#C45919] hover:bg-[#A34915] text-white px-6 py-2 rounded-full text-sm font-black transition-colors shadow-lg shadow-[#C45919]/20 whitespace-nowrap"
@@ -161,7 +161,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
           <div className="lg:hidden ml-auto z-20">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-100 hover:bg-[#C45919]/10 hover:text-[#C45919] text-[#2B3A4A] transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
             >
               <Menu size={20} />
             </button>
@@ -180,7 +180,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center min-w-max">
               <div className="relative flex items-center h-10 shrink-0">
                 <img 
-                  src="/logow.svg" 
+                  src="/logo_w.svg" 
                   alt="IRB Tech Logo" 
                   className="h-8 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
                 />

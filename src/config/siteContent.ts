@@ -42,6 +42,7 @@ export const siteContent = {
     headingMain: "Proven security across ",
     headingBr: true,
     headingHighlight: "every scale.",
+    description: "Engineering adaptive resilience for every stage of growth, from agile startups to global enterprises.",
     cases: [
       {
         id: "01",
@@ -138,10 +139,10 @@ export const siteContent = {
     card2: {
       title: "Ultra-Low Latency",
       description: "Proprietary routing algorithms ensuring <10ms response times for global data synchronization.",
-      statusLabel: "Active Mesh Network",
+      statusLabel: "< 10ms Response Time", 
     },
-    card3: {
-      title: "Regulatory Mastery",
+   card3: {
+      title: "Compliance-Native Framework", 
       description: "Real-time compliance monitoring tailored for ISO, GDPR, and localized sovereign standards.",
       statusLabel: "Verified System",
     },
@@ -231,8 +232,11 @@ export const siteContent = {
     headingMain: "The SME ",
     headingHighlight: "Shield.",
     description: "A 24-hour turnaround audit that saved a local IT firm's client-facing portal from a critical data exposure vulnerability.",
-    imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070",
-    imageAlt: "Cybersecurity Code",
+    
+    // 🔥 FIXED: Swapped for a premium, abstract 3D digital security visual
+    imageUrl: "/sme.jpg",
+    imageAlt: "Abstract glowing digital security lock and network nodes",
+    
     turnaroundLabel: "Turnaround",
     turnaroundValue: "< 24 Hrs",
     threatLabel: "Threat Level",

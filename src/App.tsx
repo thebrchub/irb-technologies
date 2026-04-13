@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
-import Features from './components/sections/Features';
+// import Features from './components/sections/Features';
 import Services from './components/sections/Services';
 import Footer from './components/layout/Footer'; 
 import ContactModal from './components/ui/ContactModal';
@@ -24,7 +24,7 @@ function App() {
     <>
       <Hero onOpenModal={() => setIsModalOpen(true)} />
       <About />
-      <Features />
+      {/* <Features /> */}
       <Services />
       <CaseStudies />
       <CTA onOpenModal={() => setIsModalOpen(true)} />

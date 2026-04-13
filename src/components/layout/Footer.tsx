@@ -7,16 +7,19 @@ interface FooterProps {
 
 const Footer = ({ onOpenModal }: FooterProps) => {
   return (
-    <footer className="relative bg-slate-50 border-t border-slate-200 pt-24 pb-12 overflow-hidden">
+    // Slightly reduced top padding since the CTA block is removed, keeping it tight
+    <footer className="relative bg-slate-50 border-t border-slate-200 pt-16 pb-12 overflow-hidden">
       
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-500/5 blur-[120px] rounded-full"></div>
       </div>
 
-      <div className="relative z-10 max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-16">
+      {/* 🔥 FIXED: Expanded max-width to 1920px for large monitors to match all other sections */}
+      <div className="relative z-10 max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-20 border-b border-slate-200 pb-16 items-center">
+        {/* 🔥 FIXED: Commented out the duplicate CTA section to keep the design clean! */}
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-20 border-b border-slate-200 pb-16 items-center">
            <div>
               <h3 className="text-3xl md:text-4xl 2xl:text-[2.75rem] font-extrabold text-slate-900 mb-4 tracking-tight">Ready to secure your future?</h3>
               <p className="text-slate-600 max-w-md leading-relaxed text-sm md:text-base 2xl:text-lg">
@@ -32,7 +35,8 @@ const Footer = ({ onOpenModal }: FooterProps) => {
                 Contact Our Team <ArrowRight size={18} className="transform group-hover:translate-x-1 transition-transform" />
               </button>
            </div>
-        </div>
+        </div> 
+        */}
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
            
