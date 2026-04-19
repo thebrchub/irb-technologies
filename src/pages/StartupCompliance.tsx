@@ -29,7 +29,8 @@ const StartupCompliance = () => {
 
   return (
     
-    <div className="min-h-screen bg-[#FDFBF7] pt-32 md:pt-40 pb-16 md:pb-24 font-sans selection:bg-amber-200 selection:text-amber-900 relative overflow-hidden">
+    
+    <div className="min-h-screen bg-[#FDFBF7] pt-32 md:pt-40 pb-10 md:pb-12 lg:pb-16 font-sans selection:bg-amber-200 selection:text-amber-900 relative overflow-hidden">
       
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 mask-image:linear-gradient(to_bottom,transparent,black,transparent) pointer-events-none -z-10"></div>
 
@@ -42,7 +43,8 @@ const StartupCompliance = () => {
         </div>
 
         {/* 2-Column Header Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 2xl:gap-20 items-start mb-10 md:mb-12 lg:mb-16">
+        {/* 🔥 FIXED: Slashed bottom margin to kill whitespace above the stats bar */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 2xl:gap-20 items-start mb-6 md:mb-8 lg:mb-10">
           
           {/* 🔥 ANIMATED: Text slides in from left */}
           <motion.div 
@@ -86,8 +88,9 @@ const StartupCompliance = () => {
         </div>
 
         {/* 🔥 ANIMATED: Stats Bar rises from center */}
+        {/* 🔥 FIXED: Slashed massive bottom margin to kill whitespace below the stats bar */}
         <motion.div 
-          className="w-[calc(100%+3rem)] -mx-6 md:w-full md:mx-0 bg-white md:rounded-[2.5rem] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] border-y md:border border-stone-200 p-4 md:p-8 2xl:p-10 mb-10 md:mb-16 lg:mb-20 2xl:mb-24"
+          className="w-[calc(100%+3rem)] -mx-6 md:w-full md:mx-0 bg-white md:rounded-[2.5rem] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] border-y md:border border-stone-200 p-4 md:p-8 2xl:p-10 mb-6 md:mb-8 lg:mb-10 2xl:mb-12"
           custom={{ direction: 'center', delay: 0.2 }}
           initial="hidden"
           whileInView="visible"
@@ -182,12 +185,18 @@ const StartupCompliance = () => {
           >
             <div className="absolute top-[-20%] right-[-5%] w-[500px] h-[500px] bg-white/10 rounded-full blur-[80px] pointer-events-none"></div>
             
-            <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-5 lg:gap-8 2xl:gap-10">
-              <div className="w-14 h-14 lg:w-16 lg:h-16 2xl:w-20 2xl:h-20 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl flex items-center justify-center shrink-0">
-                <ShieldCheck size={28} className="text-white lg:w-8 lg:h-8 2xl:w-10 2xl:h-10" />
+            {/* 🔥 FIXED: Mobile Result Card Layout aligned correctly */}
+            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-8 2xl:gap-10">
+              
+              <div className="flex items-center gap-4 shrink-0">
+                <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 2xl:w-20 2xl:h-20 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl flex items-center justify-center shrink-0">
+                  <ShieldCheck size={24} className="text-white md:w-7 md:h-7 lg:w-8 lg:h-8 2xl:w-10 2xl:h-10" />
+                </div>
+                <h3 className="text-xl font-black m-0 md:hidden">{content.result.title}</h3>
               </div>
-              <div className="flex-1 w-full">
-                <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-black mb-2 lg:mb-3">{content.result.title}</h3>
+
+              <div className="flex-1 w-full mt-1 md:mt-0">
+                <h3 className="hidden md:block text-xl lg:text-2xl 2xl:text-3xl font-black mb-2 lg:mb-3">{content.result.title}</h3>
                 
                 <p className="text-amber-50 text-base md:text-lg leading-relaxed w-full m-0">
                   {content.result.description}
