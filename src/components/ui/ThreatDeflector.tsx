@@ -106,7 +106,8 @@ const ThreatDeflector = () => {
               height: pkt.isThreat ? '8px' : '5px',
               backgroundColor: pkt.isThreat ? 'transparent' : '#16a34a', 
               boxShadow: pkt.isThreat ? 'none' : '0 0 10px #16a34a',
-              animation: `${pkt.isThreat ? 'threat-fly' : 'safe-fly'}-${pkt.pathId} ${pkt.dur}s linear infinite`,
+              /* 🔥 FIXED: Added "both" to the end of the animation shorthand so it applies the 0% opacity during the delay phase */
+              animation: `${pkt.isThreat ? 'threat-fly' : 'safe-fly'}-${pkt.pathId} ${pkt.dur}s linear infinite both`,
               animationDelay: `${pkt.delay}s`,
               transformStyle: 'preserve-3d',
               transform: 'translateZ(2px)'

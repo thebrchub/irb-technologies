@@ -4,22 +4,23 @@ export const siteContent = {
     
     headingMain: "Elite Cybersecurity & ",
     headingBr: true,
-    headingHighlight: "Digital Resilience.",
+    headingHighlight: "Digital Resilience",
     
     descriptionMobile: "In an era of fast-moving digital threats, we provide the elite resilience required to secure your growing business.",
     descriptionDesktop: "Traditional defenses are obsolete. We engineer adaptive resilience to let you scale your enterprise fearlessly.",
     descriptionPart1Desktop: "adaptive resilience",
     
-    mission: {
+   mission: {
       title: "Our Mission",
-      descriptionMobile: "Delivering elite cybersecurity shields to startups and mega-events through rapid, expert-led resilience training.",
-      descriptionDesktop: "To provide the shield of elite cybersecurity to every entity, from the local startup to the international mega-event, through rapid audits and expert-led resilience training.",
+      // 🔥 FIXED: Drastically shortened to fit perfectly on 1-2 lines maximum
+      descriptionMobile: "Delivering scalable cybersecurity and rapid resilience training for entities of every size.",
+      descriptionDesktop: "Delivering scalable cybersecurity and rapid resilience training for entities of every size.",
     },
-    
     vision: {
       title: "Our Vision",
-      descriptionMobile: "Setting the global benchmark for adaptive cybersecurity, ensuring every digital interaction is inherently secure.",
-      descriptionDesktop: "To be the global benchmark for adaptive cybersecurity, where the scale of the challenge never compromises the integrity of the protection. We ensure every digital interaction is inherently secure.",
+      // 🔥 FIXED: Drastically shortened for impact
+      descriptionMobile: "Setting the global benchmark for adaptive security, ensuring every digital interaction remains inherently safe.",
+      descriptionDesktop: "Setting the global benchmark for adaptive security, ensuring every digital interaction remains inherently safe.",
     },
     
     whatWeDo: {
@@ -80,45 +81,53 @@ export const siteContent = {
     cards: [
       {
         title: "Health Check Express",
+        titleMobile: "Health Check", // 🔥 Shorter for mobile
         description: "A fixed-price, 24-hour turnaround audit. Comprehensive VAPT for websites, APIs, and internal networks to fix loopholes instantly.",
       },
       {
         title: "Rapid Event VAPT",
+        titleMobile: "Event VAPT", // 🔥 Shorter for mobile
         description: "Accelerated, high-concurrency security audits designed specifically to protect live mega-event environments from real-time threats.",
       },
       {
         title: "Compliance as a Service",
+        titleMobile: "Compliance", // 🔥 Shorter for mobile
         description: "Helping businesses of all sizes navigate the DPDP Act, ISO 27001, and SOC2. We simplify the complex world of data privacy laws.",
       },
       {
         title: "Network Consultation",
+        titleMobile: "Networks", // 🔥 Shorter for mobile
         description: "Designing secure, segmented networks. We help SMBs secure remote-work setups and mega-events secure onsite infrastructure.",
       },
       {
         title: "Resilience Training",
+        titleMobile: "Training", // 🔥 Shorter for mobile
         description: "Custom Cyber Awareness and Incident Response [IR] training programs tailored for corporate teams of 5 to 5,000 members.",
       },
       {
         title: "IR Playbooks",
+        titleMobile: "Playbooks", // 🔥 Shorter for mobile
         description: "Custom 'What-to-do-if' actionable guides for your teams to handle hardware failures, data breaches, or DDoS attacks instantly.",
       },
     ],
   },
 
   hero: {
-    headingMain: "Cybersecurity Tailored to ",
-    headingHighlight: "Your Business.",
+    headingMain: "Cybersecurity Tailored ",
+    headingHighlight: "to Your Business",
     descriptionPart1: "From high-concurrency ",
-    descriptionHighlight1: "Mega-Events",
-    descriptionPart2: " to agile ",
-    descriptionHighlight2: "DPDP-ready",
-    descriptionPart3: " audits for growing SMEs. We safeguard your digital assets at any scale.",
+    descriptionHighlight1: "Mega-Events ",
+    descriptionPart2: "to agile ",
+    descriptionHighlight2: "DPDP-ready ",
+    descriptionPart3: "audits for growing SMEs. We safeguard your digital assets at any scale",
     mobileCard1Label: "Enterprise Scale",
-    mobileCard2Label: "Agile VAPT",
+    mobileCard2Label: "SME Protection",
     desktopCard1Title: "Enterprise & Events",
-    desktopCard1Description: "Comprehensive, high-concurrency protection for large scale environments.",
+    // 🔥 FIXED: Ultra-short description to guarantee a single line
+    desktopCard1Description: "High-concurrency protection at scale",
     desktopCard2Title: "On-Demand Security",
-    desktopCard2Description: "Fast, affordable audits and VAPT tailored for SMEs and startups.",
+    // 🔥 FIXED: Ultra-short description to guarantee a single line
+    desktopCard2Description: "Fast, affordable VAPT for startups",
     ctaButtonLabel: "Schedule an Audit",
     secondaryButtonLabel: "View Services",
     secondaryButtonLink: "#services",

@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ShieldCheck, Twitter, Github, Linkedin, Facebook, ArrowRight, Lock, Globe, MapPin, Mail, Phone } from 'lucide-react';
 
-// 🔥 FIXED: Removed FooterProps and the onOpenModal prop since there is no modal logic anymore
 const Footer = () => {
   return (
-    // Slightly reduced top padding since the CTA block is removed, keeping it tight
     <footer className="relative bg-slate-50 border-t border-slate-200 pt-16 pb-12 overflow-hidden">
       
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -14,8 +12,6 @@ const Footer = () => {
 
       <div className="relative z-10 max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16">
         
-        {/* 🔥 FIXED: Completely removed the old commented-out CTA block and button to keep the file perfectly clean */}
-
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
            
            <div className="md:col-span-4 2xl:col-span-3">
@@ -52,7 +48,8 @@ const Footer = () => {
               </div>
            </div>
 
-           <div className="md:col-span-4 2xl:col-span-5 grid grid-cols-2 gap-8 md:gap-12 md:pl-8 2xl:pl-16">
+           {/* 🔥 FIXED: Added 'hidden md:grid' so this entire block vanishes on mobile but stays perfectly intact on desktop */}
+           <div className="hidden md:grid md:col-span-4 2xl:col-span-5 grid-cols-2 gap-8 md:gap-12 md:pl-8 2xl:pl-16">
               
               <div>
                  <h4 className="text-slate-900 font-bold mb-5 md:mb-6 tracking-wide text-base 2xl:text-lg">Solutions</h4>
@@ -73,7 +70,7 @@ const Footer = () => {
                       {[
                          { name: 'About Us', href: '#about' },
                          { name: 'Core Offerings', href: '#services' },
-                         { name: 'Architecture', href: '#architecture' },
+                        //  { name: 'Architecture', href: '#architecture' },
                          { name: 'Case Studies', href: '#case-studies' },
                          { name: 'Back to Top', href: '#home' }
                       ].map((item) => (
@@ -144,7 +141,7 @@ const Footer = () => {
 
            <div className="flex justify-center lg:justify-start mt-2">
                <p className="text-slate-400 text-xs md:text-sm font-medium text-center lg:text-left">
-                   Designed and developed by <a href="https://www.thebrchub.tech" target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-600 hover:underline transition-all font-semibold ml-1">BRC HUB LLP</a>
+                   Designed and developed by <a href="https://www.thebrchub.tech" target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-600 hover:underline transition-all font-semibold ml-1">BRC Hub LLP</a>
                </p>
            </div>
 

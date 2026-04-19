@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   delay?: number;
+  className?: string;
 }
 
 export const ScrollReveal = ({ children, delay = 0 }: ScrollRevealProps) => {
