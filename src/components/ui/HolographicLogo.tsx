@@ -88,7 +88,7 @@ const HolographicLogo = () => {
     }
   `;
 
-  const imgClass = "w-14 h-14 sm:w-16 sm:h-16 object-contain absolute";
+  const imgClass = "w-20 h-20 sm:w-24 sm:h-24 object-contain absolute";
 
   return (
     <>
@@ -97,9 +97,7 @@ const HolographicLogo = () => {
       <div style={{ transform: 'rotateZ(-45deg) rotateX(-90deg)', transformStyle: 'preserve-3d' }}>
         <div
           ref={containerRef}
-          className="relative flex items-center justify-center cursor-grab active:cursor-grabbing w-32 h-32"
-          style={{ touchAction: 'none', transformStyle: 'preserve-3d' }}
-          onPointerDown={handlePointerDown}
+          className="relative flex items-center justify-center cursor-grab active:cursor-grabbing w-40 h-40 sm:w-44 sm:h-44"
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerLeave={handlePointerUp}

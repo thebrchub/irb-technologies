@@ -64,9 +64,9 @@ const Services = () => {
           className="mb-6 md:mb-8 2xl:mb-10 max-w-3xl 2xl:max-w-none flex flex-col items-center mx-auto"
         >
           
-          <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-4 md:mb-6 shadow-sm">
+          {/* <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-4 md:mb-6 shadow-sm">
             {content.badge}
-          </div>
+          </div> */}
           
           <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 mb-0 md:mb-4 tracking-tight leading-[1.15] md:leading-[1.1] md:[text-wrap:balance]">
             

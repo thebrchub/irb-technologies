@@ -16,11 +16,11 @@ const About = () => {
           <ScrollReveal>
             <div className="flex flex-col items-center">
               
-              {/* Scaled down pill size for mobile */}
+              {/* Scaled down pill size for mobile
               <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-4 md:py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-4 md:mb-6 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
                 {content.badge}
-              </div>
+              </div> */}
               
               {/* Forced 2-line heading for mobile, text-3xl */}
               <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 tracking-tight leading-[1.15] md:leading-[1.1] mb-0 md:mb-8 2xl:mb-4 max-w-4xl 2xl:max-w-none mx-auto md:[text-wrap:balance]">

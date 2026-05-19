@@ -31,7 +31,7 @@ const ThreatDeflector = () => {
         }
       `;
     });
-    
+
     styles += `
       @keyframes beam-flicker {
         0%, 100% { opacity: 0.4; }
@@ -59,7 +59,7 @@ const ThreatDeflector = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-amber-500/10 blur-[80px] rounded-full pointer-events-none"></div>
 
       <div 
-        className="relative w-[150%] aspect-square sm:w-[120%] md:w-[100%] max-w-[600px]"
+        className="relative w-[120%] aspect-square sm:w-[100%] md:w-[90%] max-w-[520px]"
         style={{ transform: 'perspective(1200px) rotateX(60deg) rotateZ(45deg)', transformStyle: 'preserve-3d' }}
       >
         <svg className="absolute inset-0 w-full h-full opacity-60">
@@ -106,7 +106,6 @@ const ThreatDeflector = () => {
               height: pkt.isThreat ? '8px' : '5px',
               backgroundColor: pkt.isThreat ? 'transparent' : '#16a34a', 
               boxShadow: pkt.isThreat ? 'none' : '0 0 10px #16a34a',
-              /* 🔥 FIXED: Added "both" to the end of the animation shorthand so it applies the 0% opacity during the delay phase */
               animation: `${pkt.isThreat ? 'threat-fly' : 'safe-fly'}-${pkt.pathId} ${pkt.dur}s linear infinite both`,
               animationDelay: `${pkt.delay}s`,
               transformStyle: 'preserve-3d',
@@ -139,7 +138,7 @@ const ThreatDeflector = () => {
           style={{ transform: 'translate(-50%, -50%) translateZ(45px)' }}
         />
 
-        {/* Holographic Projection Beam */}
+        {/* Holographic Projection Beam (Widened to fit your scaled logo!) */}
         <div 
           className="absolute top-1/2 left-1/2 w-0 h-0 pointer-events-none"
           style={{ transform: 'translateZ(46px)', transformStyle: 'preserve-3d' }}
@@ -149,13 +148,13 @@ const ThreatDeflector = () => {
             className="absolute"
             style={{ 
               bottom: '0px',
-              left: '-100px',
-              width: '200px', 
-              height: '80px',
+              left: '-160px', /* Widened offset */
+              width: '320px', /* Widened from 200px to 320px */
+              height: '90px', 
               transformOrigin: 'bottom center',
               transform: 'rotateZ(-45deg) rotateX(-90deg)',
               background: 'linear-gradient(to top, rgba(245,158,11,0.6) 0%, rgba(245,158,11,0) 100%)',
-              clipPath: 'polygon(20% 0, 80% 0, 50% 100%)',
+              clipPath: 'polygon(10% 0, 90% 0, 50% 100%)', /* Broadened the top of the cone */
               filter: 'blur(3px)',
               animation: 'beam-flicker 4s linear infinite',
             }}
@@ -165,7 +164,7 @@ const ThreatDeflector = () => {
         {/* Holographic Logo */}
         <div 
           className="absolute top-1/2 left-1/2"
-          style={{ transform: 'translate(-50%, -50%) translateZ(110px)', transformStyle: 'preserve-3d' }}
+          style={{ transform: 'translate(-50%, -50%) translateZ(120px)', transformStyle: 'preserve-3d' }}
         >
           <HolographicLogo />
         </div>

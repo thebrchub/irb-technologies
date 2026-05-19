@@ -26,10 +26,10 @@ const CTA = ({ onOpenModal }: CTAProps) => {
               {/* Left Side: Text Content */}
               <div className="flex flex-col items-center lg:items-start w-full max-w-2xl 2xl:max-w-5xl">
                 
-                <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-4 lg:mb-6 shadow-sm text-center">
+                {/* <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-4 lg:mb-6 shadow-sm text-center">
                   <ShieldCheck size={14} className="md:w-4 md:h-4" />
                   Secure Your Future
-                </div>
+                </div> */}
 
                 {/* 🔥 FIXED: Removed mb-5 on mobile (now mb-0) to kill the extra space above the button. Let the text stretch full width! */}
                 <h2 className="text-center lg:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-0 md:mb-5 w-full [text-wrap:balance]">

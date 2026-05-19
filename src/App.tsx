@@ -11,6 +11,7 @@ import ContactModal from './components/ui/ContactModal';
 import CTA from './components/sections/CTA';
 import CaseStudies from './components/sections/CaseStudies';
 import ScrollManager from './components/ui/ScrollToTop'; 
+import ComplianceTicker from './components/ui/ComplianceTicker'; 
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import MegaEvent from './pages/MegaEvent';
@@ -62,6 +63,7 @@ function App() {
   const HomePage = () => (
     <>
       <Hero onOpenModal={() => setIsModalOpen(true)} />
+      <ComplianceTicker />
       <About />
       {/* <Features /> */}
       <Services />

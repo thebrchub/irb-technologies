@@ -55,9 +55,9 @@ const StartupCompliance = () => {
             viewport={{ once: true, margin: "-50px" }}
             variants={elementVariants}
           >
-            <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-4 md:py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-[10px] md:text-xs 2xl:text-sm font-black uppercase tracking-widest mb-4 md:mb-6 shadow-sm">
+            {/* <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-4 md:py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-[10px] md:text-xs 2xl:text-sm font-black uppercase tracking-widest mb-4 md:mb-6 shadow-sm">
               <FileCheck size={12} className="md:w-3.5 md:h-3.5 2xl:w-4 2xl:h-4" /> {content.badge}
-            </div>
+            </div> */}
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] 2xl:text-[5.5rem] font-black text-slate-900 tracking-tighter mb-5 lg:mb-6 leading-[1.05] [text-wrap:balance]">
               {content.headingMain}<span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">{content.headingHighlight}</span>

@@ -7,14 +7,14 @@ export const siteContent = {
     headingHighlight: "Digital Resilience",
     
     descriptionMobile: "In an era of fast-moving digital threats, we provide the elite resilience required to secure your growing business.",
-    descriptionDesktop: "Traditional defenses are obsolete. We engineer adaptive resilience to let you scale your enterprise fearlessly.",
+    descriptionDesktop: "Threat Prevention is Better than Cure",
     descriptionPart1Desktop: "adaptive resilience",
     
    mission: {
       title: "Our Mission",
       // 🔥 FIXED: Drastically shortened to fit perfectly on 1-2 lines maximum
-      descriptionMobile: "Delivering scalable cybersecurity and rapid resilience training for entities of every size.",
-      descriptionDesktop: "Delivering scalable cybersecurity and rapid resilience training for entities of every size.",
+      descriptionMobile: "To make world-class cybersecurity simple and accessible for any and every business.",
+      descriptionDesktop: "To make world-class cybersecurity simple and accessible for any and every business.",
     },
     vision: {
       title: "Our Vision",
@@ -26,14 +26,14 @@ export const siteContent = {
     whatWeDo: {
       title: "What We Do",
       descriptionMobile: "Strategic security consulting and high-precision VAPT to harden your defenses against real-world attack vectors.",
-      descriptionDesktop: "We partner with organizations for strategic digital security consulting, identifying critical vulnerabilities through high-precision VAPT (Vulnerability Assessment and Penetration Testing). Our approach goes beyond automated scans; we simulate real-world attack vectors to harden your defenses.",
+      descriptionDesktop: "We partner with organizations for strategic digital security consulting, cybersecurity implementation and identifying critical vulnerabilities through high-precision VAPT (Vulnerability Assessment and Penetration Testing) and real time monitoring. Our approach goes beyond automated scans; we simulate real-world attack vectors to harden your defenses.",
       vaptAcronym: "VAPT",
     },
     
     culture: {
       title: "A Culture of Safety",
       descriptionMobile: "Engineering next-gen cybersecurity tools with a \"Security-First\" philosophy to build your internal resilience.",
-      descriptionDesktop: "While we protect our clients today, we are engineering the next generation of cybersecurity tools. Our \"Security-First\" philosophy ensures that we don't just find problems; we help you build resilience from the inside out.",
+      descriptionDesktop: "While we protect our clients today, we are engineering the next generation of cybersecurity solutions and tools for data privacy. Our \"Security-First\" philosophy ensures that we don't just find problems; we help you build resilience from the inside out.",
       philosophy: "Security-First",
     },
   },
@@ -72,62 +72,62 @@ export const siteContent = {
 
   services: {
     badge: "Core Offerings",
-    headingMain: "Elite Cyber Defense, ",
+    headingMain: "We Protect Your Business, ",
     headingBr: true,
-    headingHighlight: "no matter the stage.",
-    descriptionPart1: "From specialized Rapid VAPT for mega-events to agile security audits for growing businesses.",
+    headingHighlight: " from Cyber Threats",
+    descriptionPart1:'',
     descriptionPart2: "We ensure you are DPDP ready and inherently secure.",
     descriptionPart2Mobile: false,
     cards: [
       {
         title: "Health Check Express",
         titleMobile: "Health Check", // 🔥 Shorter for mobile
-        description: "A fixed-price, 24-hour turnaround audit. Comprehensive VAPT for websites, APIs, and internal networks to fix loopholes instantly.",
+        description: "A fixed-price, 24-hour turnaround comprehensive audit for your digital footprint and networks.",
       },
       {
-        title: "Rapid Event VAPT",
+        title: "Rapid Vulnerability Management",
         titleMobile: "Event VAPT", // 🔥 Shorter for mobile
-        description: "Accelerated, high-concurrency security audits designed specifically to protect live mega-event environments from real-time threats.",
+        description: "Accelerated, high-concurrency VAPT designed specifically to protect mission critical infra like live mega-events.",
       },
       {
         title: "Compliance as a Service",
         titleMobile: "Compliance", // 🔥 Shorter for mobile
-        description: "Helping businesses of all sizes navigate the DPDP Act, ISO 27001, and SOC2. We simplify the complex world of data privacy laws.",
+        description: "Let us handle the complex data privacy laws to keep your business ready to pass strict security audits like ISO 27001 and India's new DPDP Act.",
       },
       {
-        title: "Network Consultation",
+        title: "Expert Consulting",
         titleMobile: "Networks", // 🔥 Shorter for mobile
-        description: "Designing secure, segmented networks. We help SMBs secure remote-work setups and mega-events secure onsite infrastructure.",
+        description: "Think of us as your outsourced Security Head. We review your IT setup and guide you step-by-step on how to build a hack-proof business.",
       },
       {
-        title: "Resilience Training",
+        title: "Cyber Awareness Training",
         titleMobile: "Training", // 🔥 Shorter for mobile
-        description: "Custom Cyber Awareness and Incident Response [IR] training programs tailored for corporate teams of 5 to 5,000 members.",
+        description: "Technology isn't enough if human error happens. We train your staff for Phishing Scams, Digital Traps & Security Best Practices.",
       },
       {
-        title: "IR Playbooks",
-        titleMobile: "Playbooks", // 🔥 Shorter for mobile
-        description: "Custom 'What-to-do-if' actionable guides for your teams to handle hardware failures, data breaches, or DDoS attacks instantly.",
+        title: "Incident Simulation and Response",
+        titleMobile: "Simulation", // 🔥 Shorter for mobile
+        description: "Transforming your workforce into an active defensive layer through cyber attack simulations  and real time and 'What-to-do-if' exercises.",
       },
     ],
   },
 
   hero: {
-    headingMain: "Cybersecurity Tailored ",
+    headingMain: "Cybersecurity Tailored",
     headingHighlight: "to Your Business",
-    descriptionPart1: "From high-concurrency ",
-    descriptionHighlight1: "Mega-Events ",
-    descriptionPart2: "to agile ",
-    descriptionHighlight2: "DPDP-ready ",
-    descriptionPart3: "audits for growing SMEs. We safeguard your digital assets at any scale",
+    descriptionPart1: "From growing   ",
+    descriptionHighlight1: "SMEs ",
+    descriptionPart2: "to ",
+    descriptionHighlight2: "large-scale events",
+    descriptionPart3: ", we safeguard your digital assets. We secure your growth while you innovate.",
     mobileCard1Label: "Enterprise Scale",
     mobileCard2Label: "SME Protection",
-    desktopCard1Title: "Enterprise & Events",
+    desktopCard1Title: "Unified Security Operations",
     // 🔥 FIXED: Ultra-short description to guarantee a single line
-    desktopCard1Description: "High-concurrency protection at scale",
-    desktopCard2Title: "On-Demand Security",
+    desktopCard1Description: "Seamless Integrations",
+    desktopCard2Title: "Rapid Deployment",
     // 🔥 FIXED: Ultra-short description to guarantee a single line
-    desktopCard2Description: "Fast, affordable VAPT for startups",
+    desktopCard2Description: "Risk Management, Threat Mitigation",
     ctaButtonLabel: "Schedule an Audit",
     secondaryButtonLabel: "View Services",
     secondaryButtonLink: "#services",
@@ -378,10 +378,15 @@ export const siteContent = {
   contactModal: {
     serviceOptions: [
       "Network Discovery & Mapping",
-      "Penetration Testing",
-      "Cloud Security Architecture",
+      "Vulnerability Assessment",
+      "Compliance/Audit Support",
       "Endpoint Protection",
-      "Other / General Inquiry"
+      "Cybersecurity Training",
+      "Other / General Enquiry"
+      
+
+
+
     ],
     sidebar: {
       heading: "Secure your enterprise today.",

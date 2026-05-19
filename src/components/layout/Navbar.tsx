@@ -84,7 +84,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
   const navLinks = [
     { name: 'Home',           href: '/#home',         index: '01' },
     { name: 'About Us',       href: '/#about',        index: '02' },
-    { name: 'Core Offerings', href: '/#services',     index: '04' },
+    { name: 'Services',       href: '/#services',     index: '04' },
     { name: 'Case Studies',   href: '/#case-studies', index: '05' },
   ];
 
@@ -155,7 +155,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-4 py-1.5 text-xs lg:text-sm font-black tracking-tight text-white/80 hover:text-white rounded-full transition-all duration-200"
+                  className="px-4 py-1.5 text-sm lg:text-base font-black tracking-tight text-white/80 hover:text-white rounded-full transition-all duration-200"
                   style={{ letterSpacing: '-0.2px' }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.10)';
@@ -182,7 +182,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             <div className="h-6 w-[1px]" style={{ background: 'rgba(255,255,255,0.12)' }} />
             <button
               onClick={onOpenModal}
-              className="flex items-center gap-2 text-white px-5 py-2 rounded-full text-xs lg:text-sm font-black tracking-tight transition-all duration-200 whitespace-nowrap active:scale-95"
+              className="flex items-center gap-2 text-white px-5 py-2 rounded-full text-sm lg:text-base font-black tracking-tight transition-all duration-200 whitespace-nowrap active:scale-95"
               style={{
                 background: '#C45919',
                 letterSpacing: '-0.2px',
@@ -274,7 +274,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
               >
                 <div className="flex items-center gap-4">
                   <span className="font-mono font-bold text-[10px] text-[#C45919]/60 tracking-widest w-5">{link.index}</span>
-                  <span className="text-xl font-black text-slate-100 group-hover:text-white transition-colors tracking-tight">
+                  <span className="text-2xl font-black text-slate-100 group-hover:text-white transition-colors tracking-tight">
                     {link.name}
                   </span>
                 </div>

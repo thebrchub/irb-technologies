@@ -26,7 +26,7 @@ const Footer = () => {
                  </span>
               </div>
               <p className="text-slate-600 text-sm 2xl:text-base leading-relaxed mb-8 pr-4">
-                 Strategic cybersecurity and operational excellence for the modern enterprise. We secure the digital future of industry leaders globally.
+                Strategic cybersecurity and operational excellence for the modern enterprise. We secure the digital future of industries globally.
               </p>
               
               <div className="flex gap-4">
@@ -54,7 +54,7 @@ const Footer = () => {
               <div>
                  <h4 className="text-slate-900 font-bold mb-5 md:mb-6 tracking-wide text-base 2xl:text-lg">Solutions</h4>
                  <ul className="space-y-4 text-sm 2xl:text-base font-medium text-slate-600">
-                    {['Rapid VAPT', 'DPDP Readiness', 'Compliance (CaaS)', 'Network Consulting', 'IR Playbooks'].map((item) => (
+                    {['Rapid Vulnerability Management', 'DPDP Readiness', 'Compliance (CaaS)', 'Expert Consulting', 'Incident Simulation and Response'].map((item) => (
                        <li key={item} className="flex items-center gap-2 group cursor-default">
                          <span className="w-1.5 h-1.5 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span>
                          <span className="group-hover:text-slate-900 transform group-hover:translate-x-1 transition-all duration-300">{item}</span>
@@ -69,7 +69,7 @@ const Footer = () => {
                    <ul className="space-y-4 text-sm 2xl:text-base font-medium text-slate-600">
                       {[
                          { name: 'About Us', href: '#about' },
-                         { name: 'Core Offerings', href: '#services' },
+                         { name: 'Services', href: '#services' },
                         //  { name: 'Architecture', href: '#architecture' },
                          { name: 'Case Studies', href: '#case-studies' },
                          { name: 'Back to Top', href: '#home' }
