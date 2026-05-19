@@ -98,6 +98,7 @@ const HolographicLogo = () => {
         <div
           ref={containerRef}
           className="relative flex items-center justify-center cursor-grab active:cursor-grabbing w-40 h-40 sm:w-44 sm:h-44"
+          onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerLeave={handlePointerUp}
