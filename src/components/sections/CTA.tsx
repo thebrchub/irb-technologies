@@ -1,4 +1,4 @@
-import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
 interface CTAProps {
