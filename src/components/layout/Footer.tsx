@@ -141,7 +141,7 @@ const Footer = () => {
 
            <div className="flex justify-center lg:justify-start mt-2">
                <p className="text-slate-400 text-xs md:text-sm font-medium text-center lg:text-left">
-                   Designed and developed by <a href="https://www.thebrchub.tech" target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-600 hover:underline transition-all font-semibold ml-1">BRC Hub LLP</a>
+                   Designed and developed by <a href="https://www.brchub.tech" target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-600 hover:underline transition-all font-semibold ml-1">BRC Hub LLP</a>
                </p>
            </div>
 
