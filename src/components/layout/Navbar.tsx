@@ -34,14 +34,25 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [scrollY, setScrollY] = useState(0);
+  
+  // Start with an empty string so nothing is highlighted initially
+  const [activeSection, setActiveSection] = useState(''); 
 
   const [activeLink, setActiveLink] = useState<string | null>(null);
   const expandTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const navLinks = [
+    { name: 'Home',           href: '/#home',         index: '01' },
+    { name: 'About Us',       href: '/#about',        index: '02' },
+    { name: 'Services',       href: '/#services',     index: '04' },
+    { name: 'Case Studies',   href: '/#case-studies', index: '05' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // Handle Navbar Show/Hide
       if (currentScrollY < 50) {
         setIsVisible(true);
       } else if (currentScrollY > scrollY) {
@@ -49,16 +60,41 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
       } else if (currentScrollY < scrollY) {
         setIsVisible(true);
       }
-
       setScrollY(currentScrollY);
+
+      // 🔥 FIXED: If we are in the Hero Section (top 60% of the screen), highlight absolutely nothing.
+      if (currentScrollY < window.innerHeight * 0.6) {
+        setActiveSection('');
+        return;
+      }
+
+      // 🔥 For all other sections, calculate when they cross the top 1/3rd of the screen
+      const triggerPoint = currentScrollY + (window.innerHeight / 3); 
+      let current = '';
+      
+      navLinks.forEach((link) => {
+        const sectionId = link.href.replace('/#', '');
+        
+        // Skip home since we already handled the blank state for the top of the page
+        if (sectionId === 'home') return; 
+
+        const section = document.getElementById(sectionId);
+        if (section && section.offsetTop <= triggerPoint) {
+          current = sectionId;
+        }
+      });
+      
+      setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Init on mount
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (expandTimeout.current) clearTimeout(expandTimeout.current);
     };
-  }, [scrollY]);
+  }, [scrollY, navLinks]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -73,13 +109,6 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
       document.documentElement.style.overflow = '';
     };
   }, [isMobileMenuOpen]);
-
-  const navLinks = [
-    { name: 'Home',           href: '/#home',         index: '01' },
-    { name: 'About Us',       href: '/#about',        index: '02' },
-    { name: 'Services',       href: '/#services',     index: '04' },
-    { name: 'Case Studies',   href: '/#case-studies', index: '05' },
-  ];
 
   const effectiveExpanded = true;
 
@@ -142,24 +171,24 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
                 border: '1px solid rgba(255,255,255,0.08)',
               }}
             >
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  /* 🔥 FIXED: Removed tracking-tight to let the letters breathe */
-                  className="px-4 py-1.5 2xl:px-5 2xl:py-2 text-sm xl:text-base 2xl:text-lg font-bold 2xl:font-extrabold text-white/80 hover:text-white rounded-full transition-all duration-200"
-                  /* 🔥 FIXED: Applied a native rounded font-family to override the condensed look */
-                  style={{ fontFamily: 'ui-rounded, "Nunito", "Quicksand", sans-serif' }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.10)';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = 'transparent';
-                  }}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href.replace('/#', '');
+                
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={`px-4 py-1.5 2xl:px-5 2xl:py-2 text-sm xl:text-base 2xl:text-lg font-bold 2xl:font-extrabold rounded-full transition-all duration-300 ${
+                      isActive 
+                        ? 'bg-white/15 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]' 
+                        : 'text-white/70 hover:text-white hover:bg-white/10'
+                    }`}
+                    style={{ fontFamily: 'ui-rounded, "Nunito", "Quicksand", sans-serif' }}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -175,11 +204,9 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             <div className="h-6 2xl:h-8 w-[1px]" style={{ background: 'rgba(255,255,255,0.12)' }} />
             <button
               onClick={onOpenModal}
-              /* 🔥 FIXED: Removed tracking-tight here as well */
               className="flex items-center gap-2 text-white px-5 py-2 2xl:px-6 2xl:py-2.5 rounded-full text-sm xl:text-base 2xl:text-lg font-bold 2xl:font-extrabold transition-all duration-200 whitespace-nowrap active:scale-95"
               style={{
                 background: '#C45919',
-                /* 🔥 FIXED: Swapped negative letter-spacing for the rounded font stack */
                 fontFamily: 'ui-rounded, "Nunito", "Quicksand", sans-serif',
                 boxShadow: '0 0 20px rgba(196,89,25,0.35), inset 0 1px 0 rgba(255,255,255,0.15)',
               }}
@@ -229,7 +256,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center min-w-max">
               <div className="relative flex items-center h-10 shrink-0">
                 <img
-                  src="/logo_w.svg"
+                  src="/logow.svg"
                   alt="IRB Tech Logo"
                   className="h-8 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
                 />

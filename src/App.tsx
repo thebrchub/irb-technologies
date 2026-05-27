@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-// 🔥 FIXED: Swapped 'Plus' for 'MessageSquare' and 'X'
 import { ArrowUp, MessageCircle, Phone, MessageSquare, X } from 'lucide-react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
@@ -63,32 +62,34 @@ const SmartFAB = () => {
   const showToTop = isScrolling && scrollY > 200;
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[70]">
+    
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 2xl:bottom-12 2xl:right-12 z-[70]">
       
       {/* ─── SCROLL TO TOP BUTTON ─── */}
       <button
         onClick={scrollToTop}
         aria-label="Go to top"
-        className={`absolute bottom-0 right-0 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700/50 text-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:bg-slate-800 hover:text-amber-400 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+        /* 🔥 Aggressively compact size (h-10) for laptops, standard 2xl size */
+        className={`absolute bottom-0 right-0 flex h-10 w-10 md:h-10 md:w-10 2xl:h-16 2xl:w-16 items-center justify-center rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700/50 text-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:bg-slate-800 hover:text-amber-400 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
           showToTop 
             ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto' 
             : 'opacity-0 scale-50 translate-y-5 pointer-events-none'
         }`}
       >
-        <ArrowUp size={20} className="md:w-6 md:h-6" strokeWidth={2.5} />
+        <ArrowUp className="w-4 h-4 2xl:w-6 2xl:h-6" strokeWidth={2.5} />
       </button>
 
       {/* ─── CONTACT FAB GROUP ─── */}
       <div
         onMouseLeave={() => setIsFabOpen(false)}
-        className={`flex flex-col items-end gap-3 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom ${
+        className={`flex flex-col items-end gap-2 lg:gap-3 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom ${
           showToTop 
             ? 'opacity-0 scale-50 translate-y-5 pointer-events-none' 
             : 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
         }`}
       >
         {/* Hidden Actions (WhatsApp & Call) */}
-        <div className={`flex flex-col items-end gap-3 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom ${
+        <div className={`flex flex-col items-end gap-2 lg:gap-3 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom ${
             isFabOpen 
               ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' 
               : 'opacity-0 translate-y-5 scale-95 pointer-events-none'
@@ -97,13 +98,14 @@ const SmartFAB = () => {
           <a
             href={`tel:${phoneNumber}`}
             aria-label="Call IRB Technology"
-            className="group/action relative flex h-14 w-14 md:h-16 md:w-16 items-center justify-end overflow-hidden rounded-full bg-blue-600 text-white shadow-[0_16px_32px_rgba(37,99,235,0.28)] hover:w-36 md:hover:w-40 hover:bg-blue-700 hover:-translate-y-1 focus:w-36 md:focus:w-40 focus:bg-blue-700 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
+            /* Compact action buttons (h-9) */
+            className="group/action relative flex h-9 w-9 md:h-9 md:w-9 2xl:h-14 2xl:w-14 items-center justify-end overflow-hidden rounded-full bg-blue-600 text-white shadow-[0_12px_24px_rgba(37,99,235,0.28)] hover:w-28 md:hover:w-32 2xl:hover:w-44 hover:bg-blue-700 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
           >
-            <span className="absolute left-5 md:left-6 opacity-0 whitespace-nowrap text-base md:text-lg font-extrabold transition-opacity duration-300 group-hover/action:opacity-100 group-focus/action:opacity-100">
+            <span className="absolute left-3 lg:left-4 2xl:left-6 opacity-0 whitespace-nowrap text-xs lg:text-sm 2xl:text-lg font-bold tracking-tight transition-opacity duration-300 group-hover/action:opacity-100">
               Call Us
             </span>
-            <div className="flex h-14 w-14 md:h-16 md:w-16 shrink-0 items-center justify-center">
-              <Phone size={24} strokeWidth={2.5} />
+            <div className="flex h-9 w-9 md:h-9 md:w-9 2xl:h-14 2xl:w-14 shrink-0 items-center justify-center">
+              <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 2xl:w-6 2xl:h-6" strokeWidth={2.5} />
             </div>
           </a>
 
@@ -112,13 +114,13 @@ const SmartFAB = () => {
             target="_blank"
             rel="noreferrer"
             aria-label="Chat on WhatsApp"
-            className="group/action relative flex h-14 w-14 md:h-16 md:w-16 items-center justify-end overflow-hidden rounded-full bg-[#22c55e] text-white shadow-[0_16px_32px_rgba(34,197,94,0.28)] hover:w-40 md:hover:w-44 hover:bg-[#16a34a] hover:-translate-y-1 focus:w-40 md:focus:w-44 focus:bg-[#16a34a] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
+            className="group/action relative flex h-9 w-9 md:h-9 md:w-9 2xl:h-14 2xl:w-14 items-center justify-end overflow-hidden rounded-full bg-[#22c55e] text-white shadow-[0_12px_24px_rgba(34,197,94,0.28)] hover:w-32 md:hover:w-32 2xl:hover:w-44 hover:bg-[#16a34a] hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
           >
-            <span className="absolute left-5 md:left-6 opacity-0 whitespace-nowrap text-base md:text-lg font-extrabold transition-opacity duration-300 group-hover/action:opacity-100 group-focus/action:opacity-100">
+            <span className="absolute left-3 lg:left-4 2xl:left-6 opacity-0 whitespace-nowrap text-xs lg:text-sm 2xl:text-lg font-bold tracking-tight transition-opacity duration-300 group-hover/action:opacity-100">
               WhatsApp
             </span>
-            <div className="flex h-14 w-14 md:h-16 md:w-16 shrink-0 items-center justify-center">
-              <MessageCircle size={24} strokeWidth={2.4} />
+            <div className="flex h-9 w-9 md:h-9 md:w-9 2xl:h-14 2xl:w-14 shrink-0 items-center justify-center">
+              <MessageCircle className="w-[15px] h-[15px] md:w-4 md:h-4 2xl:w-[26px] 2xl:h-[26px]" strokeWidth={2.4} />
             </div>
           </a>
         </div>
@@ -129,18 +131,22 @@ const SmartFAB = () => {
           onClick={() => setIsFabOpen(!isFabOpen)} 
           onMouseEnter={() => setIsFabOpen(true)} 
           aria-label="Contact quick actions"
-          className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-slate-900 text-white border border-slate-700/60 shadow-[0_18px_35px_rgba(15,23,42,0.28)] hover:bg-slate-800 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] relative z-10"
+          /* 🔥 FIXED: Tamed size to h-10 (40px) on mobile/laptops. 
+             🔥 FIXED: Color changed from generic slate to brand #C45919 to match UI. */
+          className={`flex h-10 w-10 md:h-10 md:w-10 2xl:h-16 2xl:w-16 items-center justify-center rounded-full border shadow-[0_10px_30px_rgba(196,89,25,0.3)] hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] relative z-10 
+            ${isFabOpen 
+              ? 'bg-white border-slate-200' 
+              : 'bg-[#C45919] hover:bg-[#A34915] border-[#C45919]'
+            }`}
         >
-          {/* 🔥 FIXED: Added dual-icon morph animation. Chat bubble shows when closed, X shows when open! */}
+          {/* Morphing Message / X Icons perfectly scaled */}
           <MessageSquare
-            size={26}
-            strokeWidth={2}
-            className={`absolute transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${isFabOpen ? 'opacity-0 scale-50 -rotate-90' : 'opacity-100 scale-100 rotate-0'}`}
+            strokeWidth={2.2}
+            className={`absolute w-4 h-4 2xl:w-7 2xl:h-7 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${isFabOpen ? 'opacity-0 scale-50 -rotate-90 text-[#C45919]' : 'opacity-100 scale-100 rotate-0 text-white'}`}
           />
           <X
-            size={28}
-            strokeWidth={2.5}
-            className={`absolute transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${isFabOpen ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-50 rotate-90'}`}
+            strokeWidth={2.8}
+            className={`absolute w-5 h-5 2xl:w-9 2xl:h-9 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${isFabOpen ? 'opacity-100 scale-100 rotate-0 text-[#C45919]' : 'opacity-0 scale-50 rotate-90 text-white'}`}
           />
         </button>
       </div>
