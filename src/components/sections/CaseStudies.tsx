@@ -42,7 +42,7 @@ const CaseStudies = () => {
   return (
     <section 
       id="case-studies" 
-      className="relative bg-[#FDFBF7] pt-4 pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-12 2xl:pt-10 2xl:pb-16 scroll-mt-32 overflow-hidden border-t border-stone-200"
+      className="relative bg-[#FDFBF7] pt-4 pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-12 2xl:pt-10 2xl:pb-16 scroll-mt-32 overflow-hidden border-t border-slate-200"
     >
       
       <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16 relative z-10 w-full">

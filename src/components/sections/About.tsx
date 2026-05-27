@@ -58,9 +58,8 @@ const About = () => {
             <article className="bg-white p-6 md:p-8 2xl:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-amber-300 transition-all duration-300 group h-full flex flex-col">
                
                <div className="flex items-start gap-4 md:gap-5 lg:gap-6 h-full">
-                 {/* Hidden icon on mobile */}
-                 <div className="hidden md:flex w-14 h-14 md:w-16 md:h-16 2xl:w-16 2xl:h-16 bg-amber-50 rounded-2xl items-center justify-center border border-amber-100 group-hover:bg-amber-100 transition-colors shadow-sm shrink-0">
-                    <Target className="w-7 h-7 md:w-8 md:h-8 2xl:w-8 2xl:h-8 text-amber-600" />
+                 <div className="flex w-11 h-11 md:w-16 md:h-16 2xl:w-16 2xl:h-16 bg-amber-50 rounded-xl md:rounded-2xl items-center justify-center border border-amber-100 group-hover:bg-amber-100 transition-colors shadow-sm shrink-0">
+                    <Target className="w-5 h-5 md:w-8 md:h-8 2xl:w-8 2xl:h-8 text-amber-600" />
                  </div>
                  
                  <div className="flex-1 flex flex-col justify-start">
@@ -82,9 +81,8 @@ const About = () => {
             <article className="bg-white p-6 md:p-8 2xl:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-amber-300 transition-all duration-300 group h-full flex flex-col">
                
                <div className="flex items-start gap-4 md:gap-5 lg:gap-6 h-full">
-                 {/* Hidden icon on mobile */}
-                 <div className="hidden md:flex w-14 h-14 md:w-16 md:h-16 2xl:w-16 2xl:h-16 bg-amber-50 rounded-2xl items-center justify-center border border-amber-100 group-hover:bg-amber-100 transition-colors shadow-sm shrink-0">
-                    <Eye className="w-7 h-7 md:w-8 md:h-8 2xl:w-8 2xl:h-8 text-amber-600" />
+                 <div className="flex w-11 h-11 md:w-16 md:h-16 2xl:w-16 2xl:h-16 bg-amber-50 rounded-xl md:rounded-2xl items-center justify-center border border-amber-100 group-hover:bg-amber-100 transition-colors shadow-sm shrink-0">
+                    <Eye className="w-5 h-5 md:w-8 md:h-8 2xl:w-8 2xl:h-8 text-amber-600" />
                  </div>
                  
                  <div className="flex-1 flex flex-col justify-start">
@@ -107,9 +105,9 @@ const About = () => {
               <article className="bg-white p-6 md:p-10 2xl:p-12 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-amber-300 transition-all duration-300 group">
                  
                  <div className="flex items-start gap-4 md:gap-5 lg:gap-6">
-                   <div className="hidden md:flex w-12 h-12 md:w-16 md:h-16 2xl:w-16 2xl:h-16 bg-amber-50 rounded-[0.85rem] md:rounded-2xl items-center justify-center border border-amber-100 group-hover:bg-amber-100 transition-colors shadow-sm shrink-0">
-  <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 2xl:w-8 2xl:h-8 text-amber-600" />
-</div>
+                   <div className="flex w-11 h-11 md:w-16 md:h-16 2xl:w-16 2xl:h-16 bg-amber-50 rounded-xl md:rounded-2xl items-center justify-center border border-amber-100 group-hover:bg-amber-100 transition-colors shadow-sm shrink-0">
+                     <ShieldCheck className="w-5 h-5 md:w-8 md:h-8 2xl:w-8 2xl:h-8 text-amber-600" />
+                   </div>
                    
                    <div className="flex-1 flex flex-col">
                      <h3 className="text-xl md:text-2xl 2xl:text-3xl font-bold text-slate-900 tracking-tight mb-2 md:mb-4 mt-1 md:mt-0">{content.whatWeDo.title}</h3>

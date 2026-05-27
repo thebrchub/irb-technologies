@@ -86,7 +86,7 @@ export const siteContent = {
       },
       {
         title: "Rapid Vulnerability Management",
-        titleMobile: "Event VAPT", // 🔥 Shorter for mobile
+        titleMobile: "VAPT", // 🔥 Shorter for mobile
         description: "Accelerated, high-concurrency VAPT designed specifically to protect mission critical infra like live mega-events.",
       },
       {
@@ -96,7 +96,7 @@ export const siteContent = {
       },
       {
         title: "Expert Consulting",
-        titleMobile: "Networks", // 🔥 Shorter for mobile
+        titleMobile: "Consultation", // 🔥 Shorter for mobile
         description: "Think of us as your outsourced Security Head. We review your IT setup and guide you step-by-step on how to build a hack-proof business.",
       },
       {
@@ -115,19 +115,19 @@ export const siteContent = {
   hero: {
     headingMain: "Cybersecurity Tailored",
     headingHighlight: "to Your Business",
-    descriptionPart1: "From growing   ",
-    descriptionHighlight1: "SMEs ",
-    descriptionPart2: "to ",
-    descriptionHighlight2: "large-scale events",
-    descriptionPart3: ", we safeguard your digital assets. We secure your growth while you innovate.",
+    // descriptionPart1: "From growing   ",
+    // descriptionHighlight1: "SMEs ",
+    // descriptionPart2: "to ",
+    // descriptionHighlight2: "large-scale events",
+    descriptionPart3: "We secure your growth while you innovate.",
     mobileCard1Label: "Enterprise Scale",
     mobileCard2Label: "SME Protection",
     desktopCard1Title: "Unified Security Operations",
     // 🔥 FIXED: Ultra-short description to guarantee a single line
-    desktopCard1Description: "Seamless Integrations",
+    // desktopCard1Description: "Seamless Integrations",
     desktopCard2Title: "Rapid Deployment",
     // 🔥 FIXED: Ultra-short description to guarantee a single line
-    desktopCard2Description: "Risk Management, Threat Mitigation",
+    // desktopCard2Description: "Risk Management, Threat Mitigation",
     ctaButtonLabel: "Schedule an Audit",
     secondaryButtonLabel: "View Services",
     secondaryButtonLink: "#services",

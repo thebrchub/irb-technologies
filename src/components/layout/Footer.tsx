@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Twitter, Github, Linkedin, Facebook, ArrowRight, Lock, Globe, MapPin, Mail, Phone } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Lock, Globe, MapPin, Mail, Phone, Server } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -29,6 +29,8 @@ const Footer = () => {
                 Strategic cybersecurity and operational excellence for the modern enterprise. We secure the digital future of industries globally.
               </p>
               
+              {/* 🔥 SAFEGUARDED: Socials commented out, ready for when the client wants them back! */}
+              {/*
               <div className="flex gap-4">
                  {[
                    { icon: Twitter, label: 'Twitter' }, 
@@ -46,18 +48,20 @@ const Footer = () => {
                     </a>
                  ))}
               </div>
+              */}
            </div>
 
-           {/* 🔥 FIXED: Added 'hidden md:grid' so this entire block vanishes on mobile but stays perfectly intact on desktop */}
            <div className="hidden md:grid md:col-span-4 2xl:col-span-5 grid-cols-2 gap-8 md:gap-12 md:pl-8 2xl:pl-16">
               
+              {/* 🔥 FIXED ALIGNMENT: Solutions list sits perfectly flush with the heading */}
               <div>
                  <h4 className="text-slate-900 font-bold mb-5 md:mb-6 tracking-wide text-base 2xl:text-lg">Solutions</h4>
                  <ul className="space-y-4 text-sm 2xl:text-base font-medium text-slate-600">
                     {['Rapid Vulnerability Management', 'DPDP Readiness', 'Compliance (CaaS)', 'Expert Consulting', 'Incident Simulation and Response'].map((item) => (
-                       <li key={item} className="flex items-center gap-2 group cursor-default">
-                         <span className="w-1.5 h-1.5 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span>
-                         <span className="group-hover:text-slate-900 transform group-hover:translate-x-1 transition-all duration-300">{item}</span>
+                       <li key={item}>
+                         <span className="group flex items-center cursor-default hover:text-amber-600 transition-colors">
+                           <span className="transform group-hover:translate-x-1 transition-transform duration-300">{item}</span>
+                         </span>
                        </li>
                     ))}
                  </ul>
@@ -70,7 +74,6 @@ const Footer = () => {
                       {[
                          { name: 'About Us', href: '#about' },
                          { name: 'Services', href: '#services' },
-                        //  { name: 'Architecture', href: '#architecture' },
                          { name: 'Case Studies', href: '#case-studies' },
                          { name: 'Back to Top', href: '#home' }
                       ].map((item) => (
@@ -113,11 +116,11 @@ const Footer = () => {
            </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-200 flex flex-col gap-8 lg:gap-3">
+        <div className="pt-8 border-t border-slate-200 flex flex-col xl:flex-row justify-between items-center gap-8 xl:gap-4">
            
-           <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8">
-               
-               <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-slate-500 text-sm font-medium text-center lg:text-left">
+           {/* 🔥 FIXED: Copyright & Attribution Text grouped tightly in a flex-col so they stick together! */}
+           <div className="flex flex-col items-center md:items-start gap-2 text-slate-500 text-sm font-medium text-center md:text-left">
+               <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 sm:gap-4">
                    <span>&copy; {new Date().getFullYear()} IRB Technology. All rights reserved.</span>
                    <span className="hidden sm:inline-block text-slate-300">|</span>
                    <div className="flex items-center gap-4">
@@ -125,27 +128,46 @@ const Footer = () => {
                        <Link to="/terms-of-service" className="hover:text-amber-600 transition-colors">Terms of Service</Link>
                    </div>
                </div>
-
-               <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-                  <div className="flex items-center gap-2 text-slate-600 text-xs md:text-sm font-bold uppercase tracking-wider">
-                     <Lock size={14} className="text-amber-500" /> SSL Secured
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-600 text-xs md:text-sm font-bold uppercase tracking-wider">
-                     <Globe size={14} className="text-amber-500" /> DPDP Compliant
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-700 text-xs md:text-sm font-bold px-3 py-1.5 md:px-4 md:py-2 bg-white border border-slate-200 rounded-md shadow-sm">
-                     <ShieldCheck size={14} className="text-amber-500" /> ISO 27001
-                  </div>
-               </div>
-           </div>
-
-           <div className="flex justify-center lg:justify-start mt-2">
-               <p className="text-slate-400 text-xs md:text-sm font-medium text-center lg:text-left">
+               <p className="text-slate-400 text-xs md:text-sm font-medium md:self-center md:text-center xl:self-start xl:text-left">
                    Designed and developed by <a href="https://www.brchub.tech" target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-600 hover:underline transition-all font-semibold ml-1">BRC Hub LLP</a>
                </p>
            </div>
 
+           {/* Highlighted Premium Compliance Capsule with Ticker Content */}
+           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-5 bg-white px-5 py-3 md:px-6 md:py-3.5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+               
+               {/* Pulsing Verified Dot */}
+               <div className="flex items-center gap-2 pr-3 md:pr-4 border-r border-slate-200">
+                   <span className="relative flex h-2 w-2">
+                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                   </span>
+                   <span className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest">Verified</span>
+               </div>
+               
+               <div className="flex items-center gap-1.5 md:gap-2">
+                   <Lock size={14} className="text-amber-500" />
+                   <span className="text-xs md:text-sm font-bold text-slate-800">SSL <span className="hidden sm:inline text-slate-500 font-semibold">Secured</span></span>
+               </div>
+               
+               <div className="flex items-center gap-1.5 md:gap-2">
+                   <Server size={14} className="text-amber-500" />
+                   <span className="text-xs md:text-sm font-bold text-slate-800">NIST <span className="hidden sm:inline text-slate-500 font-semibold">Framework</span></span>
+               </div>
+
+               <div className="flex items-center gap-1.5 md:gap-2">
+                   <ShieldCheck size={14} className="text-amber-500" />
+                   <span className="text-xs md:text-sm font-bold text-slate-800">ISO 27001 <span className="hidden sm:inline text-slate-500 font-semibold">Certified</span></span>
+               </div>
+
+               <div className="flex items-center gap-1.5 md:gap-2">
+                   <Globe size={14} className="text-amber-500" />
+                   <span className="text-xs md:text-sm font-bold text-slate-800">DPDP <span className="hidden sm:inline text-slate-500 font-semibold">Compliant</span></span>
+               </div>
+           </div>
+
         </div>
+
       </div>
     </footer>
   );

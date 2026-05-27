@@ -31,29 +31,22 @@ const MOBILE_STYLES = `
 `;
 
 const Navbar = ({ onOpenModal }: NavbarProps) => {
-  // const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const [isVisible, setIsVisible] = useState(true);
-  // const [isExpanded, setIsExpanded] = useState(true);
   const [scrollY, setScrollY] = useState(0);
 
   const [activeLink, setActiveLink] = useState<string | null>(null);
   const expandTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // 🔥 FIXED: Navbar stays expanded, but hides/shows on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY < 50) {
         setIsVisible(true);
-        // isExpanded stays true always
       } else if (currentScrollY > scrollY) {
-        // Scrolling down - hide navbar
         setIsVisible(false);
       } else if (currentScrollY < scrollY) {
-        // Scrolling up - show navbar
         setIsVisible(true);
       }
 
@@ -88,15 +81,13 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
     { name: 'Case Studies',   href: '/#case-studies', index: '05' },
   ];
 
-  // 🔥 FIXED: Always expanded, shows/hides on scroll
-  const effectiveExpanded = true; // Navbar stays expanded always
+  const effectiveExpanded = true;
 
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: MOBILE_STYLES }} />
 
       <nav
-        
         className={`fixed left-0 right-0 z-50 flex justify-center transition-transform duration-500 ease-in-out mt-1 md:mt-4 ${
           isVisible ? 'translate-y-4' : '-translate-y-[150%]'
         }`}
@@ -106,9 +97,9 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             relative backdrop-blur-2xl border border-white/[0.08] rounded-full
             shadow-2xl shadow-black/50
             transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden
-            flex items-center justify-between h-16
+            flex items-center justify-between h-16 2xl:h-20
             ${effectiveExpanded
-              ? 'w-[95vw] lg:w-[70vw] xl:w-[65vw] max-w-[900px] 2xl:max-w-[1000px] pl-3 lg:pl-4 2xl:pl-5 pr-3 lg:pr-5 2xl:pr-6'
+              ? 'w-[95vw] lg:w-[75vw] xl:w-[65vw] max-w-[900px] 2xl:max-w-[1100px] pl-3 lg:pl-5 2xl:pl-6 pr-3 lg:pr-6 2xl:pr-8'
               : 'w-[240px] lg:w-[200px] pl-2 lg:pl-3 pr-2 lg:pr-3'}
           `}
           style={{
@@ -125,11 +116,11 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center min-w-max cursor-pointer z-10">
-            <div className="relative flex items-center h-12 shrink-0">
+            <div className="relative flex items-center h-12 lg:h-14 shrink-0">
               <img
                 src="/logow.svg"
                 alt="IRB Tech Logo"
-                className="h-9 lg:h-10 w-auto object-contain drop-shadow-md"
+                className="h-8 lg:h-9 2xl:h-12 w-auto object-contain drop-shadow-md"
               />
             </div>
           </Link>
@@ -145,7 +136,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             `}
           >
             <div
-              className="flex items-center rounded-full px-1 py-1 gap-0.5 whitespace-nowrap"
+              className="flex items-center rounded-full px-2 py-1.5 gap-0.5 2xl:gap-1 whitespace-nowrap"
               style={{
                 background: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.08)',
@@ -155,8 +146,10 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-4 py-1.5 text-sm lg:text-base font-black tracking-tight text-white/80 hover:text-white rounded-full transition-all duration-200"
-                  style={{ letterSpacing: '-0.2px' }}
+                  /* 🔥 FIXED: Removed tracking-tight to let the letters breathe */
+                  className="px-4 py-1.5 2xl:px-5 2xl:py-2 text-sm xl:text-base 2xl:text-lg font-bold 2xl:font-extrabold text-white/80 hover:text-white rounded-full transition-all duration-200"
+                  /* 🔥 FIXED: Applied a native rounded font-family to override the condensed look */
+                  style={{ fontFamily: 'ui-rounded, "Nunito", "Quicksand", sans-serif' }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.10)';
                   }}
@@ -173,19 +166,21 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
           {/* Desktop CTA */}
           <div
             className={`
-              hidden lg:flex items-center gap-4 min-w-max transition-all duration-500 delay-150
+              hidden lg:flex items-center gap-4 2xl:gap-5 min-w-max transition-all duration-500 delay-150
               ${effectiveExpanded
                 ? 'opacity-100 translate-x-0'
                 : 'opacity-0 translate-x-10 pointer-events-none'}
             `}
           >
-            <div className="h-6 w-[1px]" style={{ background: 'rgba(255,255,255,0.12)' }} />
+            <div className="h-6 2xl:h-8 w-[1px]" style={{ background: 'rgba(255,255,255,0.12)' }} />
             <button
               onClick={onOpenModal}
-              className="flex items-center gap-2 text-white px-5 py-2 rounded-full text-sm lg:text-base font-black tracking-tight transition-all duration-200 whitespace-nowrap active:scale-95"
+              /* 🔥 FIXED: Removed tracking-tight here as well */
+              className="flex items-center gap-2 text-white px-5 py-2 2xl:px-6 2xl:py-2.5 rounded-full text-sm xl:text-base 2xl:text-lg font-bold 2xl:font-extrabold transition-all duration-200 whitespace-nowrap active:scale-95"
               style={{
                 background: '#C45919',
-                letterSpacing: '-0.2px',
+                /* 🔥 FIXED: Swapped negative letter-spacing for the rounded font stack */
+                fontFamily: 'ui-rounded, "Nunito", "Quicksand", sans-serif',
                 boxShadow: '0 0 20px rgba(196,89,25,0.35), inset 0 1px 0 rgba(255,255,255,0.15)',
               }}
               onMouseEnter={(e) => {
@@ -195,7 +190,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
                 (e.currentTarget as HTMLElement).style.background = '#C45919';
               }}
             >
-              <Lock size={14} strokeWidth={2.5} />
+              <Lock size={16} className="2xl:w-[18px] 2xl:h-[18px]" strokeWidth={2.5} />
               Get Audit
             </button>
           </div>

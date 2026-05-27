@@ -10,18 +10,16 @@ interface HeroProps {
 const Hero = ({ onOpenModal }: HeroProps) => {
   const content = siteContent.hero;
 
-  // 🔥 FIXED: Added explicit : Variants type
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // Delay between each child popping up
+        staggerChildren: 0.15,
       },
     },
   };
 
-  // 🔥 FIXED: Added explicit : Variants type and "spring" as const
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -35,7 +33,6 @@ const Hero = ({ onOpenModal }: HeroProps) => {
     },
   };
 
-  // 🔥 FIXED: Added explicit : Variants type and "spring" as const
   const graphicVariants: Variants = {
     hidden: { opacity: 0, x: 50, scale: 0.95 },
     visible: {
@@ -46,82 +43,71 @@ const Hero = ({ onOpenModal }: HeroProps) => {
         type: "spring" as const,
         stiffness: 80,
         damping: 20,
-        delay: 0.3, // Waits just a split second for the text to start
+        delay: 0.3, 
         duration: 0.8,
       },
     },
   };
 
   return (
-    
-    <section id="home" className="relative bg-white pt-30 pb-6 md:pt-40 md:pb-10 xl:pt-32 xl:pb-8 2xl:pt-36 2xl:pb-16 overflow-hidden min-h-[100dvh] 2xl:min-h-0 flex items-center">
+    <section id="home" className="relative bg-[#FDFBF7] pt-28 pb-8 md:pt-28 md:pb-8 lg:pt-32 lg:pb-10 xl:pt-28 xl:pb-8 2xl:pt-40 2xl:pb-20 overflow-hidden min-h-0 md:min-h-[860px] lg:min-h-[900px] xl:min-h-[100dvh] 2xl:min-h-[90vh] flex items-start md:items-center border-b border-slate-200">
       
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none flex justify-center sm:justify-start">
-        <div className="absolute top-[-5%] w-[150%] h-[60%] sm:left-[-10%] sm:w-[50%] sm:h-[50%] bg-amber-500/15 sm:bg-amber-500/5 blur-[90px] sm:blur-[120px] rounded-full z-0"></div>
+      {/* Background radial soft ambient lights */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none flex justify-center sm:justify-start z-0">
+        <div className="absolute top-[-5%] w-[150%] h-[60%] sm:left-[-10%] sm:w-[50%] sm:h-[50%] bg-amber-500/15 sm:bg-amber-500/5 blur-[90px] sm:blur-[120px] rounded-full"></div>
       </div>
 
+      {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:32px_32px] opacity-10 pointer-events-none z-0 md:opacity-0"></div>
 
       <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16 relative z-10 w-full">
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 items-center">
+        
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-10 xl:gap-8 2xl:gap-12 items-center">
           
+          {/* ─── LEFT COLUMN: Text & CTAs ─── */}
           <motion.div 
-            className="xl:col-span-7 2xl:col-span-7 flex flex-col items-start text-left pt-6 sm:pt-4 xl:pt-0"
+            className="xl:col-span-6 2xl:col-span-6 flex flex-col items-center xl:items-start text-center xl:text-left pt-6 sm:pt-4 xl:pt-0 pr-0 2xl:pr-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             
-            <motion.h1 variants={itemVariants} className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-[3.5rem] xl:text-6xl 2xl:text-[5rem] font-extrabold text-slate-900 tracking-tight lg:leading-[1.05] mb-4 xl:mb-6 w-full [text-wrap:balance]">
-              {content.headingMain}<span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">{content.headingHighlight}</span>
+            {/* 🔥 REFINED: Added <br /> for 2-line structure */}
+            <motion.h1 variants={itemVariants} className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-6xl xl:text-6xl 2xl:text-[5.25rem] font-extrabold text-slate-900 tracking-tight lg:leading-[1.05] 2xl:leading-[1.02] mb-4 xl:mb-5 2xl:mb-8 w-full">
+              {content.headingMain}
+              <br className="hidden md:block" />
+              {' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">{content.headingHighlight}</span>
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-lg lg:text-xl 2xl:text-2xl text-slate-600 leading-relaxed max-w-2xl 2xl:max-w-4xl mx-auto sm:mx-0 mb-6 xl:mb-8 font-light">
-              {content.descriptionPart1}<strong className="text-slate-900 font-bold">{content.descriptionHighlight1}</strong>{content.descriptionPart2}<strong className="text-slate-900 font-bold">{content.descriptionHighlight2}</strong>{content.descriptionPart3}
+            {/* Description */}
+            <motion.p variants={itemVariants} className="text-lg lg:text-xl xl:text-xl 2xl:text-[1.35rem] text-slate-600 leading-relaxed max-w-2xl 2xl:max-w-3xl mx-auto xl:mx-0 mb-8 xl:mb-10 2xl:mb-14 font-medium">
+              {content.descriptionPart3}
             </motion.p>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3 w-full mb-6 sm:hidden">
-              <div className="p-3 rounded-xl border border-slate-200 bg-white shadow-sm flex flex-row items-center justify-start gap-2.5 text-left">
-                 <Globe size={18} className="text-amber-500 shrink-0" />
-                 <span className="text-slate-900 font-bold text-xs leading-tight">{content.desktopCard1Title}</span>
+            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3 w-full mb-7 md:hidden">
+              <div className="min-h-16 rounded-2xl border border-slate-200 bg-white/90 shadow-[0_8px_24px_rgba(15,23,42,0.08)] px-4 py-3 flex items-center justify-center gap-3 text-center">
+                <Globe size={22} className="text-amber-500 shrink-0" />
+                <span className="text-sm font-extrabold leading-tight text-slate-900 whitespace-nowrap">SecOps</span>
               </div>
-              <div className="p-3 rounded-xl border border-slate-200 bg-white shadow-sm flex flex-row items-center justify-start gap-2.5 text-left">
-                 <Zap size={18} className="text-amber-500 shrink-0" />
-                 <span className="text-slate-900 font-bold text-xs leading-tight">{content.desktopCard2Title}</span>
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="hidden sm:grid sm:grid-cols-2 gap-3 2xl:gap-5 w-full max-w-2xl 2xl:max-w-3xl mb-6 xl:mb-8 items-stretch">
-              <div className="h-full flex flex-col justify-center p-4 2xl:p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                 <div className="flex items-center gap-2 mb-1.5 text-slate-900 font-bold text-sm lg:text-base 2xl:text-lg">
-                    <Globe size={16} className="text-amber-500 2xl:w-5 2xl:h-5" /> {content.desktopCard1Title}
-                 </div>
-                 <p className="text-sm lg:text-base 2xl:text-lg text-slate-600 font-medium">
-                    {content.desktopCard1Description}
-                 </p>
-              </div>
-              
-              <div className="h-full flex flex-col justify-center p-4 2xl:p-5 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                 <div className="flex items-center gap-2 mb-1.5 text-slate-900 font-bold text-sm lg:text-base 2xl:text-lg">
-                    <Zap size={16} className="text-amber-500 2xl:w-5 2xl:h-5" /> {content.desktopCard2Title}
-                 </div>
-                 <p className="text-sm lg:text-base 2xl:text-lg text-slate-600 font-medium">
-                    {content.desktopCard2Description}
-                 </p>
+              <div className="min-h-16 rounded-2xl border border-slate-200 bg-white/90 shadow-[0_8px_24px_rgba(15,23,42,0.08)] px-4 py-3 flex items-center justify-center gap-3 text-center">
+                <Zap size={22} className="text-amber-500 shrink-0" />
+                <span className="text-sm font-extrabold leading-tight text-slate-900 whitespace-nowrap">Rapid Deploy</span>
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+            {/* CTA Buttons */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-3 sm:gap-4 w-full xl:w-auto">
               <button 
                 onClick={onOpenModal}
-                className="group w-full sm:w-auto px-6 py-4 sm:py-3.5 sm:px-8 2xl:px-10 2xl:py-5 bg-amber-500 hover:bg-amber-600 text-white font-extrabold 2xl:text-xl rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_8px_25px_rgba(245,158,11,0.35)] sm:shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:-translate-y-1"
+                className="group w-full sm:w-auto px-6 py-4 sm:py-3.5 sm:px-8 xl:px-8 xl:py-3.5 2xl:px-10 2xl:py-4.5 bg-amber-500 hover:bg-amber-600 text-white font-extrabold xl:text-base 2xl:text-xl rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_8px_25px_rgba(245,158,11,0.35)] sm:shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:-translate-y-1"
               >
                 {content.ctaButtonLabel} <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
               </button>
               
               <a 
                 href={content.secondaryButtonLink}
-                className="w-full sm:w-auto px-6 py-4 sm:py-3.5 sm:px-8 2xl:px-10 2xl:py-5 bg-white border border-slate-200 hover:border-amber-300 text-slate-700 hover:text-amber-600 font-bold 2xl:text-xl rounded-xl flex items-center justify-center transition-all hover:bg-amber-50"
+                className="w-full sm:w-auto px-6 py-4 sm:py-3.5 sm:px-8 xl:px-8 xl:py-3.5 2xl:px-10 2xl:py-4.5 bg-white border border-slate-200 hover:border-amber-300 text-slate-700 hover:text-amber-600 font-bold xl:text-base 2xl:text-xl rounded-xl flex items-center justify-center transition-all hover:bg-amber-50"
               >
                 {content.secondaryButtonLabel}
               </a>
@@ -129,13 +115,42 @@ const Hero = ({ onOpenModal }: HeroProps) => {
 
           </motion.div>
 
+          {/* ─── RIGHT COLUMN: Premium Stage ─── */}
           <motion.div 
             variants={graphicVariants}
             initial="hidden"
             animate="visible"
-            className="hidden md:flex xl:col-span-5 2xl:col-span-5 relative w-full h-[350px] lg:h-[450px] xl:h-[60vh] max-h-[500px] 2xl:max-h-[700px] items-center justify-center 2xl:justify-end mt-8 xl:mt-0"
+            className="hidden md:flex xl:col-span-6 2xl:col-span-6 relative w-full h-[400px] xl:h-[450px] 2xl:h-[65vh] 2xl:max-h-[750px] items-center justify-center mt-8 xl:mt-0"
           >
-             <ThreatDeflector />
+            
+            <div className="w-full h-full bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-md rounded-[2rem] md:rounded-[3rem] border border-white/60 border-b-slate-200/60 shadow-[0_50px_100px_-20px_rgba(15,23,42,0.14),0_15px_35px_-10px_rgba(15,23,42,0.06)] overflow-hidden flex items-center justify-center relative p-8">
+              
+              <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
+
+              {/* The ThreatDeflector Animation */}
+              <div className="w-full h-full max-w-[500px] 2xl:max-w-[600px] scale-90 xl:scale-100 transform flex items-center justify-center relative z-10 pb-10">
+                <ThreatDeflector />
+              </div>
+
+              {/* 🔥 REFINED: Dock font-size/style matched to the description paragraph */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white border-t border-x border-slate-200 px-6 xl:px-8 h-12 md:h-14 lg:h-16 rounded-t-[1.5rem] md:rounded-t-[2rem] gap-5 md:gap-8 lg:gap-10 shadow-[0_-10px_35px_rgba(15,23,42,0.03)] z-20 w-max max-w-[95%]">
+                
+                <div className="flex items-center gap-2.5 text-slate-600 font-medium text-xs md:text-sm xl:text-sm 2xl:text-[1.35rem] leading-relaxed whitespace-nowrap">
+                  <Globe size={16} className="text-amber-500 shrink-0 2xl:w-6 2xl:h-6" />
+                  <span>{content.desktopCard1Title}</span>
+                </div>
+                
+                <div className="w-px h-4 bg-slate-200 shrink-0"></div>
+
+                <div className="flex items-center gap-2.5 text-slate-600 font-medium text-xs md:text-sm xl:text-sm 2xl:text-[1.35rem] leading-relaxed whitespace-nowrap">
+                  <Zap size={16} className="text-amber-500 shrink-0 2xl:w-6 2xl:h-6" />
+                  <span>{content.desktopCard2Title}</span>
+                </div>
+
+              </div>
+
+            </div>
+
           </motion.div>
 
         </div>

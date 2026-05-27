@@ -59,7 +59,7 @@ const CTA = ({ onOpenModal }: CTAProps) => {
 
               {/* Right Side: CTA Button & Status */}
               {/* 🔥 FIXED: Removed mt-2 to pull the button up tightly against the heading on mobile */}
-              <div className="flex flex-col items-center lg:items-end shrink-0 w-full lg:w-auto mt-0 lg:translate-y-3">
+              <div className="flex flex-col items-start shrink-0 w-full lg:w-auto mt-0 lg:translate-y-3">
                 
                 <button 
                   onClick={onOpenModal}
@@ -72,7 +72,7 @@ const CTA = ({ onOpenModal }: CTAProps) => {
                   </span>
                 </button>
 
-                <p className="mt-4 lg:mt-5 text-sm 2xl:text-base text-slate-400 flex items-center justify-center lg:justify-end gap-2 font-medium">
+                <p className="mt-4 lg:mt-5 text-sm 2xl:text-base text-slate-400 flex items-center justify-start gap-2 font-medium text-left">
                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                    Security Architects available 24/7
                 </p>

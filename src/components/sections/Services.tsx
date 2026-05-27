@@ -45,7 +45,7 @@ const Services = () => {
 
   return (
     
-    <section id="services" className="bg-white pt-4 pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-12 2xl:pt-10 2xl:pb-16 scroll-mt-20 relative overflow-hidden">
+    <section id="services" className="bg-white pt-4 pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-12 2xl:pt-10 2xl:pb-16 scroll-mt-20 relative overflow-hidden border-t border-slate-200">
       
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[120px] animate-[pulse_8s_ease-in-out_infinite]"></div>
@@ -136,7 +136,7 @@ const Card = ({ title, titleMobile, description, icon }: { title: string, titleM
     <div className="relative z-20 flex flex-col h-full justify-center md:justify-start">
       
       <div className="flex flex-col md:flex-row items-center gap-2 md:gap-5 mb-0 md:mb-5">
-        <div className="p-2.5 sm:p-3 md:p-4 bg-white border border-slate-200 shadow-sm w-fit rounded-[0.85rem] md:rounded-2xl transform md:group-hover:-translate-y-1 md:group-hover:shadow-md transition-all duration-300 shrink-0">
+        <div className="p-2.5 sm:p-3 md:p-4 bg-white border border-slate-200 shadow-sm w-fit rounded-[0.85rem] md:rounded-2xl transform md:group-hover:-translate-y-1 md:group-hover:shadow-md transition-all duration-300 shrink-0 md:hidden xl:block">
           {icon}
         </div>
         

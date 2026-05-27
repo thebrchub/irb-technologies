@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Mail, User, Building2, MessageSquare, ArrowRight, ShieldCheck, CheckCircle2, ChevronDown, Check } from 'lucide-react';
+import { X, Mail, User, Building2, MessageSquare, ArrowRight, CheckCircle2, ChevronDown, Check } from 'lucide-react';
 import { siteContent } from '../../config/siteContent';
 
 interface ContactModalProps {
@@ -23,9 +23,14 @@ const MODAL_STYLES = `
     90% { opacity: 1; } 
     100% { transform: translateY(800px); opacity: 0; } 
   }
+  @keyframes modal-cursor-blink { 
+    0%,100% { opacity: 1; } 
+    50% { opacity: 0; } 
+  }
   .animate-modal-bg { animation: modal-fade-in 0.4s ease-out forwards; }
   .animate-modal-box { animation: modal-slide-up 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
   .animate-cyber-scan { animation: scan-line 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.3s; }
+  .modal-cursor { animation: modal-cursor-blink 1s step-end infinite; }
 `;
 
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
@@ -100,11 +105,19 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-amber-500/20 blur-[80px] rounded-full"></div>
              
              <div className="relative z-10">
-                <div className="w-12 h-12 bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center shadow-lg mb-8">
-                  <ShieldCheck className="w-6 h-6 text-amber-500" />
+                {/* LOGO & TERMINAL TEXT BLOCK: Simplified layout, single line! */}
+                <div className="flex items-center gap-3 mb-8">
+                  <img src="/logo_w.svg" alt="IRB Technology" className="w-8 h-8 object-contain drop-shadow-md shrink-0" />
+                  {/* 🔥 FIXED: Changed text color to a lighter, more vibrant orange [#CF7D16] */}
+                  <p className="font-mono text-[10px] xl:text-[11px] text-[#CF7D16] font-bold tracking-widest uppercase m-0 leading-tight whitespace-nowrap">
+                    <span className="text-[#CF7D16]/40">{'>'}</span> SECURE_SESSION_ACTIVE
+                    <span className="modal-cursor ml-1 text-[#CF7D16]">_</span>
+                  </p>
                 </div>
+
                 <h3 className="text-3xl font-bold text-white mb-4 leading-tight">{content.sidebar.heading}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-8">
+                
+                <p className="text-slate-300 text-sm leading-relaxed mb-8">
                    {content.sidebar.description}
                 </p>
              </div>
@@ -113,7 +126,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 {content.sidebar.features.map((feature, index) => (
                   <div key={index} className={`flex flex-col gap-1 border-l-2 ${index === 0 ? 'border-amber-500' : 'border-slate-700'} pl-4`}>
                      <span className="text-white font-bold text-sm">{feature.title}</span>
-                     <span className="text-slate-400 text-xs">{feature.description}</span>
+                     <span className="text-slate-300 text-xs">{feature.description}</span>
                   </div>
                 ))}
              </div>
@@ -141,8 +154,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 <h2 id="modal-title" className="text-2xl font-extrabold text-slate-900 mb-2 pr-8 mt-2 md:mt-0">{content.form.heading}</h2>
                 <p className="text-sm text-slate-500 mb-6 md:mb-8">{content.form.subheading}</p>
                 
-                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                <form onSubmit={handleSubmit} className="space-y-[18px] md:space-y-[22px]">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-[18px] md:gap-[22px]">
                      <div className="space-y-1.5">
                        <label htmlFor="name" className="text-[11px] md:text-xs font-bold text-slate-700 uppercase tracking-wide">{content.form.fields.nameLabel}</label>
                        <div className="relative">
