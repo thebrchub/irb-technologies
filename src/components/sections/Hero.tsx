@@ -74,7 +74,7 @@ const Hero = ({ onOpenModal }: HeroProps) => {
             animate="visible"
           >
             
-            <motion.h1 variants={itemVariants} className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[5.25rem] font-extrabold text-slate-900 tracking-tight lg:leading-[1.05] 2xl:leading-[1.02] mb-3 xl:mb-4 2xl:mb-8 w-full">
+            <motion.h1 variants={itemVariants} className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-6xl xl:text-6xl 2xl:text-[5.25rem] font-extrabold text-slate-900 tracking-tight lg:leading-[1.05] 2xl:leading-[1.02] mb-3 xl:mb-4 2xl:mb-8 w-full">
               {content.headingMain}
               <br className="hidden md:block" />
               {' '}
