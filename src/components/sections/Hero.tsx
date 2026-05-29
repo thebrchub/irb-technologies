@@ -50,7 +50,9 @@ const Hero = ({ onOpenModal }: HeroProps) => {
   };
 
   return (
-    <section id="home" className="relative bg-[#FDFBF7] pt-28 pb-8 md:pt-28 md:pb-8 lg:pt-32 lg:pb-10 xl:pt-28 xl:pb-8 2xl:pt-40 2xl:pb-20 overflow-hidden min-h-0 md:min-h-[860px] lg:min-h-[900px] xl:min-h-[100dvh] 2xl:min-h-[90vh] flex items-start md:items-center border-b border-slate-200">
+    
+    
+    <section id="home" className="relative bg-[#FDFBF7] pt-28 pb-10 lg:pt-28 lg:pb-16 xl:pt-47 xl:pb-20 3xl:pt-56 3xl:pb-32 overflow-hidden min-h-0 md:min-h-[860px] lg:min-h-0 xl:min-h-[88vh] 3xl:min-h-[90vh] flex items-start md:items-center border-b border-slate-200">
       
       {/* Background radial soft ambient lights */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none flex justify-center sm:justify-start z-0">
@@ -72,8 +74,7 @@ const Hero = ({ onOpenModal }: HeroProps) => {
             animate="visible"
           >
             
-            {/* 🔥 REFINED: Added <br /> for 2-line structure */}
-            <motion.h1 variants={itemVariants} className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-6xl xl:text-6xl 2xl:text-[5.25rem] font-extrabold text-slate-900 tracking-tight lg:leading-[1.05] 2xl:leading-[1.02] mb-4 xl:mb-5 2xl:mb-8 w-full">
+            <motion.h1 variants={itemVariants} className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[5.25rem] font-extrabold text-slate-900 tracking-tight lg:leading-[1.05] 2xl:leading-[1.02] mb-3 xl:mb-4 2xl:mb-8 w-full">
               {content.headingMain}
               <br className="hidden md:block" />
               {' '}
@@ -81,7 +82,8 @@ const Hero = ({ onOpenModal }: HeroProps) => {
             </motion.h1>
 
             {/* Description */}
-            <motion.p variants={itemVariants} className="text-lg lg:text-xl xl:text-xl 2xl:text-[1.35rem] text-slate-600 leading-relaxed max-w-2xl 2xl:max-w-3xl mx-auto xl:mx-0 mb-8 xl:mb-10 2xl:mb-14 font-medium">
+            {/* 🔥 FIXED: Reduced xl:mb-10 to xl:mb-8 to tighten vertical footprint on laptops */}
+            <motion.p variants={itemVariants} className="text-lg sm:text-xl lg:text-2xl xl:text-[1.75rem] 2xl:text-[2.25rem] text-slate-600 leading-snug max-w-2xl 2xl:max-w-4xl mx-auto xl:mx-0 mb-8 lg:mb-10 xl:mb-8 2xl:mb-20 font-medium tracking-tight">
               {content.descriptionPart3}
             </motion.p>
 
@@ -120,7 +122,8 @@ const Hero = ({ onOpenModal }: HeroProps) => {
             variants={graphicVariants}
             initial="hidden"
             animate="visible"
-            className="hidden md:flex xl:col-span-6 2xl:col-span-6 relative w-full h-[400px] xl:h-[450px] 2xl:h-[65vh] 2xl:max-h-[750px] items-center justify-center mt-8 xl:mt-0"
+
+            className="hidden md:flex xl:col-span-6 2xl:col-span-6 relative w-full h-[380px] lg:h-[380px] xl:h-[380px] 2xl:h-[65vh] 2xl:max-h-[750px] items-center justify-center mt-8 xl:mt-0"
           >
             
             <div className="w-full h-full bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-md rounded-[2rem] md:rounded-[3rem] border border-white/60 border-b-slate-200/60 shadow-[0_50px_100px_-20px_rgba(15,23,42,0.14),0_15px_35px_-10px_rgba(15,23,42,0.06)] overflow-hidden flex items-center justify-center relative p-8">
@@ -132,7 +135,6 @@ const Hero = ({ onOpenModal }: HeroProps) => {
                 <ThreatDeflector />
               </div>
 
-              {/* 🔥 REFINED: Dock font-size/style matched to the description paragraph */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white border-t border-x border-slate-200 px-6 xl:px-8 h-12 md:h-14 lg:h-16 rounded-t-[1.5rem] md:rounded-t-[2rem] gap-5 md:gap-8 lg:gap-10 shadow-[0_-10px_35px_rgba(15,23,42,0.03)] z-20 w-max max-w-[95%]">
                 
                 <div className="flex items-center gap-2.5 text-slate-600 font-medium text-xs md:text-sm xl:text-sm 2xl:text-[1.35rem] leading-relaxed whitespace-nowrap">

@@ -10,6 +10,8 @@
   --color-slate-deep: #2B3A4A;
   --color-tallow: #CF7D16;
   --color-bone: #EAE2D6;
+
+  --breakpoint-3xl: 1920px;
 }
 
 html {

@@ -35,7 +35,6 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [scrollY, setScrollY] = useState(0);
   
-  // Start with an empty string so nothing is highlighted initially
   const [activeSection, setActiveSection] = useState(''); 
 
   const [activeLink, setActiveLink] = useState<string | null>(null);
@@ -52,7 +51,6 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Handle Navbar Show/Hide
       if (currentScrollY < 50) {
         setIsVisible(true);
       } else if (currentScrollY > scrollY) {
@@ -62,20 +60,17 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
       }
       setScrollY(currentScrollY);
 
-      // 🔥 FIXED: If we are in the Hero Section (top 60% of the screen), highlight absolutely nothing.
       if (currentScrollY < window.innerHeight * 0.6) {
         setActiveSection('');
         return;
       }
 
-      // 🔥 For all other sections, calculate when they cross the top 1/3rd of the screen
       const triggerPoint = currentScrollY + (window.innerHeight / 3); 
       let current = '';
       
       navLinks.forEach((link) => {
         const sectionId = link.href.replace('/#', '');
         
-        // Skip home since we already handled the blank state for the top of the page
         if (sectionId === 'home') return; 
 
         const section = document.getElementById(sectionId);
@@ -88,7 +83,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Init on mount
+    handleScroll(); 
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -145,11 +140,12 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center min-w-max cursor-pointer z-10">
-            <div className="relative flex items-center h-12 lg:h-14 shrink-0">
+            {/* 🔥 FIXED: Scaled up the h-12 to h-14, and the img h-8 to h-10 for the mobile closed navbar view */}
+            <div className="relative flex items-center h-14 shrink-0">
               <img
                 src="/logow.svg"
                 alt="IRB Tech Logo"
-                className="h-8 lg:h-9 2xl:h-12 w-auto object-contain drop-shadow-md"
+                className="h-10 lg:h-9 2xl:h-12 w-auto object-contain drop-shadow-md"
               />
             </div>
           </Link>
@@ -254,11 +250,11 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
 
           <div className="relative z-10 flex items-center justify-between px-6 pt-8 pb-6">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center min-w-max">
-              <div className="relative flex items-center h-10 shrink-0">
+              <div className="relative flex items-center h-12 shrink-0">
                 <img
                   src="/logow.svg"
                   alt="IRB Tech Logo"
-                  className="h-8 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                  className="h-10 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
                 />
               </div>
             </Link>
@@ -296,7 +292,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
               >
                 <div className="flex items-center gap-4">
                   <span className="font-mono font-bold text-[10px] text-[#C45919]/60 tracking-widest w-5">{link.index}</span>
-                  <span className="text-2xl font-black text-slate-100 group-hover:text-white transition-colors tracking-tight">
+                  <span className="text-xl font-black text-slate-100 group-hover:text-white transition-colors tracking-tight">
                     {link.name}
                   </span>
                 </div>

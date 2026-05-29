@@ -56,10 +56,6 @@ const CaseStudies = () => {
           className="mb-5 md:mb-6 2xl:mb-8 max-w-3xl 2xl:max-w-none flex flex-col items-center mx-auto"
         >
           
-          {/* <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-5 md:mb-6 shadow-sm">
-            {content.badge}
-          </div> */}
-          
           <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 mb-4 md:mb-5 tracking-tight leading-[1.15] md:leading-[1.1] md:[text-wrap:balance]">
             
             <span className="flex flex-col md:hidden">
@@ -119,9 +115,20 @@ const CaseStudies = () => {
                     </span>
                   </div>
                   
-                  <div className="flex-grow">
-                    <div className="inline-block px-3 py-1 bg-stone-100 text-stone-600 text-[10px] 2xl:text-xs font-bold uppercase tracking-wider rounded-md mb-3 md:mb-4">
-                      {study.tag}
+                  <div className="flex-grow flex flex-col justify-end md:block">
+                    {/* 🔥 FIXED: Mobile layout puts tag and Read Full Case on the same line */}
+                    <div className="flex items-center justify-between md:block mb-1 md:mb-4">
+                      <div className="inline-block px-3 py-1 bg-stone-100 text-stone-600 text-[10px] 2xl:text-xs font-bold uppercase tracking-wider rounded-md">
+                        {study.tag}
+                      </div>
+
+                      {/* 🔥 FIXED: Mobile-only "Read Full Case" link beside the tag */}
+                      <Link 
+                        to={study.link}
+                        className="md:hidden inline-flex items-center text-sm font-bold text-slate-900 group-hover:text-amber-600 transition-colors"
+                      >
+                        {content.readFullCaseLabel} <ArrowRight size={16} className="ml-1.5 transform group-hover:translate-x-1 transition-transform" />
+                      </Link>
                     </div>
                     
                     <p className="hidden md:block text-sm md:text-base 2xl:text-lg text-slate-600 leading-relaxed mb-4">
@@ -129,7 +136,8 @@ const CaseStudies = () => {
                     </p>
                   </div>
 
-                  <div className="mt-auto pt-4 border-t border-stone-100">
+                  {/* 🔥 FIXED: Desktop-only bottom border section */}
+                  <div className="hidden md:block mt-auto pt-4 border-t border-stone-100">
                     <Link 
                       to={study.link}
                       className="inline-flex items-center text-sm md:text-base 2xl:text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors"

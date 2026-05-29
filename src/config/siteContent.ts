@@ -119,7 +119,7 @@ export const siteContent = {
     // descriptionHighlight1: "SMEs ",
     // descriptionPart2: "to ",
     // descriptionHighlight2: "large-scale events",
-    descriptionPart3: "We secure your growth while you innovate.",
+    descriptionPart3: "We secure your growth while you innovate",
     mobileCard1Label: "Enterprise Scale",
     mobileCard2Label: "SME Protection",
     desktopCard1Title: "Unified Security Operations",

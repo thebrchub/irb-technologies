@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-import { ArrowUp, MessageCircle, Phone, MessageSquare, X } from 'lucide-react';
+import { MessageCircle, Phone, MessageSquare, X } from 'lucide-react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
@@ -19,77 +19,23 @@ import SmeShield from './pages/SmeShield';
 import StartupCompliance from './pages/StartupCompliance';
 import NotFound from './pages/NotFound';
 
-// 🔥 SMART FAB: Seamlessly toggles between Contact Actions and Scroll To Top
+// 🔥 SMART FAB: Purely Contact Actions now. Stripped out all unnecessary scroll logic.
 const SmartFAB = () => {
-  const [isScrolling, setIsScrolling] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const [isFabOpen, setIsFabOpen] = useState(false); 
-
-  useEffect(() => {
-    let scrollTimer: ReturnType<typeof setTimeout>;
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-      setIsScrolling(true);
-      
-      setIsFabOpen(false); 
-
-      if (scrollTimer) window.clearTimeout(scrollTimer);
-      
-      scrollTimer = window.setTimeout(() => {
-        setIsScrolling(false);
-      }, 750);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      if (scrollTimer) window.clearTimeout(scrollTimer);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
 
   const phoneNumber = '+919146466127';
   const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}`;
 
-  const showToTop = isScrolling && scrollY > 200;
-
   return (
-    
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 2xl:bottom-12 2xl:right-12 z-[70]">
       
-      {/* ─── SCROLL TO TOP BUTTON ─── */}
-      <button
-        onClick={scrollToTop}
-        aria-label="Go to top"
-        /* 🔥 Aggressively compact size (h-10) for laptops, standard 2xl size */
-        className={`absolute bottom-0 right-0 flex h-10 w-10 md:h-10 md:w-10 2xl:h-16 2xl:w-16 items-center justify-center rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700/50 text-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:bg-slate-800 hover:text-amber-400 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
-          showToTop 
-            ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto' 
-            : 'opacity-0 scale-50 translate-y-5 pointer-events-none'
-        }`}
-      >
-        <ArrowUp className="w-4 h-4 2xl:w-6 2xl:h-6" strokeWidth={2.5} />
-      </button>
-
       {/* ─── CONTACT FAB GROUP ─── */}
       <div
         onMouseLeave={() => setIsFabOpen(false)}
-        className={`flex flex-col items-end gap-2 lg:gap-3 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom ${
-          showToTop 
-            ? 'opacity-0 scale-50 translate-y-5 pointer-events-none' 
-            : 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
-        }`}
+        className="flex flex-col items-end gap-2 lg:gap-3 origin-bottom relative"
       >
         {/* Hidden Actions (WhatsApp & Call) */}
-        <div className={`flex flex-col items-end gap-2 lg:gap-3 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom ${
+        <div className={`flex flex-col items-end gap-2 lg:gap-3 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom absolute bottom-[110%] right-0 ${
             isFabOpen 
               ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' 
               : 'opacity-0 translate-y-5 scale-95 pointer-events-none'
@@ -98,7 +44,6 @@ const SmartFAB = () => {
           <a
             href={`tel:${phoneNumber}`}
             aria-label="Call IRB Technology"
-            /* Compact action buttons (h-9) */
             className="group/action relative flex h-9 w-9 md:h-9 md:w-9 2xl:h-14 2xl:w-14 items-center justify-end overflow-hidden rounded-full bg-blue-600 text-white shadow-[0_12px_24px_rgba(37,99,235,0.28)] hover:w-28 md:hover:w-32 2xl:hover:w-44 hover:bg-blue-700 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"
           >
             <span className="absolute left-3 lg:left-4 2xl:left-6 opacity-0 whitespace-nowrap text-xs lg:text-sm 2xl:text-lg font-bold tracking-tight transition-opacity duration-300 group-hover/action:opacity-100">
@@ -131,8 +76,6 @@ const SmartFAB = () => {
           onClick={() => setIsFabOpen(!isFabOpen)} 
           onMouseEnter={() => setIsFabOpen(true)} 
           aria-label="Contact quick actions"
-          /* 🔥 FIXED: Tamed size to h-10 (40px) on mobile/laptops. 
-             🔥 FIXED: Color changed from generic slate to brand #C45919 to match UI. */
           className={`flex h-10 w-10 md:h-10 md:w-10 2xl:h-16 2xl:w-16 items-center justify-center rounded-full border shadow-[0_10px_30px_rgba(196,89,25,0.3)] hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] relative z-10 
             ${isFabOpen 
               ? 'bg-white border-slate-200' 
