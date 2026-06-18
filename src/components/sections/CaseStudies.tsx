@@ -11,7 +11,7 @@ const CaseStudies = () => {
     '03': FileCheck,
   };
 
-  // Animation Variants for Framer Motion
+  
   const cardVariants: Variants = {
     hidden: (custom: { index: number; direction: string }) => ({
       opacity: 0,
@@ -26,17 +26,17 @@ const CaseStudies = () => {
         type: "spring" as const,
         damping: 20,
         stiffness: 100,
-        delay: custom.index * 0.1, // Stagger effect
+        delay: custom.index * 0.1, 
         duration: 0.6,
       },
     }),
   };
 
-  // Helper function to determine the entry direction based on grid column position
+
   const getDirection = (index: number) => {
-    if (index % 3 === 0) return 'left'; // First column
-    if (index % 3 === 2) return 'right'; // Third column
-    return 'center'; // Middle column
+    if (index % 3 === 0) return 'left'; 
+    if (index % 3 === 2) return 'right'; 
+    return 'center'; 
   };
 
   return (
@@ -47,7 +47,6 @@ const CaseStudies = () => {
       
       <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16 relative z-10 w-full">
         
-        {/* Header Animation */}
         <motion.header 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,14 +79,14 @@ const CaseStudies = () => {
           )}
         </motion.header>
 
-        {/* Case Studies Grid */}
+     
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 2xl:gap-10 items-stretch">
           {content.cases.map((study, index) => {
             const IconComponent = iconMap[study.id];
             const direction = getDirection(index);
             
             return (
-              // 🔥 Wrapper with Framer Motion for the slide-in effects!
+              
               <motion.div 
                 key={study.id}
                 custom={{ index, direction }}
@@ -116,13 +115,12 @@ const CaseStudies = () => {
                   </div>
                   
                   <div className="flex-grow flex flex-col justify-end md:block">
-                    {/* 🔥 FIXED: Mobile layout puts tag and Read Full Case on the same line */}
+                   
                     <div className="flex items-center justify-between md:block mb-1 md:mb-4">
                       <div className="inline-block px-3 py-1 bg-stone-100 text-stone-600 text-[10px] 2xl:text-xs font-bold uppercase tracking-wider rounded-md">
                         {study.tag}
                       </div>
 
-                      {/* 🔥 FIXED: Mobile-only "Read Full Case" link beside the tag */}
                       <Link 
                         to={study.link}
                         className="md:hidden inline-flex items-center text-sm font-bold text-slate-900 group-hover:text-amber-600 transition-colors"
@@ -136,7 +134,7 @@ const CaseStudies = () => {
                     </p>
                   </div>
 
-                  {/* 🔥 FIXED: Desktop-only bottom border section */}
+             
                   <div className="hidden md:block mt-auto pt-4 border-t border-stone-100">
                     <Link 
                       to={study.link}

@@ -53,18 +53,18 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-white text-slate-600 pt-30 md:pt-50 pb-16 px-6 md:px-12 lg:px-16 relative">
       
-      {/* Background Grid */}
+     
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 mask-image:linear-gradient(to_bottom,transparent,black,transparent) pointer-events-none -z-10"></div>
 
       <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto relative z-10 w-full">
         <div className="w-full">
 
-          {/* ── Header ── */}
+         
           <div className="mb-8 md:mb-10 2xl:mb-12">
             
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-12 2xl:gap-20">
               
-              {/* Left Column: Badges & Heading */}
+            
               <div className="lg:w-1/2 shrink-0">
                 <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-4 2xl:mb-6">
                   {privacyContent.badges.map((badge, index) => {
@@ -88,13 +88,12 @@ const PrivacyPolicy = () => {
                 </h1>
               </div>
               
-              {/* Right Column: Description & Date */}
-              {/* 🔥 FIXED: Added lg:mt-12 and 2xl:mt-[4.5rem] to push the description down past the badge row, perfectly aligning it with the H1 heading! */}
+
               <div className="lg:w-1/2 flex flex-col lg:mt-12 2xl:mt-[4.5rem]">
                 <p className="text-slate-500 text-sm md:text-base lg:text-lg 2xl:text-xl leading-relaxed m-0">
                   {privacyContent.description}
                 </p>
-                {/* Hidden on mobile to keep header clean */}
+             
                 <p className="hidden md:block text-xs md:text-sm 2xl:text-base text-slate-400 font-mono mt-3 2xl:mt-4">
                   {privacyContent.lastUpdated}
                 </p>
@@ -102,14 +101,14 @@ const PrivacyPolicy = () => {
 
             </div>
 
-            {/* Separator Line */}
+          
             <div className="mt-8 md:mt-10 h-px bg-gradient-to-r from-[#F58220]/40 via-slate-200 to-transparent" />
           </div>
 
-          {/* ── Sections ── */}
+       
           <div className="space-y-4 md:space-y-6 2xl:space-y-8">
 
-            {/* Section 1 */}
+       
             <div className="group p-5 md:p-8 2xl:p-10 rounded-3xl border border-slate-100 bg-slate-50/60 hover:bg-white hover:border-[#F58220]/20 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300">
               <div className="flex flex-col sm:flex-row items-start gap-4 md:gap-5 2xl:gap-8">
                 <div className="hidden md:flex shrink-0 items-center justify-center w-10 h-10 md:w-11 md:h-11 2xl:w-14 2xl:h-14 rounded-2xl bg-[#F58220]/10 border border-[#F58220]/20 group-hover:bg-[#F58220]/15 transition-colors">
@@ -117,8 +116,7 @@ const PrivacyPolicy = () => {
                 </div>
                 
                 <div className="flex-1 w-full flex flex-col lg:flex-row gap-4 lg:gap-10 2xl:gap-16">
-                  
-                  {/* Left Column on Desktop */}
+       
                   <div className="lg:w-1/3 xl:w-1/4 shrink-0">
                     <div className="flex items-center gap-3 mb-1 2xl:mb-3">
                       <span className="text-[10px] md:text-[11px] 2xl:text-sm font-mono text-[#F58220]/60 tracking-widest">{privacyContent.sections[0].number}</span>
@@ -127,7 +125,7 @@ const PrivacyPolicy = () => {
                     <div className="w-8 2xl:w-12 h-0.5 bg-[#F58220]/30 rounded mb-2 lg:mb-0" />
                   </div>
                   
-                  {/* Right Column on Desktop */}
+            
                   <div className="lg:w-2/3 xl:w-3/4 flex flex-col">
                     <p className="text-sm md:text-base 2xl:text-xl text-slate-600 leading-relaxed 2xl:max-w-6xl">
                       {privacyContent.sections[0].description}
@@ -145,7 +143,7 @@ const PrivacyPolicy = () => {
               </div>
             </div>
 
-            {/* Section 2 */}
+        
             <div className="group p-5 md:p-8 2xl:p-10 rounded-3xl border border-slate-100 bg-slate-50/60 hover:bg-white hover:border-[#F58220]/20 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300">
               <div className="flex flex-col sm:flex-row items-start gap-4 md:gap-5 2xl:gap-8">
                 <div className="hidden md:flex shrink-0 items-center justify-center w-10 h-10 md:w-11 md:h-11 2xl:w-14 2xl:h-14 rounded-2xl bg-[#F58220]/10 border border-[#F58220]/20 group-hover:bg-[#F58220]/15 transition-colors">
@@ -185,7 +183,6 @@ const PrivacyPolicy = () => {
               </div>
             </div>
 
-            {/* Section 3 */}
             <div className="group p-5 md:p-8 2xl:p-10 rounded-3xl border border-slate-100 bg-slate-50/60 hover:bg-white hover:border-[#F58220]/20 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300">
               <div className="flex flex-col sm:flex-row items-start gap-4 md:gap-5 2xl:gap-8">
                 <div className="hidden md:flex shrink-0 items-center justify-center w-10 h-10 md:w-11 md:h-11 2xl:w-14 2xl:h-14 rounded-2xl bg-[#F58220]/10 border border-[#F58220]/20 group-hover:bg-[#F58220]/15 transition-colors">
@@ -219,14 +216,13 @@ const PrivacyPolicy = () => {
               </div>
             </div>
 
-            {/* Mobile-only Last Updated Text positioned cleanly at the bottom */}
             <div className="md:hidden w-full flex justify-center mt-6 mb-2">
                <span className="text-[11px] font-mono text-slate-400 bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
                  {privacyContent.lastUpdated}
                </span>
             </div>
 
-            {/* CTA */}
+
             <div className="relative overflow-hidden bg-[#2B3A4A] rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 2xl:p-12 shadow-2xl shadow-[#2B3A4A]/20 mt-10 2xl:mt-16">
               <div className="absolute top-0 right-0 w-72 h-72 bg-[#F58220]/15 blur-[80px] rounded-full pointer-events-none" />
               <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8 2xl:gap-16">

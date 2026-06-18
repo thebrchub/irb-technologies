@@ -19,7 +19,7 @@ import SmeShield from './pages/SmeShield';
 import StartupCompliance from './pages/StartupCompliance';
 import NotFound from './pages/NotFound';
 
-// 🔥 SMART FAB: Purely Contact Actions now. Stripped out all unnecessary scroll logic.
+//   SMART FAB: Purely Contact Actions now. Stripped out all unnecessary scroll logic.
 const SmartFAB = () => {
   const [isFabOpen, setIsFabOpen] = useState(false); 
 
@@ -29,13 +29,12 @@ const SmartFAB = () => {
   return (
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 2xl:bottom-12 2xl:right-12 z-[70]">
       
-      {/* ─── CONTACT FAB GROUP ─── */}
+     
       <div
         onMouseLeave={() => setIsFabOpen(false)}
         className="flex flex-col items-end gap-2 lg:gap-3 origin-bottom relative"
       >
-        {/* Hidden Actions (WhatsApp & Call) */}
-        {/* UPDATED: Replaced bottom-[110%] with bottom-full mb-2 lg:mb-3 to perfectly match the internal gaps */}
+        
         <div className={`flex flex-col items-end gap-2 lg:gap-3 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom absolute bottom-full pb-2 lg:pb-3 right-0 ${
             isFabOpen 
               ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' 

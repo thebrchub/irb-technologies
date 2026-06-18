@@ -9,13 +9,12 @@ const Features = () => {
     <section id="architecture" className="bg-slate-50 py-12 md:py-16 relative overflow-hidden border-t border-slate-200 min-h-[100dvh] flex flex-col justify-center">
       <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16 w-full">
         
-        {/* 2-Column Header */}
+       
        <header className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-12 md:mb-16 lg:mb-20 w-full">
           
           <div className="w-full lg:w-[60%] flex flex-col items-center lg:items-start text-center lg:text-left max-w-3xl lg:max-w-none mx-auto lg:mx-0">
             <ScrollReveal>
-              
-              {/* 🔥 FIXED: Wrapped IRB Tech Architecture in a single inline-block so it drops together! */}
+  
               <h2 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 mb-5 md:mb-6 tracking-tight leading-[1.1] [text-wrap:balance]">
                 {content.headingPart1}
                 <span className="inline-block">
@@ -30,7 +29,7 @@ const Features = () => {
             </ScrollReveal>
           </div>
 
-          {/* Right Column: Floating SVG Map (STRICTLY DESKTOP ONLY) */}
+         
           <div className="hidden lg:flex w-full lg:w-[40%] justify-end items-center">
             <div className="w-full max-w-[260px] md:max-w-[300px] lg:max-w-[320px] 2xl:max-w-[380px]">
               <ScrollReveal>
@@ -73,10 +72,9 @@ const Features = () => {
 
         </header>
 
-        {/* The 3 Perfectly Uniform Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 2xl:gap-10 perspective-[2000px] items-stretch">
           
-          {/* Box 1: Global Intelligence */}
+    
           <article className="group relative bg-white hover:bg-slate-50 border border-slate-200 hover:border-amber-300 rounded-[2rem] p-6 lg:p-8 2xl:p-10 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col h-full hover:-translate-y-2">
             <div className="absolute inset-0 bg-[radial-gradient(400px_at_50%_50%,rgba(245,158,11,0.05),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             
@@ -97,7 +95,7 @@ const Features = () => {
             </div>
           </article>
 
-          {/* Box 2: Speed */}
+         
           <article className="group relative bg-white hover:bg-slate-50 border border-slate-200 hover:border-amber-300 rounded-[2rem] p-6 lg:p-8 2xl:p-10 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col h-full hover:-translate-y-2">
             <div className="absolute inset-0 bg-[radial-gradient(400px_at_50%_50%,rgba(245,158,11,0.05),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             
@@ -118,7 +116,6 @@ const Features = () => {
             </div>
           </article>
 
-          {/* Box 3: Compliance (Dark Theme) */}
           <article className="group relative bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-amber-500/30 rounded-[2rem] p-6 lg:p-8 2xl:p-10 transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-amber-500/20 flex flex-col h-full hover:-translate-y-2">
             <div className="absolute inset-0 bg-[radial-gradient(400px_at_50%_50%,rgba(245,158,11,0.1),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             

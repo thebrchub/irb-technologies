@@ -15,7 +15,7 @@ const Services = () => {
   };
   const iconColors = ['text-amber-600', 'text-slate-700', 'text-emerald-600', 'text-blue-600', 'text-amber-500', 'text-slate-800'];
   
-  // 🔥 FIXED: Explicitly typed as Variants, and updated to accept the combined custom object
+
   const cardVariants: Variants = {
     hidden: (custom: { index: number; direction: string }) => ({
       opacity: 0,
@@ -27,20 +27,20 @@ const Services = () => {
       x: 0,
       y: 0,
       transition: {
-        type: "spring" as const, // 🔥 FIXED: TypeScript now knows this is specifically a spring animation
+        type: "spring" as const, 
         damping: 20,
         stiffness: 100,
-        delay: custom.index * 0.1, // Stagger effect
+        delay: custom.index * 0.1, 
         duration: 0.6,
       },
     }),
   };
 
-  // Helper function to determine the entry direction based on grid column position
+  
   const getDirection = (index: number) => {
-    if (index % 3 === 0) return 'left'; // First column (0, 3)
-    if (index % 3 === 2) return 'right'; // Third column (2, 5)
-    return 'center'; // Middle column (1, 4)
+    if (index % 3 === 0) return 'left'; 
+    if (index % 3 === 2) return 'right'; 
+    return 'center'; 
   };
 
   return (
@@ -99,7 +99,7 @@ const Services = () => {
             return (
               <motion.div
                 key={index}
-                // 🔥 FIXED: Combined index and direction into a single object!
+                
                 custom={{ index, direction }}
                 initial="hidden"
                 whileInView="visible"

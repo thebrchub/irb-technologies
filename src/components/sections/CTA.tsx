@@ -13,17 +13,15 @@ const CTA = ({ onOpenModal }: CTAProps) => {
       <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16 relative z-10">
         
         <ScrollReveal>
-          {/* 🔥 FIXED: Reduced mobile padding (px-4 py-8) to give the text maximum horizontal width */}
+
           <div className="relative bg-slate-900 rounded-[2rem] lg:rounded-[3rem] px-4 py-8 sm:px-6 md:px-12 md:py-12 lg:px-16 lg:py-14 2xl:px-20 2xl:py-16 overflow-hidden shadow-2xl shadow-slate-900/20 border border-slate-800">
             
-            {/* Ambient High-Tech Glows Inside the Card */}
+     
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[300px] bg-amber-500/15 blur-[100px] rounded-full pointer-events-none"></div>
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
 
-            {/* 🔥 FIXED: Tightened mobile gap down to gap-5 */}
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-5 md:gap-8 lg:gap-16 2xl:gap-24">
-              
-              {/* Left Side: Text Content */}
+      
               <div className="flex flex-col items-center lg:items-start w-full max-w-2xl 2xl:max-w-5xl">
                 
                 {/* <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-4 lg:mb-6 shadow-sm text-center">
@@ -31,10 +29,9 @@ const CTA = ({ onOpenModal }: CTAProps) => {
                   Secure Your Future
                 </div> */}
 
-                {/* 🔥 FIXED: Removed mb-5 on mobile (now mb-0) to kill the extra space above the button. Let the text stretch full width! */}
+                
                 <h2 className="text-center lg:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-0 md:mb-5 w-full [text-wrap:balance]">
                   
-                  {/* MOBILE HEADING: Removed flex-col so it flows naturally and wide */}
                   <span className="md:hidden">
                     Don't wait for a breach to{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
@@ -42,7 +39,7 @@ const CTA = ({ onOpenModal }: CTAProps) => {
                     </span>
                   </span>
 
-                  {/* DESKTOP HEADING */}
+                 
                   <span className="hidden md:inline">
                     Start your security{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
@@ -57,8 +54,7 @@ const CTA = ({ onOpenModal }: CTAProps) => {
                 </p>
               </div>
 
-              {/* Right Side: CTA Button & Status */}
-              {/* 🔥 FIXED: Removed mt-2 to pull the button up tightly against the heading on mobile */}
+             
               <div className="flex flex-col items-start shrink-0 w-full lg:w-auto mt-0 lg:translate-y-3">
                 
                 <button 

@@ -54,19 +54,19 @@ const Hero = ({ onOpenModal }: HeroProps) => {
     
     <section id="home" className="relative bg-[#FDFBF7] pt-28 pb-10 lg:pt-28 lg:pb-16 xl:pt-47 xl:pb-20 3xl:pt-56 3xl:pb-32 overflow-hidden min-h-0 md:min-h-[860px] lg:min-h-0 xl:min-h-[88vh] 3xl:min-h-[90vh] flex items-start md:items-center border-b border-slate-200">
       
-      {/* Background radial soft ambient lights */}
+    
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none flex justify-center sm:justify-start z-0">
         <div className="absolute top-[-5%] w-[150%] h-[60%] sm:left-[-10%] sm:w-[50%] sm:h-[50%] bg-amber-500/15 sm:bg-amber-500/5 blur-[90px] sm:blur-[120px] rounded-full"></div>
       </div>
 
-      {/* Subtle grid background */}
+
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:32px_32px] opacity-10 pointer-events-none z-0 md:opacity-0"></div>
 
       <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16 relative z-10 w-full">
         
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-10 xl:gap-8 2xl:gap-12 items-center">
           
-          {/* ─── LEFT COLUMN: Text & CTAs ─── */}
+         
           <motion.div 
             className="xl:col-span-6 2xl:col-span-6 flex flex-col items-center xl:items-start text-center xl:text-left pt-6 sm:pt-4 xl:pt-0 pr-0 2xl:pr-8"
             variants={containerVariants}
@@ -81,8 +81,7 @@ const Hero = ({ onOpenModal }: HeroProps) => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">{content.headingHighlight}</span>
             </motion.h1>
 
-            {/* Description */}
-            {/* 🔥 FIXED: Reduced xl:mb-10 to xl:mb-8 to tighten vertical footprint on laptops */}
+            
             <motion.p variants={itemVariants} className="text-lg sm:text-xl lg:text-2xl xl:text-[1.75rem] 2xl:text-[2.25rem] text-slate-600 leading-snug max-w-2xl 2xl:max-w-4xl mx-auto xl:mx-0 mb-8 lg:mb-10 xl:mb-8 2xl:mb-20 font-medium tracking-tight">
               {content.descriptionPart3}
             </motion.p>
@@ -98,7 +97,7 @@ const Hero = ({ onOpenModal }: HeroProps) => {
               </div>
             </motion.div>
 
-            {/* CTA Buttons */}
+          
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-3 sm:gap-4 w-full xl:w-auto">
               <button 
                 onClick={onOpenModal}
@@ -117,7 +116,7 @@ const Hero = ({ onOpenModal }: HeroProps) => {
 
           </motion.div>
 
-          {/* ─── RIGHT COLUMN: Premium Stage ─── */}
+         
           <motion.div 
             variants={graphicVariants}
             initial="hidden"
@@ -130,7 +129,7 @@ const Hero = ({ onOpenModal }: HeroProps) => {
               
               <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
 
-              {/* The ThreatDeflector Animation */}
+          
               <div className="w-full h-full max-w-[500px] 2xl:max-w-[600px] scale-90 xl:scale-100 transform flex items-center justify-center relative z-10 pb-10">
                 <ThreatDeflector />
               </div>

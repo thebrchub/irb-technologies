@@ -6,7 +6,7 @@ import { siteContent } from '../config/siteContent';
 const StartupCompliance = () => {
   const content = siteContent.startupCompliance;
 
-  // 🔥 NEW: Animation variants (fully typed for TypeScript)
+  //   NEW: Animation variants (fully typed for TypeScript)
   const elementVariants: Variants = {
     hidden: (custom: { direction: string; delay: number }) => ({
       opacity: 0,
@@ -43,10 +43,10 @@ const StartupCompliance = () => {
         </div>
 
         {/* 2-Column Header Grid */}
-        {/* 🔥 FIXED: Slashed bottom margin to kill whitespace above the stats bar */}
+        {/*     Slashed bottom margin to kill whitespace above the stats bar */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 2xl:gap-20 items-start mb-6 md:mb-8 lg:mb-10">
           
-          {/* 🔥 ANIMATED: Text slides in from left */}
+          {/*   ANIMATED: Text slides in from left */}
           <motion.div 
             className="lg:col-span-8 2xl:col-span-8 max-w-4xl 2xl:max-w-none"
             custom={{ direction: 'left', delay: 0.1 }}
@@ -68,7 +68,7 @@ const StartupCompliance = () => {
             </p>
           </motion.div>
 
-          {/* 🔥 ANIMATED: Image slides in from right */}
+       
           <motion.div 
             className="hidden lg:block lg:col-span-4 2xl:col-span-4 relative flex flex-col items-end mt-6 lg:mt-8 2xl:mt-10"
             custom={{ direction: 'right', delay: 0.3 }}
@@ -87,8 +87,7 @@ const StartupCompliance = () => {
           </motion.div>
         </div>
 
-        {/* 🔥 ANIMATED: Stats Bar rises from center */}
-        {/* 🔥 FIXED: Slashed massive bottom margin to kill whitespace below the stats bar */}
+        
         <motion.div 
           className="w-[calc(100%+3rem)] -mx-6 md:w-full md:mx-0 bg-white md:rounded-[2.5rem] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] border-y md:border border-stone-200 p-4 md:p-8 2xl:p-10 mb-6 md:mb-8 lg:mb-10 2xl:mb-12"
           custom={{ direction: 'center', delay: 0.2 }}
@@ -116,7 +115,7 @@ const StartupCompliance = () => {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 2xl:gap-8">
           
-          {/* 🔥 ANIMATED: Challenge Card slides in from left */}
+         
           <motion.div 
             className="lg:col-span-5 bg-slate-900 text-white rounded-[1.5rem] md:rounded-[2rem] p-6 lg:p-8 2xl:p-10 shadow-xl flex flex-col justify-center relative overflow-hidden group"
             custom={{ direction: 'left', delay: 0.1 }}
@@ -139,7 +138,7 @@ const StartupCompliance = () => {
             </p>
           </motion.div>
 
-          {/* 🔥 ANIMATED: Approach Card slides in from right */}
+        
           <motion.div 
             className="lg:col-span-7 bg-white border border-stone-200 rounded-[1.5rem] md:rounded-[2rem] p-6 lg:p-8 2xl:p-10 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col justify-center"
             custom={{ direction: 'right', delay: 0.2 }}
@@ -174,7 +173,7 @@ const StartupCompliance = () => {
             </ul>
           </motion.div>
 
-          {/* 🔥 ANIMATED: Result Card rises from center */}
+          {/*  ANIMATED: Result Card rises from center */}
           <motion.div 
             className="lg:col-span-12 bg-gradient-to-br from-amber-500 to-amber-600 text-white rounded-[1.5rem] md:rounded-[2rem] p-6 lg:p-8 2xl:p-10 shadow-xl relative overflow-hidden"
             custom={{ direction: 'center', delay: 0.3 }}
@@ -185,7 +184,7 @@ const StartupCompliance = () => {
           >
             <div className="absolute top-[-20%] right-[-5%] w-[500px] h-[500px] bg-white/10 rounded-full blur-[80px] pointer-events-none"></div>
             
-            {/* 🔥 FIXED: Mobile Result Card Layout aligned correctly */}
+            {/*     Mobile Result Card Layout aligned correctly */}
             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-8 2xl:gap-10">
               
               <div className="flex items-center gap-4 shrink-0">

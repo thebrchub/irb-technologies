@@ -132,15 +132,15 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
               '0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.4)',
           }}
         >
-          {/* Top glass highlight line */}
+          
           <div
             className="absolute top-0 left-[10%] right-[10%] h-[1px] rounded-full pointer-events-none"
             style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)' }}
           />
 
-          {/* Logo */}
+          
           <Link to="/" className="flex items-center min-w-max cursor-pointer z-10">
-            {/* 🔥 FIXED: Scaled up the h-12 to h-14, and the img h-8 to h-10 for the mobile closed navbar view */}
+            
             <div className="relative flex items-center h-14 shrink-0">
               <img
                 src="/logow.svg"
@@ -150,7 +150,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             </div>
           </Link>
 
-          {/* Desktop nav links */}
+
           <div
             className={`
               absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
@@ -188,7 +188,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             </div>
           </div>
 
-          {/* Desktop CTA */}
+
           <div
             className={`
               hidden lg:flex items-center gap-4 2xl:gap-5 min-w-max transition-all duration-500 delay-150
@@ -218,7 +218,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             </button>
           </div>
 
-          {/* Mobile hamburger */}
+
           <div className="lg:hidden ml-auto z-20">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
@@ -229,7 +229,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
             </button>
           </div>
 
-          {/* Warm orange inner glow overlay */}
+        
           <div
             className="absolute inset-0 pointer-events-none rounded-full"
             style={{
@@ -242,7 +242,7 @@ const Navbar = ({ onOpenModal }: NavbarProps) => {
         </div>
       </nav>
 
-      {/* Mobile full-screen menu */}
+     
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[60] bg-[#1a232d] mob-bg-in flex flex-col overflow-hidden overscroll-none h-[100dvh]">
           <div className="absolute inset-0 mob-scan-lines pointer-events-none" />

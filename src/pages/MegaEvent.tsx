@@ -173,7 +173,7 @@ const MegaEvent = () => {
           >
             <div className="absolute top-[-20%] right-[-5%] w-[500px] h-[500px] bg-white/10 rounded-full blur-[80px] pointer-events-none"></div>
             
-            {/* 🔥 FIXED: Changed to flex-col md:flex-row so mobile stacks text below the grouped Icon+Heading */}
+
             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-8 2xl:gap-10">
               
               {/* Mobile grouping: Icon and Title side by side */}

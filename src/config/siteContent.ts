@@ -12,13 +12,13 @@ export const siteContent = {
     
    mission: {
       title: "Our Mission",
-      // 🔥 FIXED: Drastically shortened to fit perfectly on 1-2 lines maximum
+    
       descriptionMobile: "To make world-class cybersecurity simple and accessible for any and every business.",
       descriptionDesktop: "To make world-class cybersecurity simple and accessible for any and every business.",
     },
     vision: {
       title: "Our Vision",
-      // 🔥 FIXED: Drastically shortened for impact
+     
       descriptionMobile: "Setting the global benchmark for adaptive security, ensuring every digital interaction remains inherently safe.",
       descriptionDesktop: "Setting the global benchmark for adaptive security, ensuring every digital interaction remains inherently safe.",
     },
@@ -81,32 +81,32 @@ export const siteContent = {
     cards: [
       {
         title: "Health Check Express",
-        titleMobile: "Health Check", // 🔥 Shorter for mobile
+        titleMobile: "Health Check",  
         description: "A fixed-price, 24-hour turnaround comprehensive audit for your digital footprint and networks.",
       },
       {
         title: "Rapid Vulnerability Management",
-        titleMobile: "VAPT", // 🔥 Shorter for mobile
+        titleMobile: "VAPT", 
         description: "Accelerated, high-concurrency VAPT designed specifically to protect mission critical infra like live mega-events.",
       },
       {
         title: "Compliance as a Service",
-        titleMobile: "Compliance", // 🔥 Shorter for mobile
+        titleMobile: "Compliance", 
         description: "Let us handle the complex data privacy laws to keep your business ready to pass strict security audits like ISO 27001 and India's new DPDP Act.",
       },
       {
         title: "Expert Consulting",
-        titleMobile: "Consultation", // 🔥 Shorter for mobile
+        titleMobile: "Consultation",  
         description: "Think of us as your outsourced Security Head. We review your IT setup and guide you step-by-step on how to build a hack-proof business.",
       },
       {
         title: "Cyber Awareness Training",
-        titleMobile: "Training", // 🔥 Shorter for mobile
+        titleMobile: "Training",  
         description: "Technology isn't enough if human error happens. We train your staff for Phishing Scams, Digital Traps & Security Best Practices.",
       },
       {
         title: "Incident Simulation and Response",
-        titleMobile: "Simulation", // 🔥 Shorter for mobile
+        titleMobile: "Simulation",  
         description: "Transforming your workforce into an active defensive layer through cyber attack simulations  and real time and 'What-to-do-if' exercises.",
       },
     ],
@@ -123,10 +123,10 @@ export const siteContent = {
     mobileCard1Label: "Enterprise Scale",
     mobileCard2Label: "SME Protection",
     desktopCard1Title: "Unified Security Operations",
-    // 🔥 FIXED: Ultra-short description to guarantee a single line
+  
     // desktopCard1Description: "Seamless Integrations",
     desktopCard2Title: "Rapid Deployment",
-    // 🔥 FIXED: Ultra-short description to guarantee a single line
+   
     // desktopCard2Description: "Risk Management, Threat Mitigation",
     ctaButtonLabel: "Schedule an Audit",
     secondaryButtonLabel: "View Services",
@@ -242,7 +242,7 @@ export const siteContent = {
     headingHighlight: "Shield.",
     description: "A 24-hour turnaround audit that saved a local IT firm's client-facing portal from a critical data exposure vulnerability.",
     
-    // 🔥 FIXED: Swapped for a premium, abstract 3D digital security visual
+
     imageUrl: "/sme.jpg",
     imageAlt: "Abstract glowing digital security lock and network nodes",
     

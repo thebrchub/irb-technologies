@@ -16,16 +16,16 @@ const About = () => {
           <ScrollReveal>
             <div className="flex flex-col items-center">
               
-              {/* Scaled down pill size for mobile
+              {/*
               <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-4 md:py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-4 md:mb-6 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
                 {content.badge}
               </div> */}
               
-              {/* Forced 2-line heading for mobile, text-3xl */}
+              
               <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-[4.5rem] font-extrabold text-slate-900 tracking-tight leading-[1.15] md:leading-[1.1] mb-0 md:mb-8 2xl:mb-4 max-w-4xl 2xl:max-w-none mx-auto md:[text-wrap:balance]">
                 
-                {/* MOBILE ONLY: 2 exact lines */}
+                
                 <span className="flex flex-col md:hidden">
                   <span>{content.headingMain}</span>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700 -mt-1">
@@ -33,7 +33,7 @@ const About = () => {
                   </span>
                 </span>
 
-                {/* DESKTOP ONLY: Natural wrap */}
+                
                 <span className="hidden md:inline">
                   {content.headingMain}{' '}
                   <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">
@@ -50,11 +50,11 @@ const About = () => {
           </ScrollReveal>
         </header>
 
-        {/* 🔥 FIXED: Reverted back to grid-cols-1 on mobile so cards stretch full width */}
+   
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-10 w-full">
           
           <ScrollReveal delay={100} className="h-full">
-            {/* Restored mobile padding to p-6 since it has room again */}
+           
             <article className="bg-white p-6 md:p-8 2xl:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-amber-300 transition-all duration-300 group h-full flex flex-col">
                
                <div className="flex items-start gap-4 md:gap-5 lg:gap-6 h-full">
@@ -63,7 +63,7 @@ const About = () => {
                  </div>
                  
                  <div className="flex-1 flex flex-col justify-start">
-                   {/* Restored mobile text size to text-xl */}
+        
                    <h3 className="text-xl md:text-2xl 2xl:text-3xl font-bold text-slate-900 tracking-tight mb-2 md:mb-3">{content.mission.title}</h3>
                    <p className="md:hidden text-slate-600 leading-relaxed text-sm">
                      {content.mission.descriptionMobile}
@@ -99,7 +99,7 @@ const About = () => {
             </article>
           </ScrollReveal>
 
-          {/* 🔥 FIXED: Reverted back to md:col-span-2 (was col-span-2) so it flows naturally in the 1-column mobile grid */}
+          
           <div className="md:col-span-2">
             <ScrollReveal delay={300}>
               <article className="bg-white p-6 md:p-10 2xl:p-12 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 shadow-xl shadow-slate-200/50 hover:border-amber-300 transition-all duration-300 group">

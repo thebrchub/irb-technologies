@@ -57,7 +57,7 @@ const TermsOfService = () => {
           {/* ── Header ── */}
           <div className="mb-8 md:mb-10 2xl:mb-12">
             
-            {/* 🔥 FIXED: Implemented the responsive Split-Grid for the Header! */}
+           
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-12 2xl:gap-20">
               
               {/* Left Column: Badges & Heading */}
@@ -85,7 +85,7 @@ const TermsOfService = () => {
               </div>
               
               {/* Right Column: Description & Date */}
-              {/* 🔥 FIXED: Added lg:mt-12 and 2xl:mt-[4.5rem] to push the description down past the badge row! */}
+              
               <div className="lg:w-1/2 flex flex-col lg:mt-12 2xl:mt-[4.5rem]">
                 <p className="text-slate-500 text-sm md:text-base lg:text-lg 2xl:text-xl leading-relaxed m-0">
                   {termsContent.description}
@@ -209,7 +209,7 @@ const TermsOfService = () => {
               </div>
             </div>
 
-            {/* Mobile-only Last Updated Text positioned cleanly at the bottom */}
+
             <div className="md:hidden w-full flex justify-center mt-6 mb-2">
                <span className="text-[11px] font-mono text-slate-400 bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
                  {termsContent.lastUpdated}

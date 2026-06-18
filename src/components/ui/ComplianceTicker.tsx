@@ -9,10 +9,10 @@ const ComplianceTicker = () => {
   ];
 
   return (
-    // 🔥 FIXED: Removed background colors and hard borders. Let it breathe!
+    //     Removed background colors and hard borders. Let it breathe!
     <section className="py-8 md:py-10 relative overflow-hidden bg-transparent">
       
-      {/* 🔥 PREMIUM TOUCH: Fading top divider instead of a harsh edge-to-edge border */}
+      {/*   PREMIUM TOUCH: Fading top divider instead of a harsh edge-to-edge border */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-70"></div>
 
       <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6 lg:px-16 relative z-10 w-full">
@@ -50,7 +50,7 @@ const ComplianceTicker = () => {
                 transition={{ delay: 0.2 + (index * 0.15), duration: 0.5 }}
                 className="flex items-center gap-3 group cursor-default"
               >
-                {/* 🔥 PREMIUM TOUCH: Icons placed in sleek, muted circular badges that light up on hover */}
+                {/*   PREMIUM TOUCH: Icons placed in sleek, muted circular badges that light up on hover */}
                 <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-white border border-slate-200 flex items-center justify-center group-hover:bg-amber-50 group-hover:border-amber-200 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.15)] transition-all duration-300">
                   <ShieldCheck size={18} className="text-slate-400 group-hover:text-amber-500 transition-colors duration-300" strokeWidth={2} />
                 </div>

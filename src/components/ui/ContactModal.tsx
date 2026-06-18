@@ -108,7 +108,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 {/* LOGO & TERMINAL TEXT BLOCK: Simplified layout, single line! */}
                 <div className="flex items-center gap-3 mb-8">
                   <img src="/logo_w.svg" alt="IRB Technology" className="w-8 h-8 object-contain drop-shadow-md shrink-0" />
-                  {/* 🔥 FIXED: Changed text color to a lighter, more vibrant orange [#CF7D16] */}
+                  {/*     Changed text color to a lighter, more vibrant orange [#CF7D16] */}
                   <p className="font-mono text-[10px] xl:text-[11px] text-[#CF7D16] font-bold tracking-widest uppercase m-0 leading-tight whitespace-nowrap">
                     <span className="text-[#CF7D16]/40">{'>'}</span> SECURE_SESSION_ACTIVE
                     <span className="modal-cursor ml-1 text-[#CF7D16]">_</span>

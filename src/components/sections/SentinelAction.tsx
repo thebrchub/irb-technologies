@@ -148,7 +148,7 @@ const SentinelAction = () => {
                         transition={{ type: "spring", stiffness: 200, delay: 0.3 + (i * 0.1) }}
                         className="flex justify-center"
                       >
-                        {/* 🔥 BOLDER TICK */}
+                      
                         <Check className="text-[#C45919] w-7 h-7" strokeWidth={3.5} />
                       </motion.div>
                     </td>
@@ -156,7 +156,7 @@ const SentinelAction = () => {
                     <td className="hidden md:table-cell p-8 text-slate-700 font-bold text-center italic">
                       {typeof row.global === 'string' ? row.global : (
                         <div className="flex justify-center">
-                          {/* 🔥 BOLDER CROSS */}
+                        
                           <X size={22} className="text-slate-500 opacity-80" strokeWidth={3} />
                         </div>
                       )}

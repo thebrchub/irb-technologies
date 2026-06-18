@@ -29,7 +29,7 @@ const Footer = () => {
                 Strategic cybersecurity and operational excellence for the modern enterprise. We secure the digital future of industries globally.
               </p>
               
-              {/* 🔥 SAFEGUARDED: Socials commented out, ready for when the client wants them back! */}
+              
               {/*
               <div className="flex gap-4">
                  {[
@@ -53,7 +53,7 @@ const Footer = () => {
 
            <div className="hidden md:grid md:col-span-4 2xl:col-span-5 grid-cols-2 gap-8 md:gap-12 md:pl-8 2xl:pl-16">
               
-              {/* 🔥 FIXED ALIGNMENT: Solutions list sits perfectly flush with the heading */}
+            
               <div>
                  <h4 className="text-slate-900 font-bold mb-5 md:mb-6 tracking-wide text-base 2xl:text-lg">Solutions</h4>
                  <ul className="space-y-4 text-sm 2xl:text-base font-medium text-slate-600">
@@ -118,7 +118,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-slate-200 flex flex-col xl:flex-row justify-between items-center gap-8 xl:gap-4">
            
-           {/* 🔥 FIXED: Copyright & Attribution Text grouped tightly in a flex-col so they stick together! */}
+          
            <div className="flex flex-col items-center md:items-start gap-2 text-slate-500 text-sm font-medium text-center md:text-left">
                <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 sm:gap-4">
                    <span>&copy; {new Date().getFullYear()} IRB Technology. All rights reserved.</span>
@@ -133,10 +133,10 @@ const Footer = () => {
                </p>
            </div>
 
-           {/* Highlighted Premium Compliance Capsule with Ticker Content */}
+      
            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-5 bg-white px-5 py-3 md:px-6 md:py-3.5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
                
-               {/* Pulsing Verified Dot */}
+            
                <div className="flex items-center gap-2 pr-3 md:pr-4 border-r border-slate-200">
                    <span className="relative flex h-2 w-2">
                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
