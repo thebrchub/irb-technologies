@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Mail, User, Building2, MessageSquare, ArrowRight, CheckCircle2, ChevronDown, Check } from 'lucide-react';
 import { siteContent } from '../../config/siteContent';
+import { submitContactForm } from '../../services/contactForm';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -37,8 +38,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const content = siteContent.contactModal;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(content.serviceOptions[0]);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: '',
+  });
 
   useEffect(() => {
     if (isOpen) {
@@ -57,18 +65,32 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setSubmitError(null);
+
+    try {
+      await submitContactForm({
+        ...formData,
+        service: selectedService,
+      });
       setIsSubmitted(true);
-    }, 1500);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit form');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     onClose();
-    setTimeout(() => setIsSubmitted(false), 300);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setSubmitError(null);
+      setFormData({ name: '', email: '', company: '', message: '' });
+      setSelectedService(content.serviceOptions[0]);
+    }, 300);
   };
 
   return (
@@ -164,8 +186,11 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                           </div>
                           <input 
                             id="name" 
+                            name="name"
                             type="text" 
                             required
+                            value={formData.name}
+                            onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400" 
                             placeholder={content.form.fields.namePlaceholder} 
                           />
@@ -180,8 +205,11 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                           </div>
                           <input 
                             id="email" 
+                            name="email"
                             type="email" 
                             required
+                            value={formData.email}
+                            onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                             className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400" 
                             placeholder={content.form.fields.emailPlaceholder} 
                           />
@@ -197,8 +225,11 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                        </div>
                        <input 
                          id="company" 
+                         name="company"
                          type="text" 
                          required
+                         value={formData.company}
+                         onChange={(e) => setFormData((prev) => ({ ...prev, company: e.target.value }))}
                          className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400" 
                          placeholder={content.form.fields.companyPlaceholder} 
                        />
@@ -257,13 +288,22 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                        </div>
                        <textarea 
                          id="message" 
+                         name="message"
                          rows={2} 
                          required
+                         value={formData.message}
+                         onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
                          className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl pl-10 pr-4 py-2.5 md:py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all placeholder:text-slate-400 resize-none md:rows-3" 
                          placeholder={content.form.fields.messagePlaceholder} 
                        ></textarea>
                     </div>
                   </div>
+
+                  {submitError && (
+                    <p className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-3" role="alert">
+                      {submitError}
+                    </p>
+                  )}
 
                   <button 
                     type="submit" 
